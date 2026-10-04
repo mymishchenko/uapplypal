@@ -58,6 +58,9 @@ GitHub repo → **Settings → Secrets and variables → Actions → New reposit
 | `REMOTE_PATH` | site root directory from step 3, e.g. `/home/abc123/example.com/www` |
 | `REMOTE_KEY`  | the whole contents of the private key file `uapplypal_deploy` |
 
+In the **Variables** tab, add `REMOTE_NODE_BIN` if `npm` isn't found during deploy. Its value is the folder
+holding `node` and `npm` on the server. To find it, SSH in and run `dirname "$(which node)"`.
+
 Optional: in the **Variables** tab, add `RESTART_COMMAND`. This is a shell command that restarts
 the Node app after each deploy, if Hosting Ukraine gives you one. Without it, restart the site
 from adm.tools after a deploy.

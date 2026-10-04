@@ -32,12 +32,15 @@ jobs:
       REMOTE_USER: ${{ secrets.REMOTE_USER }}
       REMOTE_PORT: ${{ secrets.REMOTE_PORT || '22' }}
       REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+      HAS_KEY: ${{ secrets.REMOTE_KEY != '' }}
+      # Folder containing node/npm on the server, if they aren't on PATH for SSH commands.
+      REMOTE_NODE_BIN: ${{ vars.REMOTE_NODE_BIN }}
       RESTART_COMMAND: ${{ vars.RESTART_COMMAND }}
     steps:
       - name: Check deploy secrets
         id: check
         run: |
-          if [ -z "$REMOTE_HOST" ] || [ -z "$REMOTE_USER" ] || [ -z "$REMOTE_PATH" ]; then
+          if [ -z "$REMOTE_HOST" ] || [ -z "$REMOTE_USER" ] || [ -z "$REMOTE_PATH" ] || [ "$HAS_KEY" != "true" ]; then
             echo "::notice::Deploy skipped: set REMOTE_HOST, REMOTE_USER, REMOTE_PATH and REMOTE_KEY secrets (see docs/DEPLOY.md)."
             echo "ready=false" >> "$GITHUB_OUTPUT"
           else
@@ -69,6 +72,8 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" bash -s <<EOF
           set -e
+          ${REMOTE_NODE_BIN:+export PATH="$REMOTE_NODE_BIN:\$PATH"}
+          command -v npm >/dev/null || { echo "npm not found on the server. Set the REMOTE_NODE_BIN variable (see docs/DEPLOY.md)."; exit 1; }
           cd "$REMOTE_PATH"
           echo "${GITHUB_SHA::7}" > VERSION
           npm ci --omit=dev
