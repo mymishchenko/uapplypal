@@ -66,9 +66,9 @@ personal details in it (passport numbers, date of birth).
 In the **Variables** tab, add `REMOTE_NODE_BIN` if `npm` isn't found during deploy. Its value is the folder
 holding `node` and `npm` on the server. To find it, SSH in and run `dirname "$(which node)"`.
 
-Optional: in the **Variables** tab, add `RESTART_COMMAND`. This is a shell command that restarts
-the Node app after each deploy, if Hosting Ukraine gives you one. Without it, restart the site
-from adm.tools after a deploy.
+Each deploy restarts the app automatically. It stops the running `node server.js`, and Hosting
+Ukraine's Node.js supervisor starts it again with the new code. To use a different restart,
+set the `RESTART_COMMAND` variable in the **Variables** tab.
 
 Then delete the private key from your computer, or keep it somewhere safe.
 
