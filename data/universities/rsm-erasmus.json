@@ -1,0 +1,137 @@
+{
+  "id": "rsm-erasmus",
+  "name": "Erasmus University Rotterdam – Rotterdam School of Management (RSM)",
+  "short_name": "RSM Erasmus",
+  "country": "Netherlands",
+  "city": "Rotterdam",
+  "type": "public",
+  "website": "https://www.rsm.nl/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "rsm-iba-admission",
+      "title": "RSM: BSc IBA admission & application",
+      "url": "https://www.rsm.nl/education/bachelor/bsc-international-business-administration-iba/admission-application/",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-04"
+    }
+  ],
+  "benefits": [],
+  "scholarships": [
+    {
+      "id": "holland",
+      "name": "Holland Scholarship",
+      "provider": "government",
+      "type": "merit",
+      "amount": 5000,
+      "currency": "EUR",
+      "coverage": { "tuition": true },
+      "eligibility": "Non-EEA students, first year only. Check whether RSM IBA participates for 2027/28.",
+      "separate_application": true,
+      "renewable": false,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "UNKNOWN",
+      "source": "holland-scholarship"
+    }
+  ],
+  "programs": [
+    {
+      "id": "rsm-iba",
+      "name": "BSc International Business Administration (IBA)",
+      "degree": "BSc",
+      "fields": ["business", "management", "international business"],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Rotterdam",
+      "official_url": "https://www.rsm.nl/education/bachelor/bsc-international-business-administration-iba/",
+      "selectivity": "high",
+      "highlights": ["Numerus fixus selection programme", "Two-step application: Studielink + RSM online form"],
+      "risks": ["Hard deadline: no Studielink registration by 15 Jan = no application, no exceptions", "Non-EU institutional tuition applies"],
+      "intakes": [
+        {
+          "id": "rsm-iba-2027",
+          "academic_year": "2027/28",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "Studielink opened 1 Oct 2026. Register by 15 Jan 2027 23:59 CET, then complete the RSM online application form (OLAF) by 31 Jan 2027.",
+          "windows": [
+            { "id": "main", "label": "Studielink registration", "opens": "opens", "closes": "studielink" }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Studielink opens",
+              "date": "2026-10-01",
+              "status": "EXPECTED",
+              "source": "rsm-iba-admission",
+              "note": "Reported for 2027/28 (via search, 4 Oct 2026). Open the source to confirm."
+            },
+            {
+              "id": "studielink",
+              "type": "final_application",
+              "label": "Studielink registration deadline",
+              "date": "2027-01-15",
+              "status": "EXPECTED",
+              "source": "rsm-iba-admission",
+              "note": "23:59 CET. No exceptions."
+            },
+            {
+              "id": "olaf",
+              "type": "document_submission",
+              "label": "RSM online application form (OLAF)",
+              "date": "2027-01-31",
+              "status": "EXPECTED",
+              "source": "rsm-iba-admission"
+            }
+          ],
+          "tuition": {
+            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "Non-EU (institutional fee)", "status": "UNKNOWN", "source": "rsm-iba-admission" },
+            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "rsm-iba-admission" },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            {
+              "id": "studielink",
+              "category": "application",
+              "title": "Register in Studielink (Numerus Fixus IBA)",
+              "status": "EXPECTED",
+              "source": "rsm-iba-admission"
+            },
+            {
+              "id": "olaf",
+              "category": "application",
+              "title": "Complete RSM online application form (OLAF)",
+              "status": "EXPECTED",
+              "source": "rsm-iba-admission"
+            },
+            "passport",
+            "transcripts",
+            "current_grades",
+            "english",
+            "cv",
+            "motivation_letter",
+            {
+              "id": "math",
+              "category": "academic",
+              "title": "Mathematics level requirement",
+              "detail": "Dutch programmes usually require a specific maths level (e.g. VWO Wiskunde A/B equivalent).",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            {
+              "id": "selection",
+              "category": "selection",
+              "title": "Numerus fixus selection procedure",
+              "status": "EXPECTED",
+              "source": "rsm-iba-admission"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

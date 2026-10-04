@@ -1,0 +1,175 @@
+{
+  "id": "bocconi",
+  "name": "Bocconi University",
+  "short_name": "Bocconi",
+  "country": "Italy",
+  "city": "Milan",
+  "type": "private",
+  "website": "https://www.unibocconi.it/en",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "bocconi-admissions",
+      "title": "Bocconi: Admissions (bachelor)",
+      "url": "https://www.unibocconi.it/en/admissions",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-04"
+    },
+    {
+      "id": "bocconi-isu-2027",
+      "title": "ISU Bocconi Scholarship: deadlines and procedures a.y. 2027-28",
+      "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/funding/isu-bocconi-scholarship-deadlines-and-procedures-ay-2027-28",
+      "type": "official_scholarship",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-04"
+    }
+  ],
+  "benefits": [],
+  "scholarships": [
+    {
+      "id": "isu",
+      "name": "ISU Bocconi Scholarship",
+      "provider": "university",
+      "type": "need_based",
+      "amount": null,
+      "percent": null,
+      "coverage": { "tuition": true, "housing": true, "living": true },
+      "eligibility": "Need-based: family income/assets. Separate application with financial documents.",
+      "separate_application": true,
+      "renewable": true,
+      "academic_year": "2027/28",
+      "availability": "AVAILABLE",
+      "deadline": { "date": null, "date_text": "See ISU 2027-28 timeline page" },
+      "status": "EXPECTED",
+      "source": "bocconi-isu-2027",
+      "note": "Official 2027-28 page exists. Read it for amounts and dates."
+    },
+    {
+      "id": "merit",
+      "name": "Bocconi merit awards for international students",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": null,
+      "coverage": { "tuition": true },
+      "eligibility": "Merit-based. Details to be checked.",
+      "separate_application": null,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "UNKNOWN",
+      "source": "bocconi-admissions"
+    }
+  ],
+  "programs": [
+    {
+      "id": "bocconi-business",
+      "name": "English-taught business/economics bachelors (e.g. BIEM)",
+      "degree": "BSc",
+      "fields": ["business", "economics", "management", "finance"],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Milan",
+      "official_url": "https://www.unibocconi.it/en/admissions",
+      "selectivity": "very_high",
+      "highlights": [
+        "Fixed selection formula: 55% test score + 45% school grades",
+        "SAT, ACT or Bocconi Test accepted"
+      ],
+      "risks": ["Highly selective", "Early Session for 2027/28 already closed"],
+      "intakes": [
+        {
+          "id": "bocconi-business-2027",
+          "academic_year": "2027/28",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "Early Session closed 29 Sep 2026. Winter Session: 25 Nov 2026 – 26 Jan 2027.",
+          "windows": [
+            { "id": "early", "label": "Early Session", "opens": "early-opens", "closes": "early-close" },
+            { "id": "winter", "label": "Winter Session", "opens": "winter-opens", "closes": "winter-close" }
+          ],
+          "deadlines": [
+            {
+              "id": "early-opens",
+              "type": "application_opens",
+              "label": "Early Session opens",
+              "date": "2026-09-02",
+              "status": "EXPECTED",
+              "source": "bocconi-admissions",
+              "note": "Reported for 2027/28 (via search, 4 Oct 2026). Open the source to confirm."
+            },
+            {
+              "id": "early-close",
+              "type": "early_round",
+              "label": "Early Session deadline",
+              "date": "2026-09-29",
+              "status": "EXPECTED",
+              "source": "bocconi-admissions",
+              "note": "15:00 Italian time. Last test date for international applicants: 24 Sep 2026."
+            },
+            {
+              "id": "winter-opens",
+              "type": "application_opens",
+              "label": "Winter Session opens",
+              "date": "2026-11-25",
+              "status": "EXPECTED",
+              "source": "bocconi-admissions",
+              "note": "Reported for 2027/28 (via search, 4 Oct 2026). Open the source to confirm."
+            },
+            {
+              "id": "winter-close",
+              "type": "regular_round",
+              "label": "Winter Session deadline",
+              "date": "2027-01-26",
+              "status": "EXPECTED",
+              "source": "bocconi-admissions",
+              "note": "Admission test must be taken before submitting the application."
+            },
+            {
+              "id": "winter-results",
+              "type": "decision",
+              "label": "Winter Session results",
+              "date": null,
+              "date_text": "Mid-March 2027",
+              "status": "EXPECTED",
+              "source": "bocconi-admissions"
+            }
+          ],
+          "tuition": {
+            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "International students", "status": "UNKNOWN", "source": "bocconi-admissions", "note": "Bocconi tuition depends on family income for some students; enter the 2027/28 figure." },
+            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "bocconi-admissions" },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "current_grades",
+            "english",
+            {
+              "id": "test",
+              "category": "tests",
+              "title": "Admission test: SAT, ACT or Bocconi Test",
+              "detail": "Must be taken before submitting the application.",
+              "exam": ["SAT", "ACT", "BOCCONI_TEST"],
+              "exam_mode": "option",
+              "status": "EXPECTED",
+              "source": "bocconi-admissions"
+            },
+            {
+              "id": "selection",
+              "category": "selection",
+              "title": "Selection: 55% admission test, 45% school grades",
+              "detail": "No essay, no interview.",
+              "status": "EXPECTED",
+              "source": "bocconi-admissions"
+            },
+            "application_form",
+            "application_fee"
+          ]
+        }
+      ]
+    }
+  ]
+}

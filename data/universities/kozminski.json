@@ -1,0 +1,107 @@
+{
+  "id": "kozminski",
+  "name": "Kozminski University",
+  "short_name": "Kozminski",
+  "country": "Poland",
+  "city": "Warsaw",
+  "type": "private",
+  "website": "https://www.kozminski.edu.pl/en",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "kozminski",
+      "title": "Kozminski University",
+      "url": "https://www.kozminski.edu.pl/en",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": null
+    }
+  ],
+  "benefits": [],
+  "scholarships": [],
+  "programs": [
+    {
+      "id": "kozminski-mgmt",
+      "name": "Bachelor in Management",
+      "degree": "BA",
+      "fields": [
+        "management",
+        "business"
+      ],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Warsaw",
+      "official_url": "https://www.kozminski.edu.pl/en",
+      "selectivity": "low",
+      "highlights": [
+        "Close to Ukraine; large Ukrainian student community"
+      ],
+      "risks": [
+        "No 2027 data entered yet"
+      ],
+      "intakes": [
+        {
+          "academic_year": "2027/28",
+          "id": "kozminski-mgmt-2027",
+          "start": "2027-10",
+          "label": "October 2027",
+          "status_note": "2027/28 dates not entered yet.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "Application",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "kozminski"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Application deadline",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "kozminski"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU students",
+              "status": "UNKNOWN",
+              "source": "kozminski"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "kozminski"
+            },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "english",
+            "cv",
+            "motivation_letter",
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}

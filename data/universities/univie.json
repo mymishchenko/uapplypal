@@ -1,0 +1,180 @@
+{
+  "id": "univie",
+  "name": "University of Vienna",
+  "short_name": "Uni Vienna",
+  "country": "Austria",
+  "city": "Vienna",
+  "type": "public",
+  "website": "https://www.univie.ac.at/en/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "univie-remission",
+      "title": "University of Vienna: Remission and reimbursement of tuition fee",
+      "url": "https://studieren.univie.ac.at/en/tuition-fee/remission-and-reimbursement/",
+      "type": "official_regulation",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-04"
+    },
+    {
+      "id": "univie-fee-amount",
+      "title": "University of Vienna: Amount of the tuition fee / Students' Union fee",
+      "url": "https://studieren.univie.ac.at/en/tuition-fee/amount-tuition-fee/",
+      "type": "official_regulation",
+      "academic_year": "2026/27",
+      "date_checked": null
+    },
+    {
+      "id": "univie-studies",
+      "title": "University of Vienna: Studying (admission)",
+      "url": "https://studieren.univie.ac.at/en/",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": null
+    }
+  ],
+  "benefits": [
+    {
+      "id": "ua-waiver-2026",
+      "kind": "tuition_waiver",
+      "title": "Automatic tuition remission for Ukrainian citizens",
+      "academic_year": "2026/27",
+      "state": "ACTIVE",
+      "effect": { "tuition_percent_off": 100 },
+      "eligibility": "Degree and non-degree students with Ukrainian citizenship. Students' Union fee still payable.",
+      "status": "EXPECTED",
+      "source": "univie-remission",
+      "note": "Reported as active for winter semester 2026/27 (via search, 4 Oct 2026)."
+    },
+    {
+      "id": "ua-waiver-2027",
+      "kind": "tuition_waiver",
+      "title": "Automatic tuition remission for Ukrainian citizens",
+      "academic_year": "2027/28",
+      "state": "UNKNOWN",
+      "effect": { "tuition_percent_off": 100 },
+      "eligibility": "Ukrainian citizens.",
+      "status": "UNKNOWN",
+      "source": "univie-remission",
+      "note": "Do NOT assume the 2026/27 remission continues."
+    }
+  ],
+  "scholarships": [],
+  "programs": [
+    {
+      "id": "univie-ba",
+      "name": "Business Administration (Betriebswirtschaft)",
+      "degree": "BSc",
+      "fields": ["business", "management"],
+      "language": "German",
+      "language_status": "EXPECTED",
+      "duration_years": 3,
+      "campus": "Vienna",
+      "official_url": "https://studieren.univie.ac.at/en/",
+      "selectivity": "medium",
+      "highlights": ["Very low tuition; Ukrainian remission active for 2026/27"],
+      "risks": ["Expected to be German-taught: German C1 likely required", "Admission procedure / entrance test may apply"],
+      "intakes": [
+        {
+          "id": "univie-ba-2027",
+          "academic_year": "2027/28",
+          "start": "2027-10",
+          "label": "Winter semester 2027/28",
+          "status_note": "2027/28 admission dates not entered yet.",
+          "windows": [
+            { "id": "main", "label": "Application", "opens": "opens", "closes": "close" }
+          ],
+          "deadlines": [
+            { "id": "opens", "type": "application_opens", "label": "Application opens", "date": null, "date_text": "Unknown", "status": "UNKNOWN", "source": "univie-studies" },
+            { "id": "close", "type": "final_application", "label": "Application deadline", "date": null, "date_text": "Unknown", "status": "UNKNOWN", "source": "univie-studies" }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": 1453.44,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Third-country (non-EU) students",
+              "detail": "€726.72 per semester",
+              "status": "EXPECTED",
+              "source": "univie-fee-amount",
+              "note": "Austrian public-university rate; confirm for 2027/28."
+            },
+            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "univie-studies" },
+            "fees": [
+              { "id": "oeh", "label": "Students' Union (ÖH) fee", "amount": 52.4, "currency": "EUR", "period": "year", "detail": "€26.20 per semester", "status": "EXPECTED", "source": "brief" }
+            ]
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            {
+              "id": "german",
+              "category": "language",
+              "title": "German proficiency (likely C1)",
+              "exam": ["GERMAN"],
+              "exam_mode": "required",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            "passport",
+            "transcripts",
+            "translations",
+            "application_form"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "univie-iba",
+      "name": "International Business Administration",
+      "degree": "BSc",
+      "fields": ["business", "international business"],
+      "language": "German",
+      "language_status": "EXPECTED",
+      "duration_years": 3,
+      "campus": "Vienna",
+      "official_url": "https://studieren.univie.ac.at/en/",
+      "selectivity": "medium",
+      "highlights": ["Very low tuition; Ukrainian remission active for 2026/27"],
+      "risks": ["Expected to be German-taught: verify language of instruction"],
+      "intakes": [
+        {
+          "id": "univie-iba-2027",
+          "academic_year": "2027/28",
+          "start": "2027-10",
+          "label": "Winter semester 2027/28",
+          "status_note": "2027/28 admission dates not entered yet.",
+          "windows": [
+            { "id": "main", "label": "Application", "opens": "opens", "closes": "close" }
+          ],
+          "deadlines": [
+            { "id": "opens", "type": "application_opens", "label": "Application opens", "date": null, "date_text": "Unknown", "status": "UNKNOWN", "source": "univie-studies" },
+            { "id": "close", "type": "final_application", "label": "Application deadline", "date": null, "date_text": "Unknown", "status": "UNKNOWN", "source": "univie-studies" }
+          ],
+          "tuition": {
+            "sticker": { "amount": 1453.44, "currency": "EUR", "period": "year", "group": "Third-country (non-EU) students", "detail": "€726.72 per semester", "status": "EXPECTED", "source": "univie-fee-amount" },
+            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "univie-studies" },
+            "fees": [
+              { "id": "oeh", "label": "Students' Union (ÖH) fee", "amount": 52.4, "currency": "EUR", "period": "year", "detail": "€26.20 per semester", "status": "EXPECTED", "source": "brief" }
+            ]
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            {
+              "id": "german",
+              "category": "language",
+              "title": "German proficiency (verify)",
+              "exam": ["GERMAN"],
+              "exam_mode": "required",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            "passport",
+            "transcripts",
+            "translations",
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}

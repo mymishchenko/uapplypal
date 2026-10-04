@@ -1,0 +1,37 @@
+[
+  {
+    "id": "brief",
+    "title": "UApplyPal project brief (provided by the student, not an official source)",
+    "url": null,
+    "type": "project_brief",
+    "date_checked": "2026-10-04"
+  },
+  {
+    "id": "typical",
+    "title": "Typical requirement for this kind of program; not confirmed for this intake",
+    "url": null,
+    "type": "estimate",
+    "date_checked": null
+  },
+  {
+    "id": "estimate",
+    "title": "Rough estimate (not from an official source)",
+    "url": null,
+    "type": "estimate",
+    "date_checked": null
+  },
+  {
+    "id": "holland-scholarship",
+    "title": "Holland Scholarship (Study in NL, official)",
+    "url": "https://www.studyinnl.org/finances/holland-scholarship",
+    "type": "official_scholarship",
+    "date_checked": null
+  },
+  {
+    "id": "studielink",
+    "title": "Studielink (Dutch national application system)",
+    "url": "https://www.studielink.nl/",
+    "type": "government",
+    "date_checked": null
+  }
+]

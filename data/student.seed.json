@@ -1,0 +1,39 @@
+{
+  "personal": {
+    "name": "Mykyta",
+    "citizenships": "Ukraine",
+    "residence_country": "Ukraine",
+    "date_of_birth": "",
+    "entry_year": 2027,
+    "target_intake": "September 2027"
+  },
+  "education": {
+    "school": "",
+    "school_country": "Ukraine",
+    "school_system": "Ukrainian general secondary education",
+    "current_grade": "",
+    "graduation_date": "2027-06",
+    "expected_diploma": "Certificate of complete general secondary education",
+    "gpa": "",
+    "grading_scale": "1–12",
+    "math": "",
+    "english": "",
+    "other_subjects": ""
+  },
+  "languages": [
+    { "language": "Ukrainian", "level": "Native", "certificate": "", "score": "", "date": "", "expiry": "" },
+    { "language": "English", "level": "", "certificate": "", "score": "", "date": "", "expiry": "" }
+  ],
+  "tests": {},
+  "interests": ["business", "entrepreneurship", "economics", "management", "finance", "technology"],
+  "preferences": {
+    "countries": "",
+    "cities": "",
+    "max_tuition": "",
+    "max_total_budget": "",
+    "instruction_language": "English",
+    "university_size": "",
+    "campus_preference": ""
+  },
+  "activities": []
+}

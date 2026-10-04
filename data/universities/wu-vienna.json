@@ -1,0 +1,182 @@
+{
+  "id": "wu-vienna",
+  "name": "WU Vienna University of Economics and Business",
+  "short_name": "WU Vienna",
+  "country": "Austria",
+  "city": "Vienna",
+  "type": "public",
+  "website": "https://www.wu.ac.at/en/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "wu-bbe-selection",
+      "title": "WU: Selection procedure, Business and Economics (BBE)",
+      "url": "https://www.wu.ac.at/en/programs/bachelors-programs/business-and-economics/overview/selection-procedure-bbe-1",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-04"
+    },
+    {
+      "id": "wu-2026-news",
+      "title": "WU news: 2026 student selection procedures start",
+      "url": "https://www.wu.ac.at/en/the-university/news-and-events/news/details-news/detail/2026-student-selection-procedures-start-at-wu-vienna",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-04"
+    }
+  ],
+  "benefits": [
+    {
+      "id": "ua-waiver-2027",
+      "kind": "tuition_waiver",
+      "title": "Tuition waiver for Ukrainian citizens",
+      "academic_year": "2027/28",
+      "state": "UNKNOWN",
+      "effect": { "tuition_percent_off": 100 },
+      "eligibility": "Ukrainian citizens (check whether residence status matters).",
+      "status": "UNKNOWN",
+      "source": "brief",
+      "note": "Austrian universities have waived tuition for Ukrainian students in recent semesters. Not confirmed for WU 2027/28; do not assume it continues."
+    }
+  ],
+  "scholarships": [],
+  "programs": [
+    {
+      "id": "wu-bbe",
+      "name": "BSc Business and Economics (BBE)",
+      "degree": "BSc",
+      "fields": ["business", "economics", "management"],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Vienna",
+      "official_url": "https://www.wu.ac.at/en/programs/bachelors-programs/business-and-economics",
+      "selectivity": "high",
+      "highlights": [
+        "Admission through WU's own selection procedure (online self-assessment + exam) rather than only school grades",
+        "Low public-university tuition"
+      ],
+      "risks": [
+        "Ukrainian school certificate recognition must be checked (Austria may require NMT results or additional proof)",
+        "Limited places (240 in 2026/27)"
+      ],
+      "intakes": [
+        {
+          "id": "wu-bbe-2027",
+          "academic_year": "2027/28",
+          "start": "2027-10",
+          "label": "Winter semester 2027/28",
+          "status_note": "WU says 2027/28 selection details will be published in mid-November 2026 (per brief). 2026/27 registration ran 2 Mar – 19 May 2026.",
+          "windows": [
+            { "id": "main", "label": "Selection procedure registration", "opens": "opens", "closes": "close" }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "Spring 2027 (2026 cycle opened 2 March)",
+              "status": "EXPECTED",
+              "source": "wu-2026-news",
+              "note": "Official 2027 date not yet published."
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Registration closes",
+              "date": null,
+              "date_text": "May 2027 (2026 cycle: 19 May)",
+              "status": "EXPECTED",
+              "source": "wu-bbe-selection"
+            },
+            {
+              "id": "osa",
+              "type": "entrance_exam",
+              "label": "Online self-assessment (step 1)",
+              "date": null,
+              "date_text": "Late May 2027 (2026 cycle: 28 May)",
+              "status": "EXPECTED",
+              "source": "wu-bbe-selection"
+            },
+            {
+              "id": "exam",
+              "type": "entrance_exam",
+              "label": "In-person entrance exam (step 2)",
+              "date": null,
+              "date_text": "Summer 2027 (2026 cycle: 30 June)",
+              "status": "EXPECTED",
+              "source": "wu-bbe-selection"
+            },
+            {
+              "id": "publish",
+              "type": "other",
+              "label": "WU publishes 2027/28 selection details",
+              "date": null,
+              "date_text": "Mid-November 2026",
+              "status": "EXPECTED",
+              "source": "brief"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": 1453.44,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Third-country (non-EU) students",
+              "detail": "€726.72 per semester",
+              "status": "EXPECTED",
+              "source": "brief",
+              "note": "Figure from the brief; confirm the 2027/28 rate."
+            },
+            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "wu-bbe-selection" },
+            "fees": [
+              {
+                "id": "oeh",
+                "label": "Students' Union (ÖH) fee",
+                "amount": 52.4,
+                "currency": "EUR",
+                "period": "year",
+                "detail": "€26.20 per semester",
+                "status": "EXPECTED",
+                "source": "brief"
+              }
+            ]
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "translations",
+            "english",
+            {
+              "id": "osa",
+              "category": "tests",
+              "title": "WU online self-assessment",
+              "exam": ["WU_EXAM"],
+              "exam_mode": "required",
+              "status": "EXPECTED",
+              "source": "wu-bbe-selection"
+            },
+            {
+              "id": "exam",
+              "category": "tests",
+              "title": "WU entrance exam",
+              "exam": ["WU_EXAM"],
+              "exam_mode": "required",
+              "status": "EXPECTED",
+              "source": "wu-bbe-selection"
+            },
+            {
+              "id": "selection",
+              "category": "selection",
+              "title": "Selection: ranking by entrance exam result",
+              "status": "EXPECTED",
+              "source": "wu-bbe-selection"
+            },
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -57,6 +57,11 @@ GitHub repo → **Settings → Secrets and variables → Actions → New reposit
 | `REMOTE_PORT` | SSH port (only needed if it isn't 22)                        |
 | `REMOTE_PATH` | site root directory from step 3, e.g. `/home/abc123/example.com/www` |
 | `REMOTE_KEY`  | the whole contents of the private key file `uapplypal_deploy` |
+| `APP_PASSWORD` | password for opening the app in the browser (letters and digits, 16+ characters) |
+
+The app holds personal data, so it is password-protected. The browser asks for a username and
+password: type anything as the username and `APP_PASSWORD` as the password. Each deploy writes
+the password to `.env` on the server. Without it, the site answers "UApplyPal is locked".
 
 In the **Variables** tab, add `REMOTE_NODE_BIN` if `npm` isn't found during deploy. Its value is the folder
 holding `node` and `npm` on the server. To find it, SSH in and run `dirname "$(which node)"`.
@@ -71,6 +76,9 @@ Then delete the private key from your computer, or keep it somewhere safe.
 
 Merge anything into `main`, or go to **Actions → Test & Deploy → Run workflow**.
 To check the deploy, open `https://<your-domain>/api/health`. It should show the commit that was deployed.
+
+Your own data (profile, statuses, verifications) is saved on the server in `data/runtime/store.json`.
+Deploys never overwrite or delete it. To back it up, copy that file over SSH.
 
 ## Working with Claude Code
 

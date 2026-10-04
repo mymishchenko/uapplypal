@@ -1,0 +1,67 @@
+{
+  "passport": {
+    "category": "materials",
+    "title": "Passport copy",
+    "doc_type": "passport"
+  },
+  "transcripts": {
+    "category": "academic",
+    "title": "School transcripts (grades 10–11)",
+    "detail": "Official transcripts of the last school years, usually with English translation.",
+    "doc_type": "transcript"
+  },
+  "current_grades": {
+    "category": "academic",
+    "title": "Current / predicted grades",
+    "detail": "Mid-year grades or a predicted-grades letter from the school.",
+    "doc_type": "predicted_grades"
+  },
+  "diploma": {
+    "category": "academic",
+    "title": "Secondary school diploma (after graduation)",
+    "detail": "Usually submitted after graduation, before enrolment.",
+    "doc_type": "diploma"
+  },
+  "ua_certificate_recognition": {
+    "category": "academic",
+    "title": "Ukrainian school certificate accepted for entry",
+    "detail": "Check whether the Ukrainian certificate of complete general secondary education is accepted directly, or needs NMT results, an extra year of study or a foundation year."
+  },
+  "english": {
+    "category": "language",
+    "title": "English proficiency proof",
+    "detail": "Usually IELTS Academic, TOEFL iBT or Cambridge. Check minimum scores and exemptions.",
+    "exam": ["IELTS", "TOEFL"],
+    "exam_mode": "option",
+    "doc_type": "english_certificate"
+  },
+  "cv": {
+    "category": "materials",
+    "title": "CV / résumé",
+    "doc_type": "cv"
+  },
+  "motivation_letter": {
+    "category": "materials",
+    "title": "Motivation letter / essay",
+    "doc_type": "motivation_letter"
+  },
+  "recommendation": {
+    "category": "materials",
+    "title": "Recommendation letter(s)",
+    "doc_type": "recommendation_letter"
+  },
+  "translations": {
+    "category": "materials",
+    "title": "Translations of school documents",
+    "detail": "Certified translations into English (and sometimes apostille/legalisation).",
+    "doc_type": "translation"
+  },
+  "application_form": {
+    "category": "application",
+    "title": "Online application form submitted"
+  },
+  "application_fee": {
+    "category": "application",
+    "title": "Application fee paid"
+  }
+}

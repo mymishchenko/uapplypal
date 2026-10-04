@@ -1,0 +1,105 @@
+{
+  "id": "catolica-lisbon",
+  "name": "Católica Lisbon School of Business & Economics",
+  "short_name": "Católica Lisbon",
+  "country": "Portugal",
+  "city": "Lisbon",
+  "type": "private",
+  "website": "https://www.clsbe.lisboa.ucp.pt/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "catolica",
+      "title": "Católica Lisbon SBE",
+      "url": "https://www.clsbe.lisboa.ucp.pt/",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": null
+    }
+  ],
+  "benefits": [],
+  "scholarships": [],
+  "programs": [
+    {
+      "id": "catolica-ba",
+      "name": "Bachelor in Business Administration",
+      "degree": "BSc",
+      "fields": [
+        "business",
+        "management"
+      ],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Lisbon",
+      "official_url": "https://www.clsbe.lisboa.ucp.pt/",
+      "selectivity": "medium",
+      "highlights": [],
+      "risks": [
+        "No 2027 data entered yet"
+      ],
+      "intakes": [
+        {
+          "academic_year": "2027/28",
+          "id": "catolica-ba-2027",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "2027/28 dates not entered yet.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "Application",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "catolica"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Application deadline",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "catolica"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "All students",
+              "status": "UNKNOWN",
+              "source": "catolica"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "catolica"
+            },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "english",
+            "cv",
+            "motivation_letter",
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}
