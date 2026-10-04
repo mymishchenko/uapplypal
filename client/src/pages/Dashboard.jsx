@@ -47,6 +47,9 @@ export default function Dashboard() {
         <Stat label="Scholarships found" value={d.counts.scholarships_found} />
         <Stat label="Scholarships applied" value={d.counts.scholarships_applied} />
         <Stat label="Upcoming exams" value={d.counts.upcoming_exams} />
+        <a href="#/assistant" className="stat-link">
+          <Stat label="Findings to review" value={d.counts.findings_to_review} />
+        </a>
       </section>
 
       <div className="grid-2">

@@ -228,6 +228,7 @@ function buildView(catalog, state, today) {
       scholarships_applied: uniqueScholarships.filter((s) => ['applied', 'awarded'].includes(s.progress)).length,
       upcoming_exams: Object.values(state.exams).filter((p) => p.test_date && p.test_date >= today).length,
       open_now: portfolio.filter((a) => a.apply.state === 'OPEN').length,
+      findings_to_review: (state.findings || []).filter((f) => f.status === 'needs_review').length,
     },
     next_deadline: nextDeadline
       ? { app_id: nextDeadline.id, university: nextDeadline.university.short_name, program: nextDeadline.program.name, ...nextDeadline.next_deadline }
