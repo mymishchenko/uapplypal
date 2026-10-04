@@ -84,8 +84,10 @@ jobs:
       - name: Install dependencies and restart
         if: steps.check.outputs.ready == 'true'
         run: |
-          # Build the restart line here: quotes inside ${VAR:-default} are stripped in a heredoc.
-          RESTART_LINE="${RESTART_COMMAND:-echo 'No RESTART_COMMAND set: restart the app in adm.tools.'}"
+          # Default restart: stop the running app; Hosting Ukraine's Node.js
+          # supervisor starts it again with the new code within seconds.
+          # Built here because quotes inside ${VAR:-default} are stripped in a heredoc.
+          RESTART_LINE="${RESTART_COMMAND:-pkill -u \$(whoami) -f '^node server.js' && echo 'App restarted' || echo 'App was not running: start it in adm.tools'}"
           ssh -i ~/.ssh/deploy_key -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" bash -s <<EOF
           set -e
           ${REMOTE_NODE_BIN:+export PATH="$REMOTE_NODE_BIN:\$PATH"}
