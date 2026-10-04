@@ -33,10 +33,10 @@ for September 2027. Keep models generic (other students, countries, years).
 
 - `npm test`: logic + API tests (Node test runner).
 - `npm run build`: build client to `client/dist`.
-- Dev: `npm run dev:server` (no password, port 3000) and `npm run dev:client` (Vite, proxies /api).
+- Dev: `npm run dev:server` (port 3000) and `npm run dev:client` (Vite, proxies /api).
 
 ## Deploy
 
 Push to `main` → GitHub Actions tests, builds, rsyncs to Hosting Ukraine over SSH, runs
-`npm ci --omit=dev`. See `docs/DEPLOY.md`. The app requires `APP_PASSWORD` (HTTP Basic auth);
-without it, it serves 503. Don't commit secrets, `.env` or `data/runtime/`.
+`npm ci --omit=dev`. See `docs/DEPLOY.md`. The app is public (no login, by the owner's choice):
+anyone with the URL can view and edit. Don't commit secrets, `.env` or `data/runtime/`.

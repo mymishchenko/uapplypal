@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "vite build --config client/vite.config.js",
-    "dev:server": "ALLOW_NO_AUTH=1 node --watch server.js",
+    "dev:server": "node --watch server.js",
     "dev:client": "vite --config client/vite.config.js",
     "test": "node --test"
   },

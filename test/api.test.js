@@ -15,34 +15,26 @@ async function withServer(options, fn) {
   }
 }
 
-const auth = { Authorization: `Basic ${Buffer.from('m:secret').toString('base64')}` };
+const auth = {};
 
 test('health is public', async () => {
-  await withServer({ password: 'secret' }, async (base) => {
+  await withServer({}, async (base) => {
     const res = await fetch(`${base}/api/health`);
     assert.strictEqual(res.status, 200);
     assert.strictEqual((await res.json()).status, 'ok');
   });
 });
 
-test('API requires the password', async () => {
-  await withServer({ password: 'secret' }, async (base) => {
-    assert.strictEqual((await fetch(`${base}/api/bootstrap`)).status, 401);
-    assert.strictEqual((await fetch(`${base}/api/bootstrap`, { headers: { Authorization: `Basic ${Buffer.from('m:wrong').toString('base64')}` } })).status, 401);
-    assert.strictEqual((await fetch(`${base}/api/bootstrap`, { headers: auth })).status, 200);
-  });
-});
-
-test('without a password the app is locked unless ALLOW_NO_AUTH', async () => {
-  await withServer({ password: '', allowNoAuth: false }, async (base) => {
-    assert.strictEqual((await fetch(`${base}/api/bootstrap`)).status, 503);
+test('app opens without a password', async () => {
+  await withServer({}, async (base) => {
+    assert.strictEqual((await fetch(`${base}/api/bootstrap`)).status, 200);
   });
 });
 
 test('verifying IE dates turns "Can I apply now?" into OPEN, and it persists', async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'uapplypal-'));
   const storeFile = path.join(dir, 'store.json');
-  await withServer({ password: 'secret', storeFile }, async (base) => {
+  await withServer({ storeFile }, async (base) => {
     for (const fid of ['ie-bba-2027.d.opens', 'ie-bba-2027.d.r3']) {
       const res = await fetch(`${base}/api/facts/${fid}/verify`, { method: 'POST', headers: auth });
       assert.strictEqual(res.status, 200);
@@ -57,7 +49,7 @@ test('verifying IE dates turns "Can I apply now?" into OPEN, and it persists', a
 });
 
 test('invalid input is rejected', async () => {
-  await withServer({ password: 'secret' }, async (base) => {
+  await withServer({}, async (base) => {
     const put = (url, body) => fetch(`${base}/api${url}`, { method: 'PUT', headers: { ...auth, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
     assert.strictEqual((await put('/applications/ie-bba-2027', { status: 'bogus' })).status, 400);
     assert.strictEqual((await put('/applications/nope', { status: 'preparing' })).status, 400);
