@@ -1,6 +1,6 @@
 const path = require('node:path');
 
-// Optional .env file next to server.js (APP_PASSWORD etc.). Not committed.
+// Optional .env file next to server.js (HOST, PORT etc.). Not committed.
 try {
   process.loadEnvFile(path.join(__dirname, '.env'));
 } catch {

@@ -34,7 +34,6 @@ jobs:
       REMOTE_PORT: ${{ secrets.REMOTE_PORT || '22' }}
       REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
       HAS_KEY: ${{ secrets.REMOTE_KEY != '' }}
-      HAS_PASSWORD: ${{ secrets.APP_PASSWORD != '' }}
       # Folder containing node/npm on the server, if they aren't on PATH for SSH commands.
       REMOTE_NODE_BIN: ${{ vars.REMOTE_NODE_BIN }}
       RESTART_COMMAND: ${{ vars.RESTART_COMMAND }}
@@ -81,15 +80,6 @@ jobs:
             --exclude 'data/runtime/' --exclude 'client/src/' \
             -e "ssh -i ~/.ssh/deploy_key -p $REMOTE_PORT" \
             ./ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
-
-      - name: Write app password
-        if: steps.check.outputs.ready == 'true' && env.HAS_PASSWORD == 'true'
-        env:
-          APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
-        run: |
-          printf 'APP_PASSWORD=%s\n' "$APP_PASSWORD" | \
-            ssh -i ~/.ssh/deploy_key -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" \
-            "umask 077 && cat > '$REMOTE_PATH/.env'"
 
       - name: Install dependencies and restart
         if: steps.check.outputs.ready == 'true'
