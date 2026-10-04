@@ -7,7 +7,9 @@ const { createApi } = require('./src/api');
 const { buildCatalog } = require('./src/catalog');
 const { buildView } = require('./src/logic/views');
 const { todayISO } = require('./src/logic/dates');
-const { createAssistantRouter } = require('./src/assistant/routes');
+const { createMailer } = require('./src/notify/mailer');
+const { createNotifier } = require('./src/notify/scheduler');
+const { createNotifyRouter } = require('./src/notify/routes');
 
 // The deploy workflow writes the deployed commit SHA to VERSION.
 function readVersion() {
@@ -23,8 +25,8 @@ function createApp(options = {}) {
     dataDir = path.join(__dirname, 'data'),
     storeFile = process.env.STORE_FILE || path.join(__dirname, 'data', 'runtime', 'store.json'),
     today = () => todayISO(),
-    assistantClient,
-    assistantLimits,
+    mailer = createMailer(),
+    clock,
     clientDir = path.join(__dirname, 'client', 'dist'),
   } = options;
 
@@ -48,15 +50,9 @@ function createApp(options = {}) {
   });
 
   app.use('/api', createApi({ raw, store, today }));
-  app.use(
-    '/api',
-    createAssistantRouter({
-      store,
-      getContext,
-      limits: assistantLimits,
-      ...(assistantClient !== undefined && { client: assistantClient }),
-    }),
-  );
+  const notifier = createNotifier({ store, getContext, mailer, siteUrl: process.env.SITE_URL || 'https://uapplypal.com/', ...(clock && { clock }) });
+  app.locals.notifier = notifier;
+  app.use('/api', createNotifyRouter({ store, notifier, mailer }));
   app.use('/api', (req, res) => res.status(404).json({ error: 'Not found' }));
 
   if (fs.existsSync(clientDir)) {

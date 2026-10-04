@@ -21,6 +21,9 @@ const { values: args } = parseArgs({
 const host = args.host || process.env.HOST || '127.0.0.1';
 const port = Number(args.port || process.env.PORT) || 3000;
 
-createApp().listen(port, host, () => {
+const app = createApp();
+app.listen(port, host, () => {
   console.log(`UApplyPal listening on http://${host}:${port}`);
+  // The tracking agent: hourly checks for deadline alerts and the Monday summary.
+  app.locals.notifier.start();
 });

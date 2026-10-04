@@ -72,15 +72,21 @@ set the `RESTART_COMMAND` variable in the **Variables** tab.
 
 Then delete the private key from your computer, or keep it somewhere safe.
 
-## 5b. Turn on the AI assistant
+## 5b. Turn on email alerts
 
-1. Create an API key at https://console.anthropic.com → **API keys**. It starts with `sk-ant-`.
-2. In **Billing → Limits**, set a monthly spend limit (e.g. $20). The site has no login, so this is your safety net.
-3. Add it in GitHub as the repository secret **`ANTHROPIC_API_KEY`**. Paste only the key, one line.
-4. Deploy (merge to `main`, or Actions → Test & Deploy → Run workflow). The deploy writes it to `.env` on the server.
+The tracking agent emails deadline alerts (30, 14, 7, 3 and 1 days before) and a Monday summary.
+It sends from a Gmail account using a Google **app password** (not your normal Gmail password).
 
-The assistant uses Claude Opus 5.5. Usage is capped at 30 messages per visitor per hour and 150 per day;
-change this with `ASSISTANT_HOURLY_LIMIT` / `ASSISTANT_DAILY_LIMIT` in `.env`.
+1. In the Gmail account that will send the emails, turn on **2-Step Verification**:
+   https://myaccount.google.com/security
+2. Create an app password at https://myaccount.google.com/apppasswords (name it "UApplyPal").
+   Google shows 16 letters, e.g. `abcd efgh ijkl mnop`.
+3. Add two GitHub repository secrets:
+   - `GMAIL_USER`: the full Gmail address, e.g. `my.mishchenko@gmail.com`
+   - `GMAIL_APP_PASSWORD`: the 16 letters (spaces are fine)
+4. Optional: to deliver to a different address than `GMAIL_USER`, add a repository **variable**
+   `NOTIFY_TO` with that address.
+5. Deploy. Then open **Email alerts** in UApplyPal and click **Send test email**.
 
 ## 6. Deploy
 
