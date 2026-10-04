@@ -1,0 +1,76 @@
+name: Test & Deploy
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+  deploy:
+    # Only deploy from main, and only after tests pass.
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    env:
+      REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+      REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      REMOTE_PORT: ${{ secrets.REMOTE_PORT || '22' }}
+      REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+      RESTART_COMMAND: ${{ vars.RESTART_COMMAND }}
+    steps:
+      - name: Check deploy secrets
+        id: check
+        run: |
+          if [ -z "$REMOTE_HOST" ] || [ -z "$REMOTE_USER" ] || [ -z "$REMOTE_PATH" ]; then
+            echo "::notice::Deploy skipped: set REMOTE_HOST, REMOTE_USER, REMOTE_PATH and REMOTE_KEY secrets (see docs/DEPLOY.md)."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.ready == 'true'
+
+      - name: Set up SSH
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.REMOTE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$REMOTE_PORT" -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload files
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          rsync -az --delete \
+            --exclude '.git/' --exclude '.github/' --exclude 'node_modules/' \
+            --exclude '.env' --exclude 'test/' --exclude 'docs/' \
+            -e "ssh -i ~/.ssh/deploy_key -p $REMOTE_PORT" \
+            ./ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
+
+      - name: Install dependencies and restart
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" bash -s <<EOF
+          set -e
+          cd "$REMOTE_PATH"
+          echo "${GITHUB_SHA::7}" > VERSION
+          npm ci --omit=dev
+          ${RESTART_COMMAND:-echo "No RESTART_COMMAND set; restart the app in adm.tools if needed."}
+          EOF
