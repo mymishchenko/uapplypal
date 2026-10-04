@@ -1,0 +1,39 @@
+# Temporary, read-only diagnostics for the live site. Runs only on pushes to
+# the Claude work branch. Changes nothing on the server.
+name: Diagnose site
+
+on:
+  push:
+    branches: [claude/domain-hosting-github-setup-lvwook]
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    env:
+      REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+      REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      REMOTE_PORT: ${{ secrets.REMOTE_PORT || '22' }}
+      REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+    steps:
+      - name: HTTP responses
+        run: |
+          for url in https://uapplypal.com/ https://www.uapplypal.com/ http://uapplypal.com/ https://uapplypal.com/api/health; do
+            echo "=== $url"
+            curl -sS -o /dev/null -D - --max-time 20 "$url" | grep -iE '^(HTTP|www-authenticate|server|location|content-type)' || true
+          done
+
+      - name: Server state
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.REMOTE_KEY }}" > ~/.ssh/k && chmod 600 ~/.ssh/k
+          ssh-keyscan -p "$REMOTE_PORT" -H "$REMOTE_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          ssh -i ~/.ssh/k -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" bash -s <<EOF
+          echo "=== site dir"; ls -la "$REMOTE_PATH" | head -40
+          echo "=== parent dir"; ls -la "\$(dirname "$REMOTE_PATH")"
+          echo "=== auth-related files (names only)"
+          find "\$(dirname "$REMOTE_PATH")" -maxdepth 3 \( -name '.htaccess' -o -name '.htpasswd*' \) 2>/dev/null
+          for f in \$(find "\$(dirname "$REMOTE_PATH")" -maxdepth 3 -name '.htaccess' 2>/dev/null); do echo "--- \$f"; grep -iE 'auth|require|deny' "\$f" || echo "(no auth lines)"; done
+          echo "=== .env keys (values hidden)"; [ -f "$REMOTE_PATH/.env" ] && cut -d= -f1 "$REMOTE_PATH/.env" || echo "no .env"
+          echo "=== node processes"; ps -u "\$(whoami)" -o pid,args | grep -i node | grep -v grep || echo "none"
+          echo "=== webapp log tail"; tail -n 30 ~/.system/webapp/*.log 2>/dev/null || echo "no log"
+          EOF
