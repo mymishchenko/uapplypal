@@ -1,0 +1,114 @@
+{
+  "id": "nova-sbe",
+  "name": "Nova School of Business and Economics",
+  "short_name": "Nova SBE",
+  "country": "Portugal",
+  "city": "Lisbon",
+  "type": "public",
+  "website": "https://www.novasbe.unl.pt/en/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "nova-intl",
+      "title": "Nova SBE: Bachelor applications for international students",
+      "url": "https://www.novasbe.unl.pt/en/programs/apply/bachelors/international-students",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-04"
+    }
+  ],
+  "benefits": [],
+  "scholarships": [],
+  "programs": [
+    {
+      "id": "nova-mgmt",
+      "name": "Bachelor in Management",
+      "degree": "BSc",
+      "fields": [
+        "management",
+        "business"
+      ],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Carcavelos (Lisbon)",
+      "official_url": "https://www.novasbe.unl.pt/en/programs/apply/bachelors/international-students",
+      "selectivity": "medium",
+      "highlights": [
+        "Decision within 8 weeks of applying",
+        "B2 English required"
+      ],
+      "risks": [
+        "2027 application phases not found yet"
+      ],
+      "intakes": [
+        {
+          "academic_year": "2027/28",
+          "id": "nova-mgmt-2027",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "International applicants apply in phases; 2027 phases not found yet.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "Application",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "nova-intl"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Application deadline",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "nova-intl"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU students",
+              "status": "UNKNOWN",
+              "source": "nova-intl"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "nova-intl"
+            },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            {
+              "template": "english",
+              "id": "english",
+              "detail": "Minimum B2 in English (or Portuguese for Portuguese-taught programmes).",
+              "status": "EXPECTED",
+              "source": "nova-intl"
+            },
+            "cv",
+            "motivation_letter",
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}

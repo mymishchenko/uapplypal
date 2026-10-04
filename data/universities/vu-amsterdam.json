@@ -1,0 +1,137 @@
+{
+  "id": "vu-amsterdam",
+  "name": "Vrije Universiteit Amsterdam – School of Business and Economics",
+  "short_name": "VU Amsterdam",
+  "country": "Netherlands",
+  "city": "Amsterdam",
+  "type": "public",
+  "website": "https://vu.nl/en",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "vu-iba",
+      "title": "VU Amsterdam: BSc International Business Administration",
+      "url": "https://vu.nl/en/education/bachelor/international-business-administration",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": null
+    }
+  ],
+  "benefits": [],
+  "scholarships": [
+    {
+      "id": "holland",
+      "name": "Holland Scholarship",
+      "provider": "government",
+      "type": "merit",
+      "amount": 5000,
+      "currency": "EUR",
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Non-EEA students, first year only. Check whether VU Amsterdam participates for this programme in 2027/28.",
+      "separate_application": true,
+      "renewable": false,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "UNKNOWN",
+      "source": "holland-scholarship"
+    }
+  ],
+  "programs": [
+    {
+      "id": "vu-iba",
+      "name": "BSc International Business Administration",
+      "degree": "BSc",
+      "fields": [
+        "business",
+        "international business",
+        "management"
+      ],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Amsterdam",
+      "official_url": "https://vu.nl/en/education/bachelor/international-business-administration",
+      "selectivity": "high",
+      "highlights": [
+        "Amsterdam location"
+      ],
+      "risks": [
+        "Check whether the programme is numerus fixus for 2027/28 (15 Jan deadline if so)",
+        "Housing in Amsterdam is scarce and expensive"
+      ],
+      "intakes": [
+        {
+          "academic_year": "2027/28",
+          "id": "vu-iba-2027",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "2027/28 dates not entered yet.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "Application",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "October 2026 (Studielink usually opens 1 Oct)",
+              "status": "EXPECTED",
+              "source": "studielink"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Application deadline",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "vu-iba"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU (institutional fee)",
+              "status": "UNKNOWN",
+              "source": "vu-iba"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "vu-iba"
+            },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "current_grades",
+            "english",
+            {
+              "id": "math",
+              "category": "academic",
+              "title": "Mathematics level requirement",
+              "detail": "Dutch programmes usually require a specific maths level (VWO Wiskunde A/B equivalent).",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            "cv",
+            "motivation_letter",
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}

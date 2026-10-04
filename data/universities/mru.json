@@ -1,0 +1,191 @@
+{
+  "id": "mru",
+  "name": "Mykolas Romeris University",
+  "short_name": "MRU",
+  "country": "Lithuania",
+  "city": "Vilnius",
+  "type": "public",
+  "website": "https://www.mruni.eu/en/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "mru",
+      "title": "Mykolas Romeris University",
+      "url": "https://www.mruni.eu/en/",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": null
+    }
+  ],
+  "benefits": [],
+  "scholarships": [],
+  "programs": [
+    {
+      "id": "mru-gbmm",
+      "name": "Global Business and Modern Marketing",
+      "degree": "BA",
+      "fields": [
+        "business",
+        "marketing"
+      ],
+      "language": "English",
+      "duration_years": 3.5,
+      "campus": "Vilnius",
+      "official_url": "https://www.mruni.eu/en/",
+      "selectivity": "low",
+      "highlights": [
+        "Low cost of living"
+      ],
+      "risks": [
+        "No 2027 data entered yet"
+      ],
+      "intakes": [
+        {
+          "academic_year": "2027/28",
+          "id": "mru-gbmm-2027",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "2027/28 dates not entered yet.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "Application",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "mru"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Application deadline",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "mru"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU students",
+              "status": "UNKNOWN",
+              "source": "mru"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "mru"
+            },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "english",
+            "cv",
+            "motivation_letter",
+            "application_form"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mru-bmsb",
+      "name": "Business Management and Startup Building",
+      "degree": "BA",
+      "fields": [
+        "business",
+        "entrepreneurship",
+        "management"
+      ],
+      "language": "English",
+      "duration_years": 3.5,
+      "campus": "Vilnius",
+      "official_url": "https://www.mruni.eu/en/",
+      "selectivity": "low",
+      "highlights": [
+        "Startup / entrepreneurship focus"
+      ],
+      "risks": [
+        "No 2027 data entered yet"
+      ],
+      "intakes": [
+        {
+          "academic_year": "2027/28",
+          "id": "mru-bmsb-2027",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "2027/28 dates not entered yet.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "Application",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "mru"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Application deadline",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "mru"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU students",
+              "status": "UNKNOWN",
+              "source": "mru"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "mru"
+            },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "english",
+            "cv",
+            "motivation_letter",
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}

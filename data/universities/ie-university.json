@@ -1,0 +1,195 @@
+{
+  "id": "ie-university",
+  "name": "IE University",
+  "short_name": "IE University",
+  "country": "Spain",
+  "city": "Madrid",
+  "type": "private",
+  "website": "https://www.ie.edu/university/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "ie-rounds",
+      "title": "IE University: Admissions Rounds",
+      "url": "https://www.ie.edu/university/admission/admission-process/admissions-rounds/",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-04"
+    },
+    {
+      "id": "ie-process",
+      "title": "IE University: Admissions Process",
+      "url": "https://www.ie.edu/university/admission/admission-process/",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": null
+    }
+  ],
+  "benefits": [],
+  "scholarships": [
+    {
+      "id": "ukraine",
+      "name": "IE scholarship for Ukrainian students",
+      "provider": "university",
+      "type": "nationality",
+      "amount": null,
+      "percent": 100,
+      "percent_is_max": true,
+      "coverage": { "tuition": true },
+      "eligibility": "Ukrainian students.",
+      "nationality": ["UA"],
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "UNKNOWN",
+      "source": "brief",
+      "note": "Up to 100% per brief. 2027 availability needs verification."
+    },
+    {
+      "id": "merit",
+      "name": "IE Foundation scholarships (merit and need-based)",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": null,
+      "coverage": { "tuition": true },
+      "eligibility": "Apply after admission. Merit and financial need.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "UNKNOWN",
+      "source": "ie-process"
+    }
+  ],
+  "programs": [
+    {
+      "id": "ie-bba",
+      "name": "Bachelor in Business Administration (BBA)",
+      "degree": "BBA",
+      "fields": ["business", "management", "entrepreneurship"],
+      "language": "English",
+      "duration_years": 4,
+      "campus": "Madrid",
+      "official_url": "https://www.ie.edu/university/studies/academic-programs/bachelor-business-administration/",
+      "selectivity": "medium",
+      "highlights": ["Rolling rounds from September to March", "Strong entrepreneurship focus"],
+      "risks": ["High tuition unless a scholarship is awarded"],
+      "intakes": [
+        {
+          "id": "ie-bba-2027",
+          "academic_year": "2027/28",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "Rounds for 2027/28: Early 18 Sep 2026, Round 1 6 Nov 2026, Round 2 15 Jan 2027, Round 3 5 Mar 2027. After Round 3: subject to availability.",
+          "windows": [
+            { "id": "main", "label": "Admissions rounds", "opens": "opens", "closes": "r3" }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Applications open",
+              "date": null,
+              "already_open": true,
+              "date_text": "Already open (Early Round deadline was 18 Sep 2026)",
+              "status": "EXPECTED",
+              "source": "ie-rounds"
+            },
+            {
+              "id": "early",
+              "type": "early_round",
+              "label": "Early Round",
+              "date": "2026-09-18",
+              "status": "EXPECTED",
+              "source": "ie-rounds",
+              "note": "Decision 23 Oct 2026."
+            },
+            {
+              "id": "r1",
+              "type": "round",
+              "label": "Round 1",
+              "date": "2026-11-06",
+              "status": "EXPECTED",
+              "source": "ie-rounds",
+              "note": "Reported for 2027/28 (via search, 4 Oct 2026). Decision 11 Dec 2026."
+            },
+            {
+              "id": "r2",
+              "type": "round",
+              "label": "Round 2",
+              "date": "2027-01-15",
+              "status": "EXPECTED",
+              "source": "ie-rounds",
+              "note": "Decision 19 Feb 2027."
+            },
+            {
+              "id": "r3",
+              "type": "round",
+              "label": "Round 3",
+              "date": "2027-03-05",
+              "status": "EXPECTED",
+              "source": "ie-rounds",
+              "note": "Decision 23 Apr 2027. Later applications considered from May 2027 if places remain."
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": 29000,
+              "currency": "EUR",
+              "period": "year",
+              "group": "All students",
+              "status": "EXPECTED",
+              "source": "brief",
+              "note": "Figure from the brief; confirm the 2027/28 rate on IE's fees page."
+            },
+            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "ie-process" },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "current_grades",
+            "english",
+            "cv",
+            {
+              "id": "questions",
+              "category": "materials",
+              "title": "Application questions / essays",
+              "doc_type": "motivation_letter",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            {
+              "id": "test",
+              "category": "tests",
+              "title": "IE Admissions Test (or accepted alternative such as SAT)",
+              "exam": ["IE_TEST", "SAT"],
+              "exam_mode": "option",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            {
+              "id": "interview",
+              "category": "selection",
+              "title": "Admissions interview",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            "application_form",
+            "application_fee",
+            {
+              "id": "scholarship-app",
+              "category": "financial",
+              "title": "Scholarship application",
+              "status": "EXPECTED",
+              "source": "typical"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

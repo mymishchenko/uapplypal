@@ -1,0 +1,126 @@
+[
+  {
+    "code": "SAT",
+    "name": "SAT (Digital)",
+    "kind": "standardized",
+    "scale": "400–1600",
+    "syllabus": "Reading & Writing (2 modules) and Math (2 modules, algebra, advanced math, problem-solving & data analysis, geometry/trigonometry). Adaptive, ~2h14m.",
+    "suggested_target": 1400,
+    "registration_url": "https://satsuite.collegeboard.org/sat/registration",
+    "resources": [
+      { "type": "free", "title": "Bluebook app: official full-length practice tests", "url": "https://bluebook.collegeboard.org/" },
+      { "type": "free", "title": "Khan Academy: Official Digital SAT Prep", "url": "https://www.khanacademy.org/test-prep/digital-sat" },
+      { "type": "free", "title": "College Board: SAT practice and preparation", "url": "https://satsuite.collegeboard.org/sat/practice-preparation" }
+    ],
+    "study_hours_hint": "Roughly 40–80 hours for a +100–150 point improvement, depending on starting level."
+  },
+  {
+    "code": "ACT",
+    "name": "ACT",
+    "kind": "standardized",
+    "scale": "1–36",
+    "syllabus": "English, Math, Reading; Science optional.",
+    "suggested_target": 30,
+    "registration_url": "https://www.act.org/",
+    "resources": [
+      { "type": "free", "title": "ACT: free test prep", "url": "https://www.act.org/content/act/en/products-and-services/the-act/test-preparation.html" }
+    ]
+  },
+  {
+    "code": "IELTS",
+    "name": "IELTS Academic",
+    "kind": "language",
+    "scale": "0–9 bands",
+    "syllabus": "Listening, Reading, Writing (2 tasks), Speaking (interview).",
+    "suggested_target": 7.0,
+    "registration_url": "https://ielts.org/",
+    "validity_years": 2,
+    "resources": [
+      { "type": "free", "title": "IELTS: free practice tests", "url": "https://ielts.org/take-a-test/preparation-resources" },
+      { "type": "free", "title": "British Council: IELTS preparation", "url": "https://takeielts.britishcouncil.org/take-ielts/prepare" }
+    ]
+  },
+  {
+    "code": "TOEFL",
+    "name": "TOEFL iBT",
+    "kind": "language",
+    "scale": "0–120",
+    "syllabus": "Reading, Listening, Speaking, Writing.",
+    "suggested_target": 100,
+    "registration_url": "https://www.ets.org/toefl.html",
+    "validity_years": 2,
+    "resources": [
+      { "type": "free", "title": "ETS: free TOEFL iBT practice", "url": "https://www.ets.org/toefl/test-takers/ibt/prepare.html" }
+    ]
+  },
+  {
+    "code": "DUOLINGO",
+    "name": "Duolingo English Test",
+    "kind": "language",
+    "scale": "10–160",
+    "syllabus": "Adaptive online test, ~1 hour, taken at home.",
+    "suggested_target": 130,
+    "registration_url": "https://englishtest.duolingo.com/",
+    "validity_years": 2,
+    "resources": [
+      { "type": "free", "title": "Duolingo English Test: free practice test", "url": "https://englishtest.duolingo.com/prepare" }
+    ],
+    "note": "Acceptance varies by university. Check each program before relying on it."
+  },
+  {
+    "code": "BOCCONI_TEST",
+    "name": "Bocconi Online Test",
+    "kind": "university",
+    "scale": "University-specific",
+    "syllabus": "Logic, mathematics, reading comprehension, critical thinking (check the current Bocconi test guide).",
+    "registration_url": "https://www.unibocconi.it/en/admissions",
+    "resources": []
+  },
+  {
+    "code": "IE_TEST",
+    "name": "IE Admissions Test",
+    "kind": "university",
+    "scale": "University-specific",
+    "syllabus": "Check IE's admissions page for the current format.",
+    "registration_url": "https://www.ie.edu/university/admission/admission-process/",
+    "resources": []
+  },
+  {
+    "code": "ESADE_TEST",
+    "name": "Esade Admission Test",
+    "kind": "university",
+    "scale": "University-specific",
+    "syllabus": "Check Esade's admissions page for the current format.",
+    "registration_url": "https://www.esade.edu/bachelor/en/programmes/business-administration/admissions",
+    "resources": []
+  },
+  {
+    "code": "LUISS_TEST",
+    "name": "Luiss Test",
+    "kind": "university",
+    "scale": "University-specific",
+    "syllabus": "Check LUISS's admissions page for the current format.",
+    "registration_url": "https://www.luiss.it/en",
+    "resources": []
+  },
+  {
+    "code": "WU_EXAM",
+    "name": "WU Vienna entrance exam (BBE)",
+    "kind": "university",
+    "scale": "University-specific",
+    "syllabus": "Online self-assessment, then an in-person exam based on published study material (check the current WU roadmap).",
+    "registration_url": "https://www.wu.ac.at/en/programs/bachelors-programs/business-and-economics/overview/selection-procedure-bbe-1",
+    "resources": [
+      { "type": "free", "title": "WU: BBE selection procedure (study material and roadmap)", "url": "https://www.wu.ac.at/en/programs/bachelors-programs/business-and-economics/overview/selection-procedure-bbe-1" }
+    ]
+  },
+  {
+    "code": "GERMAN",
+    "name": "German language certificate (e.g. Goethe C1, ÖSD)",
+    "kind": "language",
+    "scale": "CEFR A1–C2",
+    "syllabus": "Only needed for German-taught programmes.",
+    "registration_url": "https://www.goethe.de/en/spr/kup/prf.html",
+    "resources": []
+  }
+]

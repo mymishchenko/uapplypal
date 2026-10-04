@@ -1,0 +1,170 @@
+{
+  "id": "luiss",
+  "name": "LUISS Guido Carli University",
+  "short_name": "LUISS",
+  "country": "Italy",
+  "city": "Rome",
+  "type": "private",
+  "website": "https://www.luiss.it/en",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "luiss-cert",
+      "title": "LUISS: Admission with certifications (SAT etc.) for non-EU/Schengen students",
+      "url": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-for-bachelor%27s-degrees-and-the-single-cycle-law-degree/non-eu-schengen-students/admission-for-non-eu-schengen-students-certification",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-04"
+    },
+    {
+      "id": "luiss-test",
+      "title": "LUISS: Admission via test for non-EU students",
+      "url": "https://www.luiss.it/en/orientation-and-admissions/admission-procedures/admission-bachelors-and-masters-degree-programs-law/non-eu-students/ammissione-con-test-ai-corsi-di-laurea-triennale-e-magistrale-studenti-ue",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-04"
+    }
+  ],
+  "benefits": [],
+  "scholarships": [],
+  "programs": [
+    {
+      "id": "luiss-ba",
+      "name": "Business Administration",
+      "degree": "BSc",
+      "fields": ["business", "management"],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Rome",
+      "official_url": "https://www.luiss.it/en",
+      "selectivity": "medium",
+      "highlights": ["Admission via SAT (min. 1200) or the Luiss Test"],
+      "risks": ["Check which session applies to Ukrainian (non-EU) applicants"],
+      "intakes": [
+        {
+          "id": "luiss-ba-2027",
+          "academic_year": "2027/28",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "First certification session (non-EU): applications October 2026 – 10 Feb 2027. Luiss Test: applications until 10 Feb 2027, test 22–26 Feb 2027.",
+          "windows": [
+            { "id": "cert", "label": "Certification session 1 (SAT)", "opens": "opens", "closes": "cert-close" }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Applications open",
+              "date": null,
+              "date_text": "October 2026",
+              "status": "EXPECTED",
+              "source": "luiss-cert",
+              "note": "Exact day not known. Reported for 2027/28 (via search, 4 Oct 2026)."
+            },
+            {
+              "id": "cert-close",
+              "type": "round",
+              "label": "Certification session 1 deadline",
+              "date": "2027-02-10",
+              "status": "EXPECTED",
+              "source": "luiss-cert"
+            },
+            {
+              "id": "test",
+              "type": "entrance_exam",
+              "label": "Luiss Test",
+              "date": "2027-02-22",
+              "date_end": "2027-02-26",
+              "status": "EXPECTED",
+              "source": "luiss-test"
+            },
+            {
+              "id": "enrol",
+              "type": "enrollment",
+              "label": "Enrolment deadline (session 1)",
+              "date": "2027-05-04",
+              "status": "EXPECTED",
+              "source": "luiss-cert"
+            }
+          ],
+          "tuition": {
+            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "Non-EU students", "status": "UNKNOWN", "source": "luiss-cert" },
+            "application_fee": { "amount": 150, "currency": "EUR", "status": "EXPECTED", "source": "luiss-cert", "note": "Participation fee for the certification selection session." },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "english",
+            {
+              "id": "test",
+              "category": "tests",
+              "title": "SAT (min. 1200) or Luiss Test",
+              "exam": ["SAT", "LUISS_TEST"],
+              "exam_mode": "option",
+              "min_score": { "SAT": 1200 },
+              "status": "EXPECTED",
+              "source": "luiss-cert"
+            },
+            "application_form",
+            "application_fee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luiss-eb",
+      "name": "Economics and Business",
+      "degree": "BSc",
+      "fields": ["economics", "business"],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Rome",
+      "official_url": "https://www.luiss.it/en",
+      "selectivity": "medium",
+      "highlights": ["Same admission routes as Business Administration"],
+      "risks": [],
+      "intakes": [
+        {
+          "id": "luiss-eb-2027",
+          "academic_year": "2027/28",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "Same sessions as Business Administration.",
+          "windows": [
+            { "id": "cert", "label": "Certification session 1 (SAT)", "opens": "opens", "closes": "cert-close" }
+          ],
+          "deadlines": [
+            { "id": "opens", "type": "application_opens", "label": "Applications open", "date": null, "date_text": "October 2026", "status": "EXPECTED", "source": "luiss-cert" },
+            { "id": "cert-close", "type": "round", "label": "Certification session 1 deadline", "date": "2027-02-10", "status": "EXPECTED", "source": "luiss-cert" },
+            { "id": "test", "type": "entrance_exam", "label": "Luiss Test", "date": "2027-02-22", "date_end": "2027-02-26", "status": "EXPECTED", "source": "luiss-test" }
+          ],
+          "tuition": {
+            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "Non-EU students", "status": "UNKNOWN", "source": "luiss-cert" },
+            "application_fee": { "amount": 150, "currency": "EUR", "status": "EXPECTED", "source": "luiss-cert" },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "english",
+            {
+              "id": "test",
+              "category": "tests",
+              "title": "SAT (min. 1200) or Luiss Test",
+              "exam": ["SAT", "LUISS_TEST"],
+              "exam_mode": "option",
+              "min_score": { "SAT": 1200 },
+              "status": "EXPECTED",
+              "source": "luiss-cert"
+            },
+            "application_form",
+            "application_fee"
+          ]
+        }
+      ]
+    }
+  ]
+}

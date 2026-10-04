@@ -1,0 +1,117 @@
+{
+  "id": "esade",
+  "name": "Esade Business School (Universitat Ramon Llull)",
+  "short_name": "ESADE",
+  "country": "Spain",
+  "city": "Barcelona",
+  "type": "private",
+  "website": "https://www.esade.edu/en",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "esade-bba-admissions",
+      "title": "Esade: Bachelor in Business Administration admissions",
+      "url": "https://www.esade.edu/bachelor/en/programmes/business-administration/admissions",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-04"
+    }
+  ],
+  "benefits": [],
+  "scholarships": [
+    {
+      "id": "esade-aid",
+      "name": "Esade scholarships and financial aid",
+      "provider": "university",
+      "type": "need_based",
+      "amount": null,
+      "coverage": { "tuition": true },
+      "eligibility": "To be checked.",
+      "separate_application": true,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "UNKNOWN",
+      "source": "esade-bba-admissions"
+    }
+  ],
+  "programs": [
+    {
+      "id": "esade-bba",
+      "name": "Bachelor in Business Administration (BBA)",
+      "degree": "BBA",
+      "fields": ["business", "management"],
+      "language": "English",
+      "duration_years": 4,
+      "campus": "Barcelona (Sant Cugat)",
+      "official_url": "https://www.esade.edu/bachelor/en/programmes/business-administration",
+      "selectivity": "high",
+      "highlights": ["Rolling admissions until June 2027 while places remain", "No minimum entry grade"],
+      "risks": ["Places fill up: applying early is safer"],
+      "intakes": [
+        {
+          "id": "esade-bba-2027",
+          "academic_year": "2027/28",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "Admissions for September 2027 reported open until June 2027, subject to places.",
+          "windows": [
+            { "id": "main", "label": "Rolling admissions", "opens": "opens", "closes": "close" }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Applications open",
+              "date": null,
+              "already_open": true,
+              "date_text": "Already open",
+              "status": "EXPECTED",
+              "source": "esade-bba-admissions",
+              "note": "Reported for September 2027 (via search, 4 Oct 2026). Open the source to confirm."
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Admissions close (if places remain)",
+              "date": null,
+              "date_text": "June 2027",
+              "status": "EXPECTED",
+              "source": "esade-bba-admissions"
+            }
+          ],
+          "tuition": {
+            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "All students", "status": "UNKNOWN", "source": "esade-bba-admissions" },
+            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "esade-bba-admissions" },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "current_grades",
+            "english",
+            "cv",
+            {
+              "id": "test",
+              "category": "tests",
+              "title": "Esade Admission Test",
+              "exam": ["ESADE_TEST"],
+              "exam_mode": "required",
+              "status": "EXPECTED",
+              "source": "esade-bba-admissions"
+            },
+            {
+              "id": "interview",
+              "category": "selection",
+              "title": "Personal interview",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            "application_form",
+            "application_fee"
+          ]
+        }
+      ]
+    }
+  ]
+}

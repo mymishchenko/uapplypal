@@ -21,6 +21,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - run: npm run build
 
   deploy:
     # Only deploy from main, and only after tests pass.
@@ -33,6 +34,7 @@ jobs:
       REMOTE_PORT: ${{ secrets.REMOTE_PORT || '22' }}
       REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
       HAS_KEY: ${{ secrets.REMOTE_KEY != '' }}
+      HAS_PASSWORD: ${{ secrets.APP_PASSWORD != '' }}
       # Folder containing node/npm on the server, if they aren't on PATH for SSH commands.
       REMOTE_NODE_BIN: ${{ vars.REMOTE_NODE_BIN }}
       RESTART_COMMAND: ${{ vars.RESTART_COMMAND }}
@@ -50,6 +52,18 @@ jobs:
       - uses: actions/checkout@v4
         if: steps.check.outputs.ready == 'true'
 
+      - uses: actions/setup-node@v4
+        if: steps.check.outputs.ready == 'true'
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Build client
+        if: steps.check.outputs.ready == 'true'
+        run: |
+          npm ci
+          npm run build
+
       - name: Set up SSH
         if: steps.check.outputs.ready == 'true'
         run: |
@@ -64,8 +78,18 @@ jobs:
           rsync -az --delete \
             --exclude '.git/' --exclude '.github/' --exclude 'node_modules/' \
             --exclude '.env' --exclude 'test/' --exclude 'docs/' \
+            --exclude 'data/runtime/' --exclude 'client/src/' \
             -e "ssh -i ~/.ssh/deploy_key -p $REMOTE_PORT" \
             ./ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
+
+      - name: Write app password
+        if: steps.check.outputs.ready == 'true' && env.HAS_PASSWORD == 'true'
+        env:
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+        run: |
+          printf 'APP_PASSWORD=%s\n' "$APP_PASSWORD" | \
+            ssh -i ~/.ssh/deploy_key -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" \
+            "umask 077 && cat > '$REMOTE_PATH/.env'"
 
       - name: Install dependencies and restart
         if: steps.check.outputs.ready == 'true'

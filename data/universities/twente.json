@@ -1,0 +1,137 @@
+{
+  "id": "twente",
+  "name": "University of Twente",
+  "short_name": "Twente",
+  "country": "Netherlands",
+  "city": "Enschede",
+  "type": "public",
+  "website": "https://www.utwente.nl/en/",
+  "ranking": null,
+  "sources": [
+    {
+      "id": "ut-iba",
+      "title": "University of Twente: BSc International Business Administration",
+      "url": "https://www.utwente.nl/en/education/bachelor/programmes/international-business-administration/",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": null
+    }
+  ],
+  "benefits": [],
+  "scholarships": [
+    {
+      "id": "holland",
+      "name": "Holland Scholarship",
+      "provider": "government",
+      "type": "merit",
+      "amount": 5000,
+      "currency": "EUR",
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Non-EEA students, first year only. Check whether University of Twente participates for this programme in 2027/28.",
+      "separate_application": true,
+      "renewable": false,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "UNKNOWN",
+      "source": "holland-scholarship"
+    }
+  ],
+  "programs": [
+    {
+      "id": "ut-iba",
+      "name": "BSc International Business Administration",
+      "degree": "BSc",
+      "fields": [
+        "business",
+        "international business",
+        "technology"
+      ],
+      "language": "English",
+      "duration_years": 3,
+      "campus": "Enschede",
+      "official_url": "https://www.utwente.nl/en/education/bachelor/programmes/international-business-administration/",
+      "selectivity": "low",
+      "highlights": [
+        "Business + technology focus",
+        "Campus university with lower living costs"
+      ],
+      "risks": [
+        "Non-EU deadline must be verified"
+      ],
+      "intakes": [
+        {
+          "academic_year": "2027/28",
+          "id": "ut-iba-2027",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "2027/28 dates not entered yet.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "Application",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Application opens",
+              "date": null,
+              "date_text": "October 2026 (Studielink usually opens 1 Oct)",
+              "status": "EXPECTED",
+              "source": "studielink"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Application deadline",
+              "date": null,
+              "date_text": "Unknown",
+              "status": "UNKNOWN",
+              "source": "ut-iba"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU (institutional fee)",
+              "status": "UNKNOWN",
+              "source": "ut-iba"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "ut-iba"
+            },
+            "fees": []
+          },
+          "requirements": [
+            "ua_certificate_recognition",
+            "passport",
+            "transcripts",
+            "current_grades",
+            "english",
+            {
+              "id": "math",
+              "category": "academic",
+              "title": "Mathematics level requirement",
+              "detail": "Dutch programmes usually require a specific maths level (VWO Wiskunde A/B equivalent).",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            "cv",
+            "motivation_letter",
+            "application_form"
+          ]
+        }
+      ]
+    }
+  ]
+}
