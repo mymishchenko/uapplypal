@@ -1,7 +1,7 @@
 import { AppProvider, useApp, useRoute } from './state.jsx';
 import Logo from './components/Logo.jsx';
 import Dashboard from './pages/Dashboard.jsx';
-import Assistant from './pages/Assistant.jsx';
+import Alerts from './pages/Alerts.jsx';
 import Compare from './pages/Compare.jsx';
 import Workspace from './pages/Workspace.jsx';
 import Deadlines from './pages/Deadlines.jsx';
@@ -13,7 +13,7 @@ import Sources from './pages/Sources.jsx';
 
 const NAV = [
   ['/', 'Dashboard'],
-  ['/assistant', 'Assistant'],
+  ['/alerts', 'Email alerts'],
   ['/compare', 'Compare'],
   ['/deadlines', 'Deadlines'],
   ['/scholarships', 'Scholarships'],
@@ -34,7 +34,7 @@ function Shell() {
     page =
       {
         '/': <Dashboard />,
-        '/assistant': <Assistant />,
+        '/alerts': <Alerts />,
         '/compare': <Compare />,
         '/deadlines': <Deadlines />,
         '/scholarships': <Scholarships />,
