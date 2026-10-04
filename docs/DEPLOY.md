@@ -21,14 +21,16 @@ If you have a basic shared plan, either upgrade or ask Claude to rewrite the bac
    so its DNS already points at their servers and you don't need to change any DNS records.
 2. In the site's settings, turn on the free **Let's Encrypt SSL** certificate and force HTTPS.
 
-## 3. Switch the site to Node.js (adm.tools)
+## 3. Start the app (adm.tools → Мої сайти → site → Налаштування веб-застосунку)
 
-1. Site settings → **Web server**: choose **Node.js**, version 20 or newer (22 recommended).
-2. Startup file / command: `server.js` (or `npm start`).
-3. The panel gives the site a local IP (`127.x.x.x`) and a port (default `3000`).
-   If they differ from the defaults, set environment variables `HOST` and `PORT` to match.
-   `server.js` reads both.
-4. Note the site's **root directory** (usually `/home/<account>/<domain>/www`). This is `REMOTE_PATH` below.
+1. **Проксування HTTP-трафіку в застосунок** (HTTP proxy): switch it on and note the IP
+   (`127.x.x.x`) and port it shows (default `3000`).
+2. **Налаштування запуску застосунку** (launch settings):
+   - Каталог запуску (launch directory): the site root, e.g. `/home/<account>/uapplypal.com/www/`. This is `REMOTE_PATH` below.
+   - Команда запуску (launch command):
+     `/usr/local/node22/bin/node server.js --host <IP> --port <PORT>`
+   - Click **Зберегти** (Save), then start the app. The status should change to running.
+3. If it doesn't start, open the log file linked on that page.
 
 ## 4. Create an SSH key for GitHub to use
 
