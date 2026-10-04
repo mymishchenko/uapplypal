@@ -1,4 +1,5 @@
 const path = require('node:path');
+const { parseArgs } = require('node:util');
 
 // Optional .env file next to server.js (HOST, PORT etc.). Not committed.
 try {
@@ -10,9 +11,15 @@ try {
 const { createApp } = require('./app');
 
 // Hosting Ukraine assigns each Node.js site a local 127.x.x.x address and
-// proxies HTTP traffic to it. Set HOST/PORT in the site settings in adm.tools.
-const host = process.env.HOST || '127.0.0.1';
-const port = Number(process.env.PORT) || 3000;
+// proxies HTTP traffic to it. Pass it as launch parameters in adm.tools:
+//   node server.js --host 127.x.x.x --port 3000
+// (HOST / PORT environment variables also work.)
+const { values: args } = parseArgs({
+  options: { host: { type: 'string' }, port: { type: 'string' } },
+  strict: false,
+});
+const host = args.host || process.env.HOST || '127.0.0.1';
+const port = Number(args.port || process.env.PORT) || 3000;
 
 createApp().listen(port, host, () => {
   console.log(`UApplyPal listening on http://${host}:${port}`);
