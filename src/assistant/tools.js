@@ -106,7 +106,9 @@ function compactApp(a) {
     my_status: a.application.status,
     can_apply_now: a.apply.state,
     can_apply_detail: a.apply.detail,
-    next_deadline: a.next_deadline ? { date: a.next_deadline.date, label: a.next_deadline.label, verification: a.next_deadline.status } : null,
+    next_deadline: a.next_deadline
+      ? { date: a.next_deadline.date, label: a.next_deadline.label, verification: a.next_deadline.status, note: a.next_deadline.note || null }
+      : null,
     official_tuition_per_year: a.cost.sticker ? a.cost.sticker.annual : null,
     tuition_verification: a.cost.sticker ? a.cost.sticker.status : null,
     student_tuition_per_year: a.cost.student_tuition.annual,
