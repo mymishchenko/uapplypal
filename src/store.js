@@ -14,6 +14,8 @@ function emptyState(studentSeed) {
     exams: {}, // exam code -> { status, test_date, registration_deadline, diagnostic, score, target, weekly_hours }
     scholarshipStatus: {}, // fid -> status
     overrides: {}, // fact fid -> partial fact
+    assistant: { history: [] }, // [{ role, text }] of the current conversation
+    findings: [], // research findings saved by the assistant, for review
   };
 }
 

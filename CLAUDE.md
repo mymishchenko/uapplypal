@@ -17,6 +17,11 @@ for September 2027. Keep models generic (other students, countries, years).
   `match.js` (fit + Reach/Target/Safe estimate), `views.js` (dashboard, actions, exam planner,
   documents). The client never re-implements these.
 - `src/api.js`: JSON API; every mutation returns the full recomputed view.
+- `src/assistant/`: the AI agent (Claude API, `@anthropic-ai/sdk`). `agent.js` runs the tool loop
+  (streaming, `claude-opus-5-5`, `fallbacks: "default"`), `tools.js` defines read-only data tools over
+  the computed view plus `save_finding` and web search/fetch, `routes.js` serves SSE chat with
+  per-IP and daily limits. Findings are stored as `needs_review`; the agent never verifies facts.
+  Tests use a scripted fake client (`test/assistant.test.js`); never call the real API in tests.
 - `client/`: React + Vite UI (`client/src/pages/*`). No admissions data hardcoded in components.
 
 ## Data rules (critical)

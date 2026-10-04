@@ -72,6 +72,16 @@ set the `RESTART_COMMAND` variable in the **Variables** tab.
 
 Then delete the private key from your computer, or keep it somewhere safe.
 
+## 5b. Turn on the AI assistant
+
+1. Create an API key at https://console.anthropic.com → **API keys**. It starts with `sk-ant-`.
+2. In **Billing → Limits**, set a monthly spend limit (e.g. $20). The site has no login, so this is your safety net.
+3. Add it in GitHub as the repository secret **`ANTHROPIC_API_KEY`**. Paste only the key, one line.
+4. Deploy (merge to `main`, or Actions → Test & Deploy → Run workflow). The deploy writes it to `.env` on the server.
+
+The assistant uses Claude Opus 5.5. Usage is capped at 30 messages per visitor per hour and 150 per day;
+change this with `ASSISTANT_HOURLY_LIMIT` / `ASSISTANT_DAILY_LIMIT` in `.env`.
+
 ## 6. Deploy
 
 Merge anything into `main`, or go to **Actions → Test & Deploy → Run workflow**.

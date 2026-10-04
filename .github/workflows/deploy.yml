@@ -34,6 +34,7 @@ jobs:
       REMOTE_PORT: ${{ secrets.REMOTE_PORT || '22' }}
       REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
       HAS_KEY: ${{ secrets.REMOTE_KEY != '' }}
+      HAS_AI_KEY: ${{ secrets.ANTHROPIC_API_KEY != '' }}
       # Folder containing node/npm on the server, if they aren't on PATH for SSH commands.
       REMOTE_NODE_BIN: ${{ vars.REMOTE_NODE_BIN }}
       RESTART_COMMAND: ${{ vars.RESTART_COMMAND }}
@@ -80,6 +81,21 @@ jobs:
             --exclude 'data/runtime/' --exclude 'client/src/' \
             -e "ssh -i ~/.ssh/deploy_key -p $REMOTE_PORT" \
             ./ "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH/"
+
+      - name: Write assistant API key
+        if: steps.check.outputs.ready == 'true' && env.HAS_AI_KEY == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          # Guard against pasting the wrong secret (e.g. an SSH key).
+          case "$ANTHROPIC_API_KEY" in
+            sk-ant-*) ;;
+            *) echo "::error::ANTHROPIC_API_KEY must start with sk-ant- (copy it from console.anthropic.com → API keys)"; exit 1 ;;
+          esac
+          if [ "$(printf '%s' "$ANTHROPIC_API_KEY" | wc -l)" -ne 0 ]; then echo "::error::ANTHROPIC_API_KEY must be a single line"; exit 1; fi
+          printf 'ANTHROPIC_API_KEY=%s\n' "$ANTHROPIC_API_KEY" | \
+            ssh -i ~/.ssh/deploy_key -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" \
+            "umask 077 && cat > '$REMOTE_PATH/.env'"
 
       - name: Install dependencies and restart
         if: steps.check.outputs.ready == 'true'
