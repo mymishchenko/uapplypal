@@ -176,15 +176,5 @@
       }
     ],
     "preference": 5
-  },
-  {
-    "code": "GERMAN",
-    "name": "German language certificate (e.g. Goethe C1, ÖSD)",
-    "kind": "language",
-    "scale": "CEFR A1–C2",
-    "syllabus": "Only needed for German-taught programmes.",
-    "registration_url": "https://www.goethe.de/en/spr/kup/prf.html",
-    "resources": [],
-    "preference": 3
   }
 ]

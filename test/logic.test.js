@@ -79,26 +79,26 @@ test('Bocconi: early session closed + winter not yet open (both verified) → NO
 
 test('a benefit that is unknown for the intake year does not lower the base cost', () => {
   const view = buildView(buildCatalog(raw), emptyState(raw.studentSeed), TODAY);
-  const univie = view.applications.find((a) => a.id === 'univie-ba-2027');
-  assert.strictEqual(univie.cost.student_tuition.annual, univie.cost.sticker.annual);
-  assert.strictEqual(univie.cost.best_case.tuition, 0);
-  assert.strictEqual(univie.cost.best_case.certainty, 'unconfirmed');
+  const wu = view.applications.find((a) => a.id === 'wu-bbe-2027');
+  assert.strictEqual(wu.cost.student_tuition.annual, wu.cost.sticker.annual);
+  assert.strictEqual(wu.cost.best_case.tuition, 0);
+  assert.strictEqual(wu.cost.best_case.certainty, 'unconfirmed');
 });
 
 test('a verified active benefit lowers the student tuition', () => {
-  const overrides = { 'univie.b.ua-waiver-2027': { state: 'ACTIVE', status: 'VERIFIED' } };
+  const overrides = { 'wu-vienna.b.ua-waiver-2027': { state: 'ACTIVE', status: 'VERIFIED' } };
   const view = buildView(buildCatalog(raw, overrides), emptyState(raw.studentSeed), TODAY);
-  const univie = view.applications.find((a) => a.id === 'univie-ba-2027');
-  assert.strictEqual(univie.cost.student_tuition.annual, 0);
+  const wu = view.applications.find((a) => a.id === 'wu-bbe-2027');
+  assert.strictEqual(wu.cost.student_tuition.annual, 0);
 });
 
 test('Ukraine benefits do not apply to non-Ukrainian students', () => {
   const state = emptyState(raw.studentSeed);
   state.student.personal.citizenships = 'Poland';
-  const overrides = { 'univie.b.ua-waiver-2027': { state: 'ACTIVE', status: 'VERIFIED' } };
+  const overrides = { 'wu-vienna.b.ua-waiver-2027': { state: 'ACTIVE', status: 'VERIFIED' } };
   const view = buildView(buildCatalog(raw, overrides), state, TODAY);
-  const univie = view.applications.find((a) => a.id === 'univie-ba-2027');
-  assert.strictEqual(univie.cost.student_tuition.annual, univie.cost.sticker.annual);
+  const wu = view.applications.find((a) => a.id === 'wu-bbe-2027');
+  assert.strictEqual(wu.cost.student_tuition.annual, wu.cost.sticker.annual);
 });
 
 test('exam planner consolidates SAT across applications', () => {
