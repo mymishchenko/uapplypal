@@ -16,6 +16,8 @@ export default function Exams() {
           <p className="muted small">Exams are consolidated across your whole portfolio: one SAT score can serve several applications.</p>
         </div>
       </header>
+      <Strategy strategy={view.exam_strategy} />
+      <h2 className="section-title">All exams in your applications</h2>
       {view.exam_plans.map((e) => (
         <ExamCard key={e.code} exam={e} />
       ))}
@@ -36,6 +38,87 @@ export default function Exams() {
         </section>
       )}
     </div>
+  );
+}
+
+function Strategy({ strategy }) {
+  const status = (plan) => (plan && plan.status ? plan.status.replace(/_/g, ' ') : 'not registered');
+  return (
+    <section className="card strategy">
+      <h2>Your exam strategy</h2>
+      <p className="muted small">
+        Worked out from the requirements of every application you’re considering. “Must” means there is no way around it for at least one application.
+        “Recommended” is the single exam that covers the most applications where you have a choice; the others are alternatives.
+      </p>
+
+      <h3>(a) Must take: no alternative</h3>
+      {strategy.must.length ? (
+        <table className="table compact">
+          <tbody>
+            {strategy.must.map((m) => (
+              <tr key={m.code}>
+                <td>
+                  <strong>{m.name}</strong>
+                  <div className="muted small">{status(m.plan)}</div>
+                </td>
+                <td className="small">
+                  Required by {m.count}: {m.programs.join('; ')}
+                </td>
+                <td className="nowrap small">{m.earliest ? `before ${date(m.earliest)}` : 'date not set'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p className="muted">None: every exam requirement has alternatives.</p>
+      )}
+
+      <h3>(b) Recommended: one exam covers several applications</h3>
+      {strategy.recommended.length ? (
+        strategy.recommended.map((r) => (
+          <div key={r.code} className="rec">
+            <div className="row">
+              <span className="badge green">Recommended</span>
+              <strong>{r.name}</strong>
+              <span className="muted small">
+                {r.slot_kind === 'language' ? 'English proof' : 'Admission test'} · covers {r.count} application{r.count === 1 ? '' : 's'}
+                {r.earliest ? ` · first needed before ${date(r.earliest)}` : ''} · {status(r.plan)}
+              </span>
+            </div>
+            <div className="small muted">{r.programs.join('; ')}</div>
+            {r.min_scores.length > 0 && (
+              <div className="small">Minimum scores: {[...new Set(r.min_scores.map((m) => `${m.program.split(':')[0]} ${m.min}`))].join(', ')}</div>
+            )}
+            {r.alternatives.length > 0 && (
+              <ul className="plain small alts">
+                {r.alternatives.map((a) => (
+                  <li key={a.code}>
+                    <span className="badge subtle grey">Alternative</span> <strong>{a.name}</strong>:{' '}
+                    {a.not_for.length === 0 ? (
+                      <span>accepted by all {a.programs.length} of them</span>
+                    ) : (
+                      <span>
+                        accepted by {a.programs.length} of {r.count}
+                        {a.programs.length <= 3 ? ` (${a.programs.map((p) => p.split(':')[0]).join(', ')})` : ''}; you’d still need {r.name} for the other {a.not_for.length}
+                      </span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))
+      ) : (
+        <p className="muted">No exam choices in your applications.</p>
+      )}
+      {strategy.covered_by_must.length > 0 && (
+        <p className="small muted">Already covered by a must-take exam: {strategy.covered_by_must.map((c) => c.program).join('; ')}.</p>
+      )}
+      <p className="small muted">
+        Acceptance comes from your program data: exams not confirmed for a program are not counted as accepted. Mark applications “Not applying” on the Compare page
+        and the strategy updates.
+      </p>
+    </section>
   );
 }
 

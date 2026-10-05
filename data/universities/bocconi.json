@@ -41,6 +41,14 @@
       "type": "official_scholarship",
       "academic_year": "2027/28",
       "date_checked": "2026-10-04"
+    },
+    {
+      "id": "bocconi-english",
+      "title": "Bocconi: English certificates accepted for enrollment (bachelor)",
+      "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/application-and-admissions/english-certificates-accepted-enrollment",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -204,7 +212,22 @@
             "passport",
             "transcripts",
             "current_grades",
-            "english",
+            {
+              "template": "english",
+              "id": "english",
+              "exam": [
+                "IELTS",
+                "TOEFL",
+                "DUOLINGO"
+              ],
+              "exam_mode": "option",
+              "detail": "Duolingo English Test reported accepted (guides cite 110). Check the official list for minimum scores.",
+              "status": "EXPECTED",
+              "source": "bocconi-english",
+              "min_score": {
+                "DUOLINGO": 110
+              }
+            },
             {
               "id": "test",
               "category": "tests",

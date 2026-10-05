@@ -34,6 +34,14 @@
       "type": "official_admissions",
       "academic_year": "2027/28",
       "date_checked": "2026-10-04"
+    },
+    {
+      "id": "esade-requirements",
+      "title": "Esade Bachelors: admission requirements",
+      "url": "https://www.esade.edu/bachelor/en/degrees/admissions/admission-requirements",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -135,7 +143,19 @@
             "passport",
             "transcripts",
             "current_grades",
-            "english",
+            {
+              "template": "english",
+              "id": "english",
+              "exam": [
+                "IELTS",
+                "TOEFL",
+                "DUOLINGO"
+              ],
+              "exam_mode": "option",
+              "detail": "Duolingo English Test reported accepted (a search summary quoted a minimum of 160, which looks too high; check the official page).",
+              "status": "EXPECTED",
+              "source": "esade-requirements"
+            },
             "cv",
             {
               "id": "test",

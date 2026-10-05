@@ -6,6 +6,7 @@ const { canApplyNow, nextClosingDeadline, CLOSING_TYPES } = require('./windows')
 const { costFor } = require('./cost');
 const { assess } = require('./match');
 const { rankingFor } = require('./rankings');
+const { examStrategy } = require('./examStrategy');
 
 const APPLICATION_STATUSES = ['not_started', 'preparing', 'ready', 'submitted', 'offer', 'waitlisted', 'rejected', 'withdrawn', 'not_applying'];
 const INACTIVE = new Set(['withdrawn', 'not_applying', 'rejected']);
@@ -184,26 +185,29 @@ function buildView(catalog, state, today) {
       });
     }
   }
-  const ENGLISH = ['IELTS', 'TOEFL', 'DUOLINGO'];
-  const englishDone = examPlans.some((e) => ENGLISH.includes(e.code) && e.plan.status && e.plan.status !== 'not_registered');
-  let englishAdded = false;
-  for (const e of examPlans) {
-    if (e.priority === 'done' || !e.earliest_deadline || (e.plan.status && e.plan.status !== 'not_registered')) continue;
-    if (e.meta.kind === 'university') continue; // university tests are covered by the application deadlines
-    if (!e.required_by.length && e.accepted_by.length < 2) continue; // a rarely-accepted alternative, not a task
-    const isEnglish = ENGLISH.includes(e.code);
-    if (isEnglish && (englishDone || englishAdded)) continue;
-    if (isEnglish) englishAdded = true;
-    actions.push({
-      kind: 'exam',
-      title: isEnglish ? 'Book an English test (IELTS or TOEFL)' : `Register for ${e.meta.name}`,
-      detail: `Needed by ${e.required_by.length + e.accepted_by.length} applications · score needed before ${e.earliest_deadline.app} (${e.earliest_deadline.date})`,
-      date: e.earliest_deadline.date,
-      days_left: e.days_to_deadline,
-      priority: e.priority === 'critical' ? 'critical' : 'high',
-      verified: e.earliest_deadline.status === 'VERIFIED',
-      exam: e.code,
-    });
+  // Exam tasks come from the strategy: only must-take and recommended exams.
+  const strategy = examStrategy({ applications: apps, exams, plans: state.exams });
+  for (const [group, list] of [['must', strategy.must], ['recommended', strategy.recommended]]) {
+    for (const e of list) {
+      if (e.kind === 'university' || !e.earliest) continue; // university tests follow their application deadlines
+      if (e.plan && ['registered', 'taken', 'not_needed'].includes(e.plan.status)) continue;
+      const days = daysBetween(today, e.earliest);
+      if (days < 0) continue;
+      const alts = (e.alternatives || []).slice(0, 3).map((x) => x.name);
+      actions.push({
+        kind: 'exam',
+        title: `Register for ${e.name}`,
+        detail:
+          group === 'must'
+            ? `Required by ${e.count} application${e.count === 1 ? '' : 's'}: no alternative`
+            : `Recommended: covers ${e.count} application${e.count === 1 ? '' : 's'}${alts.length ? ` · alternatives: ${alts.join(', ')}` : ''}`,
+        date: e.earliest,
+        days_left: days,
+        priority: days <= 45 ? 'critical' : days <= 120 ? 'high' : 'medium',
+        verified: false,
+        exam: e.code,
+      });
+    }
   }
   actions.sort((x, y) => rank(x.priority) - rank(y.priority) || (x.days_left ?? 9999) - (y.days_left ?? 9999));
 
@@ -247,6 +251,7 @@ function buildView(catalog, state, today) {
     student,
     applications: apps,
     exam_plans: examPlans,
+    exam_strategy: strategy,
     documents,
     deadlines: allDeadlines,
     dashboard,

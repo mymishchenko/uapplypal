@@ -196,7 +196,22 @@
             "passport",
             "transcripts",
             "current_grades",
-            "english",
+            {
+              "template": "english",
+              "id": "english",
+              "exam": [
+                "IELTS",
+                "TOEFL",
+                "DUOLINGO"
+              ],
+              "exam_mode": "option",
+              "detail": "Duolingo English Test reported accepted with 130+ (third-party guide).",
+              "status": "EXPECTED",
+              "source": "det-guides",
+              "min_score": {
+                "DUOLINGO": 130
+              }
+            },
             "cv",
             {
               "id": "questions",
