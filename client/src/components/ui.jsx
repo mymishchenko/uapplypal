@@ -118,6 +118,8 @@ function EditFactDialog({ fact, kind, onClose }) {
     date: fact.date || '',
     date_text: fact.date_text || '',
     amount: fact.amount ?? '',
+    rank_text: fact.rank_text ?? '',
+    edition: fact.edition ?? '',
     status: fact.status,
     source_url: (fact.user_source && fact.user_source.url) || '',
     note: fact.note || '',
@@ -127,6 +129,7 @@ function EditFactDialog({ fact, kind, onClose }) {
     const body = { status: form.status, note: form.note };
     if (kind === 'date') Object.assign(body, { date: form.date, date_text: form.date_text });
     if (kind === 'amount') body.amount = form.amount;
+    if (kind === 'rank') Object.assign(body, { rank_text: form.rank_text, edition: form.edition });
     if (form.source_url) body.source_url = form.source_url;
     if (await mutate(`/facts/${encodeURIComponent(fact.fid)}`, { method: 'PUT', body })) onClose();
   };
@@ -144,6 +147,18 @@ function EditFactDialog({ fact, kind, onClose }) {
               <label>
                 Text (if no exact date)
                 <input value={form.date_text} onChange={set('date_text')} placeholder="e.g. Spring 2027" />
+              </label>
+            </>
+          )}
+          {kind === 'rank' && (
+            <>
+              <label>
+                Rank (e.g. 107, =176, 301–350, not ranked)
+                <input value={form.rank_text} onChange={set('rank_text')} />
+              </label>
+              <label>
+                Edition (e.g. 2027, 2026-2027)
+                <input value={form.edition} onChange={set('edition')} />
               </label>
             </>
           )}

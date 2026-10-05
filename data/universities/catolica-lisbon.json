@@ -6,7 +6,26 @@
   "city": "Lisbon",
   "type": "private",
   "website": "https://www.clsbe.lisboa.ucp.pt/",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": "2026",
+      "rank_text": "801–1000",
+      "status": "EXPECTED",
+      "source": "rank-the",
+      "note": "Universidade Católica Portuguesa."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": "2025-2026",
+      "rank_text": "=1284",
+      "status": "EXPECTED",
+      "source": "rank-usnews",
+      "note": "Universidade Católica Portuguesa."
+    }
+  ],
   "sources": [
     {
       "id": "catolica",

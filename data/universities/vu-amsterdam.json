@@ -6,7 +6,25 @@
   "city": "Amsterdam",
   "type": "public",
   "website": "https://vu.nl/en",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": "2026",
+      "rank_text": "=176",
+      "status": "EXPECTED",
+      "source": "rank-the"
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": null,
+      "rank_text": "79",
+      "status": "EXPECTED",
+      "source": "rank-usnews",
+      "note": "Edition not stated in the search result."
+    }
+  ],
   "sources": [
     {
       "id": "vu-iba",

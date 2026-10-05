@@ -6,7 +6,24 @@
   "city": "Rome",
   "type": "private",
   "website": "https://www.luiss.it/en",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": null,
+      "rank_text": "not ranked",
+      "status": "EXPECTED",
+      "source": "rank-the"
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": null,
+      "rank_text": "not ranked",
+      "status": "EXPECTED",
+      "source": "rank-usnews"
+    }
+  ],
   "sources": [
     {
       "id": "luiss-cert",
@@ -32,14 +49,21 @@
       "id": "luiss-ba",
       "name": "Business Administration",
       "degree": "BSc",
-      "fields": ["business", "management"],
+      "fields": [
+        "business",
+        "management"
+      ],
       "language": "English",
       "duration_years": 3,
       "campus": "Rome",
       "official_url": "https://www.luiss.it/en",
       "selectivity": "medium",
-      "highlights": ["Admission via SAT (min. 1200) or the Luiss Test"],
-      "risks": ["Check which session applies to Ukrainian (non-EU) applicants"],
+      "highlights": [
+        "Admission via SAT (min. 1200) or the Luiss Test"
+      ],
+      "risks": [
+        "Check which session applies to Ukrainian (non-EU) applicants"
+      ],
       "intakes": [
         {
           "id": "luiss-ba-2027",
@@ -48,7 +72,12 @@
           "label": "September 2027",
           "status_note": "First certification session (non-EU): applications October 2026 – 10 Feb 2027. Luiss Test: applications until 10 Feb 2027, test 22–26 Feb 2027.",
           "windows": [
-            { "id": "cert", "label": "Certification session 1 (SAT)", "opens": "opens", "closes": "cert-close" }
+            {
+              "id": "cert",
+              "label": "Certification session 1 (SAT)",
+              "opens": "opens",
+              "closes": "cert-close"
+            }
           ],
           "deadlines": [
             {
@@ -88,8 +117,21 @@
             }
           ],
           "tuition": {
-            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "Non-EU students", "status": "UNKNOWN", "source": "luiss-cert" },
-            "application_fee": { "amount": 150, "currency": "EUR", "status": "EXPECTED", "source": "luiss-cert", "note": "Participation fee for the certification selection session." },
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU students",
+              "status": "UNKNOWN",
+              "source": "luiss-cert"
+            },
+            "application_fee": {
+              "amount": 150,
+              "currency": "EUR",
+              "status": "EXPECTED",
+              "source": "luiss-cert",
+              "note": "Participation fee for the certification selection session."
+            },
             "fees": []
           },
           "requirements": [
@@ -101,9 +143,14 @@
               "id": "test",
               "category": "tests",
               "title": "SAT (min. 1200) or Luiss Test",
-              "exam": ["SAT", "LUISS_TEST"],
+              "exam": [
+                "SAT",
+                "LUISS_TEST"
+              ],
               "exam_mode": "option",
-              "min_score": { "SAT": 1200 },
+              "min_score": {
+                "SAT": 1200
+              },
               "status": "EXPECTED",
               "source": "luiss-cert"
             },
@@ -117,13 +164,18 @@
       "id": "luiss-eb",
       "name": "Economics and Business",
       "degree": "BSc",
-      "fields": ["economics", "business"],
+      "fields": [
+        "economics",
+        "business"
+      ],
       "language": "English",
       "duration_years": 3,
       "campus": "Rome",
       "official_url": "https://www.luiss.it/en",
       "selectivity": "medium",
-      "highlights": ["Same admission routes as Business Administration"],
+      "highlights": [
+        "Same admission routes as Business Administration"
+      ],
       "risks": [],
       "intakes": [
         {
@@ -133,16 +185,56 @@
           "label": "September 2027",
           "status_note": "Same sessions as Business Administration.",
           "windows": [
-            { "id": "cert", "label": "Certification session 1 (SAT)", "opens": "opens", "closes": "cert-close" }
+            {
+              "id": "cert",
+              "label": "Certification session 1 (SAT)",
+              "opens": "opens",
+              "closes": "cert-close"
+            }
           ],
           "deadlines": [
-            { "id": "opens", "type": "application_opens", "label": "Applications open", "date": null, "date_text": "October 2026", "status": "EXPECTED", "source": "luiss-cert" },
-            { "id": "cert-close", "type": "round", "label": "Certification session 1 deadline", "date": "2027-02-10", "status": "EXPECTED", "source": "luiss-cert" },
-            { "id": "test", "type": "entrance_exam", "label": "Luiss Test", "date": "2027-02-22", "date_end": "2027-02-26", "status": "EXPECTED", "source": "luiss-test" }
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Applications open",
+              "date": null,
+              "date_text": "October 2026",
+              "status": "EXPECTED",
+              "source": "luiss-cert"
+            },
+            {
+              "id": "cert-close",
+              "type": "round",
+              "label": "Certification session 1 deadline",
+              "date": "2027-02-10",
+              "status": "EXPECTED",
+              "source": "luiss-cert"
+            },
+            {
+              "id": "test",
+              "type": "entrance_exam",
+              "label": "Luiss Test",
+              "date": "2027-02-22",
+              "date_end": "2027-02-26",
+              "status": "EXPECTED",
+              "source": "luiss-test"
+            }
           ],
           "tuition": {
-            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "Non-EU students", "status": "UNKNOWN", "source": "luiss-cert" },
-            "application_fee": { "amount": 150, "currency": "EUR", "status": "EXPECTED", "source": "luiss-cert" },
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU students",
+              "status": "UNKNOWN",
+              "source": "luiss-cert"
+            },
+            "application_fee": {
+              "amount": 150,
+              "currency": "EUR",
+              "status": "EXPECTED",
+              "source": "luiss-cert"
+            },
             "fees": []
           },
           "requirements": [
@@ -154,9 +246,14 @@
               "id": "test",
               "category": "tests",
               "title": "SAT (min. 1200) or Luiss Test",
-              "exam": ["SAT", "LUISS_TEST"],
+              "exam": [
+                "SAT",
+                "LUISS_TEST"
+              ],
               "exam_mode": "option",
-              "min_score": { "SAT": 1200 },
+              "min_score": {
+                "SAT": 1200
+              },
               "status": "EXPECTED",
               "source": "luiss-cert"
             },

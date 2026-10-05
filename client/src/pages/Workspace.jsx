@@ -160,6 +160,37 @@ export default function Workspace({ id }) {
           </section>
 
           <section className="card">
+            <h2>Rankings</h2>
+            <p>
+              <strong>{a.ranking.score == null ? '—' : `${a.ranking.score} / 100`}</strong> <span className="muted small">{a.ranking.summary}</span>
+            </p>
+            <table className="table compact">
+              <tbody>
+                {a.ranking.components.map((c) => (
+                  <tr key={c.fid}>
+                    <td>
+                      {c.name}
+                      <div className="muted small">{c.edition ? `Edition ${c.edition}` : 'Edition not stated'}</div>
+                    </td>
+                    <td className="nowrap">{c.not_ranked ? 'Not ranked' : c.rank_text || '—'}</td>
+                    <td className="num">{c.score == null ? '—' : c.score}</td>
+                    <td>
+                      <VerifyBadge status={c.status} />
+                      {c.note && <div className="muted small">{c.note}</div>}
+                      <div className="small">
+                        <SourceLink fact={c} /> <FactControls fact={{ ...c, label: c.name }} kind="rank" />
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="muted small">
+              Score = average of the available rankings, each normalised to 0–100: 100 × (1 − (rank − 1) / institutions ranked). Bands use their midpoint.
+            </p>
+          </section>
+
+          <section className="card">
             <h2>Real cost</h2>
             <table className="table compact">
               <tbody>

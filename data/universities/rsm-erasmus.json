@@ -6,7 +6,26 @@
   "city": "Rotterdam",
   "type": "public",
   "website": "https://www.rsm.nl/",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": "2026",
+      "rank_text": "107",
+      "status": "EXPECTED",
+      "source": "rank-the",
+      "note": "Erasmus University Rotterdam; 2027 position not found yet."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": "2026-2027",
+      "rank_text": "76",
+      "status": "EXPECTED",
+      "source": "rank-usnews",
+      "note": "Erasmus University Rotterdam."
+    }
+  ],
   "sources": [
     {
       "id": "rsm-iba-admission",
@@ -26,7 +45,9 @@
       "type": "merit",
       "amount": 5000,
       "currency": "EUR",
-      "coverage": { "tuition": true },
+      "coverage": {
+        "tuition": true
+      },
       "eligibility": "Non-EEA students, first year only. Check whether RSM IBA participates for 2027/28.",
       "separate_application": true,
       "renewable": false,
@@ -41,14 +62,24 @@
       "id": "rsm-iba",
       "name": "BSc International Business Administration (IBA)",
       "degree": "BSc",
-      "fields": ["business", "management", "international business"],
+      "fields": [
+        "business",
+        "management",
+        "international business"
+      ],
       "language": "English",
       "duration_years": 3,
       "campus": "Rotterdam",
       "official_url": "https://www.rsm.nl/education/bachelor/bsc-international-business-administration-iba/",
       "selectivity": "high",
-      "highlights": ["Numerus fixus selection programme", "Two-step application: Studielink + RSM online form"],
-      "risks": ["Hard deadline: no Studielink registration by 15 Jan = no application, no exceptions", "Non-EU institutional tuition applies"],
+      "highlights": [
+        "Numerus fixus selection programme",
+        "Two-step application: Studielink + RSM online form"
+      ],
+      "risks": [
+        "Hard deadline: no Studielink registration by 15 Jan = no application, no exceptions",
+        "Non-EU institutional tuition applies"
+      ],
       "intakes": [
         {
           "id": "rsm-iba-2027",
@@ -57,7 +88,12 @@
           "label": "September 2027",
           "status_note": "Studielink opened 1 Oct 2026. Register by 15 Jan 2027 23:59 CET, then complete the RSM online application form (OLAF) by 31 Jan 2027.",
           "windows": [
-            { "id": "main", "label": "Studielink registration", "opens": "opens", "closes": "studielink" }
+            {
+              "id": "main",
+              "label": "Studielink registration",
+              "opens": "opens",
+              "closes": "studielink"
+            }
           ],
           "deadlines": [
             {
@@ -88,8 +124,20 @@
             }
           ],
           "tuition": {
-            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "Non-EU (institutional fee)", "status": "UNKNOWN", "source": "rsm-iba-admission" },
-            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "rsm-iba-admission" },
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Non-EU (institutional fee)",
+              "status": "UNKNOWN",
+              "source": "rsm-iba-admission"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "rsm-iba-admission"
+            },
             "fees": []
           },
           "requirements": [

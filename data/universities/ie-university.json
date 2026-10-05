@@ -6,7 +6,26 @@
   "city": "Madrid",
   "type": "private",
   "website": "https://www.ie.edu/university/",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": null,
+      "rank_text": null,
+      "status": "UNKNOWN",
+      "source": "rank-the",
+      "note": "No overall ranking found."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": null,
+      "rank_text": null,
+      "status": "UNKNOWN",
+      "source": "rank-usnews",
+      "note": "No ranking found."
+    }
+  ],
   "sources": [
     {
       "id": "ie-rounds",
@@ -35,9 +54,13 @@
       "amount": null,
       "percent": 100,
       "percent_is_max": true,
-      "coverage": { "tuition": true },
+      "coverage": {
+        "tuition": true
+      },
       "eligibility": "Ukrainian students.",
-      "nationality": ["UA"],
+      "nationality": [
+        "UA"
+      ],
       "separate_application": true,
       "renewable": null,
       "academic_year": "2027/28",
@@ -53,7 +76,9 @@
       "type": "merit",
       "amount": null,
       "percent": null,
-      "coverage": { "tuition": true },
+      "coverage": {
+        "tuition": true
+      },
       "eligibility": "Apply after admission. Merit and financial need.",
       "separate_application": true,
       "renewable": null,
@@ -68,14 +93,23 @@
       "id": "ie-bba",
       "name": "Bachelor in Business Administration (BBA)",
       "degree": "BBA",
-      "fields": ["business", "management", "entrepreneurship"],
+      "fields": [
+        "business",
+        "management",
+        "entrepreneurship"
+      ],
       "language": "English",
       "duration_years": 4,
       "campus": "Madrid",
       "official_url": "https://www.ie.edu/university/studies/academic-programs/bachelor-business-administration/",
       "selectivity": "medium",
-      "highlights": ["Rolling rounds from September to March", "Strong entrepreneurship focus"],
-      "risks": ["High tuition unless a scholarship is awarded"],
+      "highlights": [
+        "Rolling rounds from September to March",
+        "Strong entrepreneurship focus"
+      ],
+      "risks": [
+        "High tuition unless a scholarship is awarded"
+      ],
       "intakes": [
         {
           "id": "ie-bba-2027",
@@ -84,7 +118,12 @@
           "label": "September 2027",
           "status_note": "Rounds for 2027/28: Early 18 Sep 2026, Round 1 6 Nov 2026, Round 2 15 Jan 2027, Round 3 5 Mar 2027. After Round 3: subject to availability.",
           "windows": [
-            { "id": "main", "label": "Admissions rounds", "opens": "opens", "closes": "r3" }
+            {
+              "id": "main",
+              "label": "Admissions rounds",
+              "opens": "opens",
+              "closes": "r3"
+            }
           ],
           "deadlines": [
             {
@@ -144,7 +183,12 @@
               "source": "brief",
               "note": "Figure from the brief; confirm the 2027/28 rate on IE's fees page."
             },
-            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "ie-process" },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "ie-process"
+            },
             "fees": []
           },
           "requirements": [
@@ -166,7 +210,10 @@
               "id": "test",
               "category": "tests",
               "title": "IE Admissions Test (or accepted alternative such as SAT)",
-              "exam": ["IE_TEST", "SAT"],
+              "exam": [
+                "IE_TEST",
+                "SAT"
+              ],
               "exam_mode": "option",
               "status": "EXPECTED",
               "source": "typical"
