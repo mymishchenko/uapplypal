@@ -37,7 +37,7 @@ export default function Alerts() {
         <div>
           <h1>Email alerts</h1>
           <p className="muted small">
-            Your tracking agent checks every hour and emails you about deadlines and progress. It only reads your UApplyPal data and never searches the web.
+            Your tracking agent checks every hour and emails you about deadlines and progress. It only reads your uApplyPal data and never searches the web.
           </p>
         </div>
         <button className="primary" disabled={!status.configured || sending} onClick={sendTest}>

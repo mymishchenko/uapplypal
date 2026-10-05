@@ -90,12 +90,12 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<
 function layout(title, bodyHtml, siteUrl) {
   return `<!doctype html><html><body style="margin:0;background:#f6f7f9;font-family:Arial,Helvetica,sans-serif;color:#1c2230">
 <div style="max-width:640px;margin:0 auto;padding:20px">
-<div style="font-size:20px;font-weight:800;font-style:italic;margin-bottom:12px"><span style="color:#0a2370">UApply</span><span style="color:#0a6cff">Pal</span></div>
+<div style="margin-bottom:12px"><img src="${esc(siteUrl)}logo.png" alt="uApplyPal" width="170" style="display:block;width:170px;height:auto;border:0"></div>
 <div style="background:#fff;border:1px solid #e3e6ec;border-radius:8px;padding:18px">
 <h2 style="margin:0 0 12px;font-size:18px">${esc(title)}</h2>
 ${bodyHtml}
 </div>
-<p style="font-size:12px;color:#667085">Sent by your UApplyPal agent · <a href="${esc(siteUrl)}" style="color:#0a5ce0">Open UApplyPal</a> · Dates marked “not verified” must be checked on the official page.</p>
+<p style="font-size:12px;color:#667085">Sent by your uApplyPal agent · <a href="${esc(siteUrl)}" style="color:#0a5ce0">Open uApplyPal</a> · Dates marked “not verified” must be checked on the official page.</p>
 </div></body></html>`;
 }
 
@@ -112,7 +112,7 @@ function alertEmail(items, siteUrl) {
   const subject =
     items.length === 1
       ? `${first.overdue ? 'Missed' : '⏰'} ${first.title} ${when(first.days)}`
-      : `⏰ ${items.length} UApplyPal deadlines: next ${first.title} ${when(first.days)}`;
+      : `⏰ ${items.length} uApplyPal deadlines: next ${first.title} ${when(first.days)}`;
   const html = layout(
     items.some((i) => i.overdue) ? 'Deadlines need attention' : 'Upcoming deadlines',
     `<table style="width:100%;border-collapse:collapse">${items.map((i) => row(i, siteUrl)).join('')}</table>`,
@@ -179,7 +179,7 @@ function weeklyEmail(view, today, siteUrl) {
 
   const textActions = d.actions.slice(0, 8).map((a) => `- ${a.title}: ${formatDate(a.date)} (${when(a.days_left)})${a.verified ? '' : ' [not verified]'}`);
   return {
-    subject: `UApplyPal weekly summary: ${formatDate(today)}`,
+    subject: `uApplyPal weekly summary: ${formatDate(today)}`,
     html: layout(`Weekly summary: ${formatDate(today)}`, body, siteUrl),
     text: `Weekly summary ${formatDate(today)}\n\nNext actions:\n${textActions.join('\n') || '- none'}\n\n${siteUrl}`,
   };

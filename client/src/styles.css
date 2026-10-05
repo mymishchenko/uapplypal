@@ -147,21 +147,17 @@ button.link {
   color: var(--text);
   padding: 0 8px 14px;
 }
-.logo-lockup {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.logo-img {
+  display: block;
+  width: 170px;
+  height: auto;
 }
-.wordmark {
-  font-weight: 800;
-  font-style: italic;
-  letter-spacing: -0.02em;
-}
-.wm-navy {
-  color: var(--navy);
-}
-.wm-blue {
-  color: var(--brand-blue);
+@media (prefers-color-scheme: dark) {
+  .logo-img {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 4px 6px;
+  }
 }
 .sidebar ul {
   list-style: none;
@@ -668,6 +664,9 @@ ul.plain li:last-child {
   }
   .sidebar-foot {
     display: none;
+  }
+  .logo-img {
+    width: 140px;
   }
   .content {
     padding: 16px;

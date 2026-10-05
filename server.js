@@ -23,7 +23,7 @@ const port = Number(args.port || process.env.PORT) || 3000;
 
 const app = createApp();
 app.listen(port, host, () => {
-  console.log(`UApplyPal listening on http://${host}:${port}`);
+  console.log(`uApplyPal listening on http://${host}:${port}`);
   // The tracking agent: hourly checks for deadline alerts and the Monday summary.
   app.locals.notifier.start();
 });

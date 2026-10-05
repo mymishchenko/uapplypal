@@ -21,7 +21,7 @@ function createMailer(config = mailConfig()) {
   return {
     to: config.to,
     send: ({ subject, html, text }) =>
-      transport.sendMail({ from: `UApplyPal <${config.user}>`, to: config.to, subject, html, text }),
+      transport.sendMail({ from: `uApplyPal <${config.user}>`, to: config.to, subject, html, text }),
   };
 }
 
