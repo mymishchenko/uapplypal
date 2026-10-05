@@ -123,12 +123,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 14310,
               "currency": "EUR",
               "period": "year",
               "group": "Non-EU (institutional fee)",
-              "status": "UNKNOWN",
-              "source": "vu-iba"
+              "status": "EXPECTED",
+              "source": "vu-iba",
+              "note": "€14,310/yr reported (likely 2026/27); 2027/28 rate not checked."
             },
             "application_fee": {
               "amount": null,

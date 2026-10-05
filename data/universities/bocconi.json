@@ -49,6 +49,22 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": "2026-10-05"
+    },
+    {
+      "id": "bocconi-fees",
+      "title": "Bocconi: bachelor fees",
+      "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/fees",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "bocconi-funding",
+      "title": "Bocconi: bachelor funding (merit awards, international award, Bocconi4Access, ISU)",
+      "url": "https://www.unibocconi.it/en/applying-bocconi/bachelor-and-law-programs/funding",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -80,21 +96,59 @@
     },
     {
       "id": "merit",
-      "name": "Bocconi merit awards for international students",
+      "name": "Bocconi Merit Award",
       "provider": "university",
       "type": "merit",
       "amount": null,
-      "percent": null,
+      "percent": 100,
       "coverage": {
         "tuition": true
       },
-      "eligibility": "Merit-based. Details to be checked.",
-      "separate_application": null,
+      "eligibility": "Top international applicants; assessed automatically from the admission application. Full tuition waiver.",
+      "separate_application": false,
+      "renewable": true,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "bocconi-funding",
+      "note": "Very competitive. Renewal depends on academic performance."
+    },
+    {
+      "id": "international-award",
+      "name": "Bocconi International Award",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": 50,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Strong international (non-Italian) applicants; assessed from the admission application.",
+      "separate_application": false,
+      "renewable": true,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "bocconi-funding"
+    },
+    {
+      "id": "bocconi4access",
+      "name": "Bocconi4Access",
+      "provider": "university",
+      "type": "need",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "International students from lower-income families: 100% tuition waiver in year 1.",
+      "separate_application": true,
       "renewable": null,
       "academic_year": "2027/28",
       "availability": "UNKNOWN",
-      "status": "UNKNOWN",
-      "source": "bocconi-admissions"
+      "status": "EXPECTED",
+      "source": "bocconi-funding",
+      "note": "Year 1 only, then other aid may apply."
     }
   ],
   "programs": [
@@ -191,13 +245,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 17000,
               "currency": "EUR",
               "period": "year",
-              "group": "International students",
-              "status": "UNKNOWN",
-              "source": "bocconi-admissions",
-              "note": "Bocconi tuition depends on family income for some students; enter the 2027/28 figure."
+              "group": "All students (EU and non-EU)",
+              "status": "EXPECTED",
+              "source": "bocconi-fees",
+              "note": "About €17,000 for first-year BSc students in 2026/27 (search summary of the official fees page). 2027/28 rate not published."
             },
             "application_fee": {
               "amount": null,

@@ -77,9 +77,9 @@
         "tuition_percent_off": 100
       },
       "eligibility": "Ukrainian citizens.",
-      "status": "UNKNOWN",
+      "status": "EXPECTED",
       "source": "univie-remission",
-      "note": "Do NOT assume the 2026/27 remission continues."
+      "note": "Austrian ministry exemption ran until 28 Feb 2026 and is reported for winter 2026/27. Not announced for 2027/28: do NOT assume it continues."
     }
   ],
   "scholarships": [],

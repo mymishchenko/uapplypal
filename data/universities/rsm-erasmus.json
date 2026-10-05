@@ -34,6 +34,22 @@
       "type": "official_admissions",
       "academic_year": "2027/28",
       "date_checked": "2026-10-04"
+    },
+    {
+      "id": "rsm-iba-fees",
+      "title": "RSM: IBA tuition and scholarships",
+      "url": "https://www.rsm.nl/bachelor/international-business-administration/tuition-scholarships/scholarship-finder/",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "rsm-excellence",
+      "title": "RSM non-EEA Scholarship of Excellence (IBA)",
+      "url": "https://www.rsm.nl/education/scholarships/iba-scholarships/rsm-non-eea-scholarship-of-excellence-iba/",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -53,8 +69,28 @@
       "renewable": false,
       "academic_year": "2027/28",
       "availability": "UNKNOWN",
-      "status": "UNKNOWN",
-      "source": "holland-scholarship"
+      "status": "EXPECTED",
+      "source": "holland-scholarship",
+      "note": "Erasmus awards €5,000, €10,000 or €15,000 (faculty decides), first year only."
+    },
+    {
+      "id": "excellence",
+      "name": "RSM non-EEA Scholarship of Excellence (IBA)",
+      "provider": "university",
+      "type": "merit",
+      "amount": 12429,
+      "percent": null,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Non-EEA IBA applicants with excellent grades. For 2026/27 the window was 1 Oct – 31 Jan, decisions 15 Apr.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "rsm-excellence",
+      "amount_text": "Difference between the non-EEA and EEA fee (≈ €12,429 in 2027/28)"
     }
   ],
   "programs": [
@@ -125,12 +161,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 15200,
               "currency": "EUR",
               "period": "year",
               "group": "Non-EU (institutional fee)",
-              "status": "UNKNOWN",
-              "source": "rsm-iba-admission"
+              "status": "EXPECTED",
+              "source": "rsm-excellence",
+              "note": "€15,200 for 2027/28 (EEA statutory fee €2,771). Search summary of the official scholarship page."
             },
             "application_fee": {
               "amount": null,

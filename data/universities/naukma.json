@@ -42,6 +42,14 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": "2026-10-05"
+    },
+    {
+      "id": "naukma-prices-2026",
+      "title": "Glavcom: tuition at popular Ukrainian universities, 2026/27",
+      "url": "https://glavcom.ua/country/science/skilki-koshtuje-navchannja-u-najpopuljarnishikh-universitetakh-ukrajini-novi-tsini-na-2026-2027-rik-1131700.html",
+      "type": "news",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -152,13 +160,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 1562,
               "currency": "EUR",
               "period": "year",
               "group": "Paid place",
-              "status": "UNKNOWN",
-              "source": "naukma-econ",
-              "note": "Paid-place tuition is set in UAH each year; enter the 2027/28 figure."
+              "status": "EXPECTED",
+              "source": "naukma-prices-2026",
+              "detail": "75,000 UAH/yr in 2026/27 (another source: 72,000) (≈ €1562 at 48 UAH/€)",
+              "note": "2026/27 price for Economics; 2027/28 set next spring."
             },
             "application_fee": {
               "amount": 0,
@@ -294,13 +303,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 1667,
               "currency": "EUR",
               "period": "year",
               "group": "Paid place",
-              "status": "UNKNOWN",
-              "source": "naukma-finance",
-              "note": "Paid-place tuition is set in UAH each year; enter the 2027/28 figure."
+              "status": "EXPECTED",
+              "source": "naukma-prices-2026",
+              "detail": "About 75,000–80,000 UAH/yr in 2026/27 (Management: 80,000) (≈ €1667 at 48 UAH/€)",
+              "note": "Finance price not found separately; Management price used as an estimate."
             },
             "application_fee": {
               "amount": 0,

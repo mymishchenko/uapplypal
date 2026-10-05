@@ -8,22 +8,19 @@ function annualise(fact) {
   return fact.period === 'semester' ? fact.amount * 2 : fact.amount;
 }
 
-function isUkrainian(student) {
-  return /ukrain/i.test((student.personal && student.personal.citizenships) || '');
-}
-
-function eligibleByNationality(item, student) {
-  if (!item.nationality) return true;
-  return item.nationality.includes('UA') && isUkrainian(student);
-}
+const { appliesToUniversity, eligibility, isUkrainian } = require('./funding');
 
 function costFor({ intake, university, benefits, scholarships, livingCosts, student }) {
   const sticker = intake.tuition.sticker;
   const stickerAnnual = annualise(sticker);
 
+  // Benefits in the data are Ukraine-specific rules unless they say otherwise;
+  // they must also match the student's categories (e.g. child of a combatant).
   const relevantBenefits = benefits.filter(
-    // Benefits in the data are Ukraine-specific rules unless they say otherwise.
-    (b) => b.university_id === university.id && b.academic_year === intake.academic_year && eligibleByNationality({ nationality: b.nationality || ['UA'] }, student),
+    (b) =>
+      appliesToUniversity(b, university) &&
+      b.academic_year === intake.academic_year &&
+      eligibility(b, student, { defaultNationality: ['UA'] }).eligible,
   );
   const confirmed = relevantBenefits.find((b) => b.state === 'ACTIVE' && b.status === 'VERIFIED' && b.effect);
   let studentTuition = stickerAnnual;
@@ -45,8 +42,8 @@ function costFor({ intake, university, benefits, scholarships, livingCosts, stud
     if (b.state === 'EXPIRED' || !b.effect || stickerAnnual == null) continue;
     options.push({ name: b.title, tuition: applyEffect(stickerAnnual, b.effect), certainty: certainty(b.state === 'ACTIVE' && b.status === 'VERIFIED') });
   }
-  for (const s of scholarships.filter((x) => x.university_id === university.id)) {
-    if (s.availability === 'NOT_AVAILABLE' || !eligibleByNationality(s, student) || stickerAnnual == null) continue;
+  for (const s of scholarships.filter((x) => appliesToUniversity(x, university))) {
+    if (s.availability === 'NOT_AVAILABLE' || !eligibility(s, student).eligible || stickerAnnual == null) continue;
     let tuition = null;
     if (s.percent != null) tuition = stickerAnnual * (1 - s.percent / 100);
     else if (s.amount != null) tuition = Math.max(0, stickerAnnual - s.amount);
@@ -85,7 +82,7 @@ function costFor({ intake, university, benefits, scholarships, livingCosts, stud
           up_to: best.upTo,
         }
       : null,
-    benefits: relevantBenefits.map((b) => ({ fid: b.fid, title: b.title, state: b.state, status: b.status, academic_year: b.academic_year, note: b.note })),
+    benefits: relevantBenefits.map((b) => ({ fid: b.fid, title: b.title, state: b.state, status: b.status, academic_year: b.academic_year, note: b.note, national: !b.university_id })),
     cheapest_route: best
       ? `${best.name}${best.upTo ? ' (up to)' : ''}: ${best.certainty === 'confirmed' ? 'confirmed' : 'not confirmed'}`
       : studentTuition == null

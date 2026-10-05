@@ -42,25 +42,44 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ucu-prices-2026",
+      "title": "UCU: bachelor tuition for 2026 entrants",
+      "url": "https://vstup.ucu.edu.ua/bakalavrat/vartist-navchannya-na-bakalavrskyh-programah/",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ucu-support-2026",
+      "title": "UCU: financial support for entrants 2026",
+      "url": "https://vstup.ucu.edu.ua/bakalavrat/otrymaty-stypendiyu/",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
   "scholarships": [
     {
       "id": "ucu-aid",
-      "name": "UCU scholarships and tuition discounts",
+      "name": "UCU financial support (scholarship)",
       "provider": "university",
-      "type": "merit",
+      "type": "merit_need",
       "amount": null,
+      "percent": 100,
       "coverage": {
         "tuition": true
       },
-      "eligibility": "To be checked.",
-      "separate_application": null,
+      "eligibility": "University support covering 25–100% of tuition, awarded for 2 years of study. No separate scheme for defenders’ children found: the state compensation applies.",
+      "separate_application": true,
+      "renewable": null,
       "academic_year": "2027/28",
       "availability": "UNKNOWN",
-      "status": "UNKNOWN",
-      "source": "ucu"
+      "status": "EXPECTED",
+      "source": "ucu-support-2026",
+      "percent_is_max": true
     }
   ],
   "programs": [
@@ -150,13 +169,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 3438,
               "currency": "EUR",
               "period": "year",
               "group": "Paid place",
-              "status": "UNKNOWN",
-              "source": "ucu",
-              "note": "Paid-place tuition is set in UAH each year; enter the 2027/28 figure."
+              "status": "EXPECTED",
+              "source": "ucu-prices-2026",
+              "detail": "165,000 UAH/yr for 2026 entrants, all bachelor programs (≈ €3438 at 48 UAH/€)",
+              "note": "2026/27 price; UCU says prices rise about 12% a year."
             },
             "application_fee": {
               "amount": 0,
@@ -291,13 +311,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 3438,
               "currency": "EUR",
               "period": "year",
               "group": "Paid place",
-              "status": "UNKNOWN",
-              "source": "ucu-epe",
-              "note": "Paid-place tuition is set in UAH each year; enter the 2027/28 figure."
+              "status": "EXPECTED",
+              "source": "ucu-prices-2026",
+              "detail": "165,000 UAH/yr for 2026 entrants, all bachelor programs (≈ €3438 at 48 UAH/€)",
+              "note": "2026/27 price; UCU says prices rise about 12% a year."
             },
             "application_fee": {
               "amount": 0,

@@ -24,6 +24,13 @@ documents) is not stored here. It lives in the runtime store (`data/runtime/`, n
 - `exams.json`: exam catalog (SAT, IELTS, university tests…) with preparation resources.
 - `living-costs.json`: rough monthly living-cost estimates per city.
 - `sources.json`: shared sources (project brief, estimates, ranking sites).
+- `national-schemes.json`: country-wide funding (e.g. Ukrainian state compensation of contract tuition
+  for children of combatants and fallen defenders, the state grant, the Dutch temporary-protection fee).
+  Each scheme is a `benefit` or `scholarship` for a `country`, optionally only `university_types`
+  (`public`/`private`). `categories` (defined in the same file) limits it to students who ticked that
+  family/residence status in their profile; scholarships and benefits in university files can use them too.
+  Fact ids are `nat.<id>`.
+- Tuition is stored in EUR per year. For UAH/PLN prices put the original in `detail` with the rate used.
 - `rankings.json`: ranking systems (THE, U.S. News) and how many institutions each edition ranks.
   Each university lists its `rankings` (system, edition, `rank_text` like `107`, `=176`, `301–350` or
   `not ranked`). The app averages the ranks after normalising each to 0–100 by edition size.

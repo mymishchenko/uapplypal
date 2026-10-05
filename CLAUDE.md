@@ -10,11 +10,13 @@ for September 2027. Keep models generic (other students, countries, years).
   Read `data/README.md` before editing. **Program ≠ Intake**: deadlines, tuition and
   requirements belong to the intake (academic year).
 - `src/catalog.js`: loads and validates data, assigns global fact ids (`<intake>.d.<id>`,
-  `<intake>.r.<id>`, `<intake>.t.sticker`, `<uni>.s.<id>`, `<uni>.b.<id>`), applies user overrides.
+  `<intake>.r.<id>`, `<intake>.t.sticker`, `<uni>.s.<id>`, `<uni>.b.<id>`, national schemes `nat.<id>` from
+  `data/national-schemes.json`), applies user overrides.
 - `src/store.js`: personal data (profile, application progress, documents, exam plans,
   verifications) in `data/runtime/store.json` (gitignored, never deployed over).
 - `src/logic/`: all business rules. `windows.js` (Can I apply now?), `cost.js` (real cost),
-  `match.js` (fit + Reach/Target/Safe estimate), `rankings.js` (combined ranking score: THE and
+  `match.js` (fit + Reach/Target/Safe estimate), `funding.js` (which scholarships/benefits apply to a
+  university and fit the student's nationality and family-status categories), `rankings.js` (combined ranking score: THE and
   U.S. News ranks each normalised to 0–100 by edition size, then averaged), `examStrategy.js`
   (must-take exams = only option for some application; recommended = greedy set cover over the
   choice slots, ties by plan status then `preference` in exams.json), `views.js` (dashboard, actions, exam planner,

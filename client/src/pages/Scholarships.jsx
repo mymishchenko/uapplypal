@@ -1,19 +1,26 @@
 import { useApp } from '../state.jsx';
-import { VerifyBadge, SourceLink, StatusSelect, FactControls } from '../components/ui.jsx';
-import { money, label, deadlineText } from '../format.js';
+import { VerifyBadge, SourceLink, StatusSelect, FactControls, EligibilityBadges } from '../components/ui.jsx';
+import { money, label, deadlineText, fundingAmount } from '../format.js';
+
+// Unique items across the portfolio; national schemes list every university they apply to.
+function collect(portfolio, key) {
+  const map = new Map();
+  for (const a of portfolio) {
+    for (const item of a[key]) {
+      const e = map.get(item.fid) || { ...item, unis: [] };
+      if (!e.unis.includes(a.university.short_name)) e.unis.push(a.university.short_name);
+      map.set(item.fid, e);
+    }
+  }
+  return [...map.values()].sort((x, y) => Number(y.eligible) - Number(x.eligible));
+}
 
 export default function Scholarships() {
   const { view, mutate } = useApp();
   const portfolio = view.applications.filter((a) => a.active);
-  const seen = new Set();
-  const scholarships = [];
-  for (const a of portfolio) {
-    for (const s of a.scholarships) {
-      if (seen.has(s.fid)) continue;
-      seen.add(s.fid);
-      scholarships.push({ ...s, uni: a.university.short_name });
-    }
-  }
+  const scholarships = collect(portfolio, 'scholarships');
+  const benefits = collect(portfolio, 'benefits');
+  const cats = view.student.personal.support_categories || [];
   const setSch = (fid, progress) => mutate(`/scholarships/${encodeURIComponent(fid)}`, { method: 'PUT', body: { progress } });
 
   return (
@@ -62,6 +69,54 @@ export default function Scholarships() {
       </section>
 
       <section className="card">
+        <h2>Benefits & state support ({benefits.length})</h2>
+        <p className="muted small">
+          Tuition waivers and state support tied to nationality or family status, such as Ukrainian state support for children of combatants (УБД) and fallen defenders. They only lower
+          your estimate when they fit your profile and are confirmed for 2027/28.{' '}
+          {cats.length ? (
+            <>Your status: {cats.map((c) => (view.funding_categories.find((x) => x.code === c) || { label: c }).label).join(', ')}. </>
+          ) : (
+            <>No family status ticked: </>
+          )}
+          <a href="#/profile">edit on Profile</a>.
+        </p>
+        <div className="table-wrap">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Benefit</th>
+                <th>Applies at</th>
+                <th>2027/28</th>
+                <th>Verification</th>
+              </tr>
+            </thead>
+            <tbody>
+              {benefits.map((b) => (
+                <tr key={b.fid} className={b.eligible ? '' : 'dim'}>
+                  <td>
+                    <strong>{b.title}</strong> <EligibilityBadges item={b} />
+                    {b.eligibility && <div className="small">{b.eligibility}</div>}
+                    {b.note && <div className="muted small">{b.note}</div>}
+                  </td>
+                  <td className="small">{b.unis.join(', ')}</td>
+                  <td>
+                    <span className={`badge ${b.state === 'ACTIVE' ? 'green' : b.state === 'EXPIRED' ? 'grey' : 'amber'}`}>{b.state === 'ACTIVE' ? 'Active' : b.state === 'EXPIRED' ? 'Ended' : 'Not announced'}</span>
+                  </td>
+                  <td className="small">
+                    <VerifyBadge status={b.status} />
+                    <div>
+                      <SourceLink fact={b} />
+                    </div>
+                    <FactControls fact={b} kind="none" />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="card">
         <h2>Scholarships found ({scholarships.length})</h2>
         <div className="table-wrap">
           <table className="table">
@@ -80,13 +135,14 @@ export default function Scholarships() {
             </thead>
             <tbody>
               {scholarships.map((s) => (
-                <tr key={s.fid}>
+                <tr key={s.fid} className={s.eligible ? '' : 'dim'}>
                   <td>
-                    <strong>{s.name}</strong>
-                    <div className="muted small">{s.uni}</div>
+                    <strong>{s.name}</strong> <EligibilityBadges item={s} />
+                    <div className="muted small">{s.unis.join(', ')}</div>
                     <div className="small">{s.eligibility}</div>
+                    {s.note && <div className="muted small">{s.note}</div>}
                   </td>
-                  <td className="nowrap">{s.percent != null ? `${s.percent_is_max ? 'up to ' : ''}${s.percent}%` : s.amount != null ? money(s.amount) : 'Unknown'}</td>
+                  <td className="small">{fundingAmount(s)}</td>
                   <td className="small">{label(s.type)}</td>
                   <td className="small">
                     {Object.entries(s.coverage || {})

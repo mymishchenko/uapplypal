@@ -26,6 +26,9 @@ function loadRaw(dataDir) {
     livingCosts: readJson(path.join(dataDir, 'living-costs.json')),
     studentSeed: readJson(path.join(dataDir, 'student.seed.json')),
     rankingSystems: readJson(path.join(dataDir, 'rankings.json')).systems,
+    national: fs.existsSync(path.join(dataDir, 'national-schemes.json'))
+      ? readJson(path.join(dataDir, 'national-schemes.json'))
+      : { categories: [], sources: [], schemes: [] },
   };
 }
 
@@ -47,6 +50,8 @@ function buildCatalog(raw, overrides = {}) {
     sources[s.id] = s;
   };
   raw.sources.forEach(addSource);
+  const national = raw.national || { categories: [], sources: [], schemes: [] };
+  national.sources.forEach(addSource);
 
   const facts = {};
   const universities = [];
@@ -122,6 +127,23 @@ function buildCatalog(raw, overrides = {}) {
     }
   }
 
+  // National schemes apply to every university in a country (fid "nat.<id>").
+  const categoryCodes = new Set(national.categories.map((c) => c.code));
+  for (const n of national.schemes) {
+    const { kind, benefit_kind: benefitKind, ...item } = n;
+    for (const c of item.categories || []) {
+      if (!categoryCodes.has(c)) throw new Error(`National scheme "${n.id}" uses unknown category "${c}"`);
+    }
+    if (kind === 'benefit') benefits.push(registerFact(`nat.${n.id}`, { ...item, kind: benefitKind || null }));
+    else if (kind === 'scholarship') scholarships.push(registerFact(`nat.${n.id}`, item));
+    else throw new Error(`National scheme "${n.id}" has invalid kind "${kind}"`);
+  }
+  for (const s of [...scholarships, ...benefits]) {
+    for (const c of s.categories || []) {
+      if (!categoryCodes.has(c)) throw new Error(`Fact "${s.fid}" uses unknown category "${c}"`);
+    }
+  }
+
   // Validate references so data mistakes fail loudly at startup / in tests.
   for (const fact of Object.values(facts)) {
     if (fact.source && !sources[fact.source]) {
@@ -148,6 +170,7 @@ function buildCatalog(raw, overrides = {}) {
     exams: raw.exams,
     livingCosts: raw.livingCosts,
     rankingSystems: raw.rankingSystems,
+    fundingCategories: national.categories,
     templates: raw.templates,
   };
 }

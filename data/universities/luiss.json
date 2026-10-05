@@ -40,10 +40,68 @@
       "type": "official_admissions",
       "academic_year": "2027/28",
       "date_checked": "2026-10-04"
+    },
+    {
+      "id": "luiss-fees",
+      "title": "LUISS: tuition fees",
+      "url": "https://api.luiss.it/en/fees",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "luiss-ukraine-2022",
+      "title": "LUISS: ten tuition-exemption scholarships for Ukrainian students (2022)",
+      "url": "https://indiplomacy.it/en/ukraine-luiss-ten-scolarship-for-students-2022/",
+      "type": "news",
+      "academic_year": "2022/23",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
-  "scholarships": [],
+  "scholarships": [
+    {
+      "id": "ukraine",
+      "name": "LUISS scholarships for students from Ukraine",
+      "provider": "university",
+      "type": "nationality",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "In 2022 LUISS funded 10 full tuition exemptions for Ukrainian students from war-affected areas.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "luiss-ukraine-2022",
+      "nationality": [
+        "UA"
+      ],
+      "note": "2022 scheme; not confirmed for 2027/28."
+    },
+    {
+      "id": "international",
+      "name": "LUISS scholarships for international students",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Merit-based awards for international applicants.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "luiss-fees",
+      "percent_is_max": true
+    }
+  ],
   "programs": [
     {
       "id": "luiss-ba",
@@ -118,12 +176,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 14500,
               "currency": "EUR",
               "period": "year",
-              "group": "Non-EU students",
-              "status": "UNKNOWN",
-              "source": "luiss-cert"
+              "group": "All students",
+              "status": "EXPECTED",
+              "source": "luiss-fees",
+              "note": "About €14,000–15,000/yr, same for all nationalities (search summary). 2027/28 rate not published."
             },
             "application_fee": {
               "amount": 150,
@@ -234,12 +293,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 14500,
               "currency": "EUR",
               "period": "year",
-              "group": "Non-EU students",
-              "status": "UNKNOWN",
-              "source": "luiss-cert"
+              "group": "All students",
+              "status": "EXPECTED",
+              "source": "luiss-fees",
+              "note": "About €14,000–15,000/yr, same for all nationalities (search summary). 2027/28 rate not published."
             },
             "application_fee": {
               "amount": 150,

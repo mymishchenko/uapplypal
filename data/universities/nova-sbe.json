@@ -34,6 +34,14 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": "2026-10-04"
+    },
+    {
+      "id": "nova-fees",
+      "title": "Nova SBE: Bachelor in Management fees",
+      "url": "https://www.novasbe.unl.pt/en/programs/bachelors/management/fees",
+      "type": "official_admissions",
+      "academic_year": "2025/26",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -96,12 +104,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 7500,
               "currency": "EUR",
               "period": "year",
-              "group": "Non-EU students",
-              "status": "UNKNOWN",
-              "source": "nova-intl"
+              "group": "International students",
+              "status": "EXPECTED",
+              "source": "nova-fees",
+              "detail": "Includes a €750 enrolment payment (10% of tuition)",
+              "note": "2025/26 figure; check the 2027/28 rate."
             },
             "application_fee": {
               "amount": null,

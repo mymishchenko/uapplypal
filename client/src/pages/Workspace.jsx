@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useApp } from '../state.jsx';
-import { ApplyBadge, CategoryBadge, MatchBadge, VerifyBadge, SourceLink, FactControls, StatusSelect } from '../components/ui.jsx';
-import { money, deadlineText, daysLabel, label } from '../format.js';
+import { ApplyBadge, CategoryBadge, MatchBadge, VerifyBadge, SourceLink, FactControls, StatusSelect, EligibilityBadges } from '../components/ui.jsx';
+import { money, deadlineText, daysLabel, label, fundingAmount } from '../format.js';
 
 const CATEGORIES = [
   ['academic', 'Academic'],
@@ -257,24 +257,25 @@ export default function Workspace({ id }) {
             </p>
           </section>
 
-          {(c.benefits.length > 0 || a.scholarships.length > 0) && (
+          {(a.benefits.length > 0 || a.scholarships.length > 0) && (
             <section className="card">
               <h2>Scholarships & Ukrainian student rules</h2>
-              {c.benefits.map((b) => (
-                <div key={b.fid} className="sch">
+              {a.benefits.map((b) => (
+                <div key={b.fid} className={`sch ${b.eligible ? '' : 'dim'}`}>
                   <strong>{b.title}</strong> <span className={`badge ${b.state === 'ACTIVE' ? 'green' : b.state === 'EXPIRED' ? 'grey' : 'amber'}`}>{b.state === 'UNKNOWN' ? `UNKNOWN FOR ${b.academic_year}` : `${b.state} ${b.academic_year}`}</span>{' '}
-                  <VerifyBadge status={b.status} />
+                  <VerifyBadge status={b.status} /> <EligibilityBadges item={b} />
+                  {b.eligibility && <div className="small">{b.eligibility}</div>}
                   {b.note && <div className="muted small">{b.note}</div>}
-                  <div className="small">
-                    <FactControls fact={b} kind="none" />
+                  <div className="small row">
+                    <SourceLink fact={b} /> <FactControls fact={b} kind="none" />
                   </div>
                 </div>
               ))}
               {a.scholarships.map((s) => (
-                <div key={s.fid} className="sch">
-                  <strong>{s.name}</strong>{' '}
+                <div key={s.fid} className={`sch ${s.eligible ? '' : 'dim'}`}>
+                  <strong>{s.name}</strong> <EligibilityBadges item={s} />{' '}
                   <span className="muted small">
-                    {s.percent != null ? `${s.percent_is_max ? 'up to ' : ''}${s.percent}%` : s.amount != null ? money(s.amount) : 'amount unknown'} · {label(s.type)} ·{' '}
+                    {fundingAmount(s)} · {label(s.type)} ·{' '}
                     {s.availability === 'AVAILABLE' ? 'available' : s.availability === 'NOT_AVAILABLE' ? 'not available' : 'availability unknown'}
                   </span>
                   <div className="small">{s.eligibility}</div>

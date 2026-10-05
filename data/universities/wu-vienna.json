@@ -50,6 +50,14 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": "2026-10-05"
+    },
+    {
+      "id": "wu-tuition-fees",
+      "title": "WU: tuition fees and ÖH dues",
+      "url": "https://www.wu.ac.at/en/students/getting-organized/tuition-fees-students-union-oeh-dues",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [
@@ -62,13 +70,37 @@
       "effect": {
         "tuition_percent_off": 100
       },
-      "eligibility": "Ukrainian citizens (check whether residence status matters).",
-      "status": "UNKNOWN",
-      "source": "brief",
-      "note": "Austrian universities have waived tuition for Ukrainian students in recent semesters. Not confirmed for WU 2027/28; do not assume it continues."
+      "eligibility": "Ukrainian citizens at Austrian public universities (automatic, no application). Students’ Union fee still payable.",
+      "status": "EXPECTED",
+      "source": "wu-tuition-fees",
+      "note": "The ministry exemption ran until 28 Feb 2026; the University of Vienna reports it for winter 2026/27 as well. Not announced for 2027/28: do not assume it continues."
     }
   ],
-  "scholarships": [],
+  "scholarships": [
+    {
+      "id": "ernst-mach-ukraine",
+      "name": "Ernst Mach Ukraine scholarship",
+      "provider": "government",
+      "type": "nationality",
+      "amount": null,
+      "percent": null,
+      "coverage": {
+        "living": true
+      },
+      "eligibility": "Ukrainian students already studying in Austria (OeAD).",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "wu-tuition-fees",
+      "amount_text": "€715/month",
+      "nationality": [
+        "UA"
+      ],
+      "note": "Extended until 28 Feb 2026 for about 630 students; not confirmed for new 2027 students."
+    }
+  ],
   "programs": [
     {
       "id": "wu-bbe",

@@ -7,6 +7,7 @@ const { costFor } = require('./cost');
 const { assess } = require('./match');
 const { rankingFor } = require('./rankings');
 const { examStrategy } = require('./examStrategy');
+const { appliesToUniversity, eligibility } = require('./funding');
 
 const APPLICATION_STATUSES = ['not_started', 'preparing', 'ready', 'submitted', 'offer', 'waitlisted', 'rejected', 'withdrawn', 'not_applying'];
 const INACTIVE = new Set(['withdrawn', 'not_applying', 'rejected']);
@@ -29,7 +30,7 @@ function withSource(fact, sources) {
 }
 
 function buildView(catalog, state, today) {
-  const { universities, programs, intakes, scholarships, benefits, sources, livingCosts, exams, rankingSystems } = catalog;
+  const { universities, programs, intakes, scholarships, benefits, sources, livingCosts, exams, rankingSystems, fundingCategories = [] } = catalog;
   const student = state.student;
   const uniById = Object.fromEntries(universities.map((u) => [u.id, u]));
   const programById = Object.fromEntries(programs.map((p) => [p.id, p]));
@@ -57,9 +58,18 @@ function buildView(catalog, state, today) {
       .map((d) => ({ ...withSource(d, sources), days_left: d.date ? daysBetween(today, d.date) : null }))
       .sort((a, b) => (a.date || '9999').localeCompare(b.date || '9999'));
 
+    const fit = (item, opts) => {
+      const e = eligibility(item, student, opts);
+      return { eligible: e.eligible, ineligible_reason: e.reason, national: !item.university_id };
+    };
     const uniScholarships = scholarships
-      .filter((s) => s.university_id === university.id)
-      .map((s) => ({ ...withSource(s, sources), progress: state.scholarshipStatus[s.fid] || 'not_started' }));
+      .filter((s) => appliesToUniversity(s, university))
+      .map((s) => ({ ...withSource(s, sources), ...fit(s), progress: state.scholarshipStatus[s.fid] || 'not_started' }));
+    // Every benefit for this intake's year, including ones the student doesn't
+    // qualify for (shown with the reason), so status-based support is visible.
+    const uniBenefits = benefits
+      .filter((b) => appliesToUniversity(b, university) && b.academic_year === intake.academic_year)
+      .map((b) => ({ ...withSource(b, sources), ...fit(b, { defaultNationality: ['UA'] }) }));
 
     const examInfo = (codes) => {
       const r = intake.requirements.find((x) => x.exam && x.exam.some((c) => codes.includes(c)));
@@ -91,6 +101,7 @@ function buildView(catalog, state, today) {
       requirements,
       progress: { done, total: applicable.length },
       scholarships: uniScholarships,
+      benefits: uniBenefits,
       flags: {
         sat: examInfo(['SAT']),
         other_exams: [...new Set(otherExams)],
@@ -257,6 +268,7 @@ function buildView(catalog, state, today) {
     dashboard,
     exams: exams,
     sources: Object.values(sources),
+    funding_categories: fundingCategories,
     enums: { APPLICATION_STATUSES, REQUIREMENT_STATUSES },
   };
 }
