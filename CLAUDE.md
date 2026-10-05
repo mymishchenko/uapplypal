@@ -15,7 +15,9 @@ for September 2027. Keep models generic (other students, countries, years).
   verifications) in `data/runtime/store.json` (gitignored, never deployed over).
 - `src/logic/`: all business rules. `windows.js` (Can I apply now?), `cost.js` (real cost),
   `match.js` (fit + Reach/Target/Safe estimate), `rankings.js` (combined ranking score: THE and
-  U.S. News ranks each normalised to 0–100 by edition size, then averaged), `views.js` (dashboard, actions, exam planner,
+  U.S. News ranks each normalised to 0–100 by edition size, then averaged), `examStrategy.js`
+  (must-take exams = only option for some application; recommended = greedy set cover over the
+  choice slots, ties by plan status then `preference` in exams.json), `views.js` (dashboard, actions, exam planner,
   documents). The client never re-implements these.
 - `src/api.js`: JSON API; every mutation returns the full recomputed view.
 - `src/notify/`: the tracking agent (no AI, no web access). `emails.js` decides which deadline

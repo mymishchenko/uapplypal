@@ -118,9 +118,14 @@
             {
               "template": "english",
               "id": "english",
-              "detail": "Minimum B2 in English (or Portuguese for Portuguese-taught programmes).",
+              "exam": [
+                "IELTS",
+                "TOEFL"
+              ],
+              "exam_mode": "option",
+              "detail": "Minimum B2 in English (or Portuguese for Portuguese-taught programmes). Duolingo English Test acceptance not confirmed for this program; check before relying on it.",
               "status": "EXPECTED",
-              "source": "nova-intl"
+              "source": "typical"
             },
             "cv",
             "motivation_letter",

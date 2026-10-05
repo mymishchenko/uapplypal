@@ -33,6 +33,14 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": null
+    },
+    {
+      "id": "vu-language",
+      "title": "VU Amsterdam: meeting language proficiency requirements",
+      "url": "https://vu.nl/en/education/more-about/meeting-language-proficiency-requirements",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -135,7 +143,19 @@
             "passport",
             "transcripts",
             "current_grades",
-            "english",
+            {
+              "template": "english",
+              "id": "english",
+              "exam": [
+                "IELTS",
+                "TOEFL",
+                "DUOLINGO"
+              ],
+              "exam_mode": "option",
+              "detail": "VU reports accepting the Duolingo English Test for a range of English-taught degrees; confirm for IBA.",
+              "status": "EXPECTED",
+              "source": "vu-language"
+            },
             {
               "id": "math",
               "category": "academic",

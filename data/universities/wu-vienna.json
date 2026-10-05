@@ -42,6 +42,14 @@
       "type": "official_admissions",
       "academic_year": "2026/27",
       "date_checked": "2026-10-04"
+    },
+    {
+      "id": "wu-language",
+      "title": "WU: Language requirements (application and admission)",
+      "url": "https://www.wu.ac.at/en/programs/application-and-admission/language",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [
@@ -182,7 +190,21 @@
             "passport",
             "transcripts",
             "translations",
-            "english",
+            {
+              "template": "english",
+              "id": "english",
+              "exam": [
+                "IELTS",
+                "TOEFL"
+              ],
+              "exam_mode": "option",
+              "detail": "WU lists TOEFL iBT, IELTS (6.0) and the Oxford Test of English for its English bachelor. Duolingo is not listed.",
+              "status": "EXPECTED",
+              "source": "wu-language",
+              "min_score": {
+                "IELTS": 6.0
+              }
+            },
             {
               "id": "osa",
               "category": "tests",

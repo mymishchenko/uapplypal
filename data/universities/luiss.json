@@ -138,7 +138,19 @@
             "ua_certificate_recognition",
             "passport",
             "transcripts",
-            "english",
+            {
+              "template": "english",
+              "id": "english",
+              "exam": [
+                "IELTS",
+                "TOEFL",
+                "DUOLINGO"
+              ],
+              "exam_mode": "option",
+              "detail": "Duolingo English Test accepted; minimum set per program call (110 for B2 to 130 for C1, per guides).",
+              "status": "EXPECTED",
+              "source": "det-guides"
+            },
             {
               "id": "test",
               "category": "tests",
@@ -241,7 +253,19 @@
             "ua_certificate_recognition",
             "passport",
             "transcripts",
-            "english",
+            {
+              "template": "english",
+              "id": "english",
+              "exam": [
+                "IELTS",
+                "TOEFL",
+                "DUOLINGO"
+              ],
+              "exam_mode": "option",
+              "detail": "Duolingo English Test accepted; minimum set per program call (110 for B2 to 130 for C1, per guides).",
+              "status": "EXPECTED",
+              "source": "det-guides"
+            },
             {
               "id": "test",
               "category": "tests",

@@ -24,7 +24,8 @@
         "url": "https://satsuite.collegeboard.org/sat/practice-preparation"
       }
     ],
-    "study_hours_hint": "Roughly 40–80 hours for a +100–150 point improvement, depending on starting level."
+    "study_hours_hint": "Roughly 40–80 hours for a +100–150 point improvement, depending on starting level.",
+    "preference": 1
   },
   {
     "code": "NMT",
@@ -40,7 +41,8 @@
         "title": "Ukrainian Center for Educational Quality Assessment (official NMT information and demo tests)",
         "url": "https://testportal.gov.ua/"
       }
-    ]
+    ],
+    "preference": 0
   },
   {
     "code": "ACT",
@@ -56,7 +58,8 @@
         "title": "ACT: free test prep",
         "url": "https://www.act.org/content/act/en/products-and-services/the-act/test-preparation.html"
       }
-    ]
+    ],
+    "preference": 2
   },
   {
     "code": "IELTS",
@@ -78,7 +81,8 @@
         "title": "British Council: IELTS preparation",
         "url": "https://takeielts.britishcouncil.org/take-ielts/prepare"
       }
-    ]
+    ],
+    "preference": 1
   },
   {
     "code": "TOEFL",
@@ -95,7 +99,8 @@
         "title": "ETS: free TOEFL iBT practice",
         "url": "https://www.ets.org/toefl/test-takers/ibt/prepare.html"
       }
-    ]
+    ],
+    "preference": 2
   },
   {
     "code": "DUOLINGO",
@@ -113,7 +118,8 @@
         "url": "https://englishtest.duolingo.com/prepare"
       }
     ],
-    "note": "Acceptance varies by university. Check each program before relying on it."
+    "note": "Acceptance varies by university. Check each program before relying on it.",
+    "preference": 0
   },
   {
     "code": "BOCCONI_TEST",
@@ -122,7 +128,8 @@
     "scale": "University-specific",
     "syllabus": "Logic, mathematics, reading comprehension, critical thinking (check the current Bocconi test guide).",
     "registration_url": "https://www.unibocconi.it/en/admissions",
-    "resources": []
+    "resources": [],
+    "preference": 5
   },
   {
     "code": "IE_TEST",
@@ -131,7 +138,8 @@
     "scale": "University-specific",
     "syllabus": "Check IE's admissions page for the current format.",
     "registration_url": "https://www.ie.edu/university/admission/admission-process/",
-    "resources": []
+    "resources": [],
+    "preference": 5
   },
   {
     "code": "ESADE_TEST",
@@ -140,7 +148,8 @@
     "scale": "University-specific",
     "syllabus": "Check Esade's admissions page for the current format.",
     "registration_url": "https://www.esade.edu/bachelor/en/programmes/business-administration/admissions",
-    "resources": []
+    "resources": [],
+    "preference": 5
   },
   {
     "code": "LUISS_TEST",
@@ -149,7 +158,8 @@
     "scale": "University-specific",
     "syllabus": "Check LUISS's admissions page for the current format.",
     "registration_url": "https://www.luiss.it/en",
-    "resources": []
+    "resources": [],
+    "preference": 5
   },
   {
     "code": "WU_EXAM",
@@ -164,7 +174,8 @@
         "title": "WU: BBE selection procedure (study material and roadmap)",
         "url": "https://www.wu.ac.at/en/programs/bachelors-programs/business-and-economics/overview/selection-procedure-bbe-1"
       }
-    ]
+    ],
+    "preference": 5
   },
   {
     "code": "GERMAN",
@@ -173,6 +184,7 @@
     "scale": "CEFR A1–C2",
     "syllabus": "Only needed for German-taught programmes.",
     "registration_url": "https://www.goethe.de/en/spr/kup/prf.html",
-    "resources": []
+    "resources": [],
+    "preference": 3
   }
 ]

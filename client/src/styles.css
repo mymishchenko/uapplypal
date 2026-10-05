@@ -635,6 +635,24 @@ ul.plain li:last-child {
   white-space: normal;
 }
 
+/* Exam strategy */
+.strategy h3 {
+  margin-top: 16px;
+}
+.rec {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rec:last-of-type {
+  border-bottom: none;
+}
+.rec .alts {
+  margin: 6px 0 0 8px;
+}
+.section-title {
+  margin: 20px 0 10px;
+}
+
 /* Email alerts */
 .preview-frame {
   width: 100%;

@@ -54,5 +54,12 @@
     "url": "https://testportal.gov.ua/en/university-entrance-exams-in-2026-(university-admission-campaign-2026)/",
     "type": "government",
     "date_checked": "2026-10-05"
+  },
+  {
+    "id": "det-guides",
+    "title": "Duolingo English Test acceptance: third-party guides found via search, Oct 2026 (verify on the official page)",
+    "url": null,
+    "type": "aggregator",
+    "date_checked": "2026-10-05"
   }
 ]
