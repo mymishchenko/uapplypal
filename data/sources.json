@@ -33,5 +33,26 @@
     "url": "https://www.studielink.nl/",
     "type": "government",
     "date_checked": null
+  },
+  {
+    "id": "rank-the",
+    "title": "THE World University Rankings (via web search summaries, Oct 2026; open THE to confirm)",
+    "url": "https://www.timeshighereducation.com/world-university-rankings",
+    "type": "ranking",
+    "date_checked": "2026-10-05"
+  },
+  {
+    "id": "rank-usnews",
+    "title": "U.S. News Best Global Universities (via web search summaries, Oct 2026; open U.S. News to confirm)",
+    "url": "https://www.usnews.com/education/best-global-universities/rankings",
+    "type": "ranking",
+    "date_checked": "2026-10-05"
+  },
+  {
+    "id": "ua-admission-2026",
+    "title": "Ukrainian Center for Educational Quality Assessment: University entrance exams in 2026 (NMT)",
+    "url": "https://testportal.gov.ua/en/university-entrance-exams-in-2026-(university-admission-campaign-2026)/",
+    "type": "government",
+    "date_checked": "2026-10-05"
   }
 ]

@@ -6,7 +6,26 @@
   "city": "Barcelona",
   "type": "private",
   "website": "https://www.esade.edu/en",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": "2026",
+      "rank_text": "801–1000",
+      "status": "EXPECTED",
+      "source": "rank-the",
+      "note": "Universitat Ramon Llull (Esade is part of URL)."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": "2025-2026",
+      "rank_text": "1009",
+      "status": "EXPECTED",
+      "source": "rank-usnews",
+      "note": "Universitat Ramon Llull."
+    }
+  ],
   "sources": [
     {
       "id": "esade-bba-admissions",
@@ -25,7 +44,9 @@
       "provider": "university",
       "type": "need_based",
       "amount": null,
-      "coverage": { "tuition": true },
+      "coverage": {
+        "tuition": true
+      },
       "eligibility": "To be checked.",
       "separate_application": true,
       "academic_year": "2027/28",
@@ -39,14 +60,22 @@
       "id": "esade-bba",
       "name": "Bachelor in Business Administration (BBA)",
       "degree": "BBA",
-      "fields": ["business", "management"],
+      "fields": [
+        "business",
+        "management"
+      ],
       "language": "English",
       "duration_years": 4,
       "campus": "Barcelona (Sant Cugat)",
       "official_url": "https://www.esade.edu/bachelor/en/programmes/business-administration",
       "selectivity": "high",
-      "highlights": ["Rolling admissions until June 2027 while places remain", "No minimum entry grade"],
-      "risks": ["Places fill up: applying early is safer"],
+      "highlights": [
+        "Rolling admissions until June 2027 while places remain",
+        "No minimum entry grade"
+      ],
+      "risks": [
+        "Places fill up: applying early is safer"
+      ],
       "intakes": [
         {
           "id": "esade-bba-2027",
@@ -55,7 +84,12 @@
           "label": "September 2027",
           "status_note": "Admissions for September 2027 reported open until June 2027, subject to places.",
           "windows": [
-            { "id": "main", "label": "Rolling admissions", "opens": "opens", "closes": "close" }
+            {
+              "id": "main",
+              "label": "Rolling admissions",
+              "opens": "opens",
+              "closes": "close"
+            }
           ],
           "deadlines": [
             {
@@ -80,8 +114,20 @@
             }
           ],
           "tuition": {
-            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "All students", "status": "UNKNOWN", "source": "esade-bba-admissions" },
-            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "esade-bba-admissions" },
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "All students",
+              "status": "UNKNOWN",
+              "source": "esade-bba-admissions"
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "esade-bba-admissions"
+            },
             "fees": []
           },
           "requirements": [
@@ -95,7 +141,9 @@
               "id": "test",
               "category": "tests",
               "title": "Esade Admission Test",
-              "exam": ["ESADE_TEST"],
+              "exam": [
+                "ESADE_TEST"
+              ],
               "exam_mode": "required",
               "status": "EXPECTED",
               "source": "esade-bba-admissions"

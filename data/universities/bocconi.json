@@ -6,7 +6,25 @@
   "city": "Milan",
   "type": "private",
   "website": "https://www.unibocconi.it/en",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": null,
+      "rank_text": "not ranked",
+      "status": "EXPECTED",
+      "source": "rank-the",
+      "note": "Specialised institution: not in THE's overall ranking (Bocconi's own rankings page)."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": "2025-2026",
+      "rank_text": "550",
+      "status": "EXPECTED",
+      "source": "rank-usnews"
+    }
+  ],
   "sources": [
     {
       "id": "bocconi-admissions",
@@ -34,13 +52,20 @@
       "type": "need_based",
       "amount": null,
       "percent": null,
-      "coverage": { "tuition": true, "housing": true, "living": true },
+      "coverage": {
+        "tuition": true,
+        "housing": true,
+        "living": true
+      },
       "eligibility": "Need-based: family income/assets. Separate application with financial documents.",
       "separate_application": true,
       "renewable": true,
       "academic_year": "2027/28",
       "availability": "AVAILABLE",
-      "deadline": { "date": null, "date_text": "See ISU 2027-28 timeline page" },
+      "deadline": {
+        "date": null,
+        "date_text": "See ISU 2027-28 timeline page"
+      },
       "status": "EXPECTED",
       "source": "bocconi-isu-2027",
       "note": "Official 2027-28 page exists. Read it for amounts and dates."
@@ -52,7 +77,9 @@
       "type": "merit",
       "amount": null,
       "percent": null,
-      "coverage": { "tuition": true },
+      "coverage": {
+        "tuition": true
+      },
       "eligibility": "Merit-based. Details to be checked.",
       "separate_application": null,
       "renewable": null,
@@ -67,7 +94,12 @@
       "id": "bocconi-business",
       "name": "English-taught business/economics bachelors (e.g. BIEM)",
       "degree": "BSc",
-      "fields": ["business", "economics", "management", "finance"],
+      "fields": [
+        "business",
+        "economics",
+        "management",
+        "finance"
+      ],
       "language": "English",
       "duration_years": 3,
       "campus": "Milan",
@@ -77,7 +109,10 @@
         "Fixed selection formula: 55% test score + 45% school grades",
         "SAT, ACT or Bocconi Test accepted"
       ],
-      "risks": ["Highly selective", "Early Session for 2027/28 already closed"],
+      "risks": [
+        "Highly selective",
+        "Early Session for 2027/28 already closed"
+      ],
       "intakes": [
         {
           "id": "bocconi-business-2027",
@@ -86,8 +121,18 @@
           "label": "September 2027",
           "status_note": "Early Session closed 29 Sep 2026. Winter Session: 25 Nov 2026 – 26 Jan 2027.",
           "windows": [
-            { "id": "early", "label": "Early Session", "opens": "early-opens", "closes": "early-close" },
-            { "id": "winter", "label": "Winter Session", "opens": "winter-opens", "closes": "winter-close" }
+            {
+              "id": "early",
+              "label": "Early Session",
+              "opens": "early-opens",
+              "closes": "early-close"
+            },
+            {
+              "id": "winter",
+              "label": "Winter Session",
+              "opens": "winter-opens",
+              "closes": "winter-close"
+            }
           ],
           "deadlines": [
             {
@@ -137,8 +182,21 @@
             }
           ],
           "tuition": {
-            "sticker": { "amount": null, "currency": "EUR", "period": "year", "group": "International students", "status": "UNKNOWN", "source": "bocconi-admissions", "note": "Bocconi tuition depends on family income for some students; enter the 2027/28 figure." },
-            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "bocconi-admissions" },
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "International students",
+              "status": "UNKNOWN",
+              "source": "bocconi-admissions",
+              "note": "Bocconi tuition depends on family income for some students; enter the 2027/28 figure."
+            },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "bocconi-admissions"
+            },
             "fees": []
           },
           "requirements": [
@@ -152,7 +210,11 @@
               "category": "tests",
               "title": "Admission test: SAT, ACT or Bocconi Test",
               "detail": "Must be taken before submitting the application.",
-              "exam": ["SAT", "ACT", "BOCCONI_TEST"],
+              "exam": [
+                "SAT",
+                "ACT",
+                "BOCCONI_TEST"
+              ],
               "exam_mode": "option",
               "status": "EXPECTED",
               "source": "bocconi-admissions"

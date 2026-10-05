@@ -6,7 +6,26 @@
   "city": "Vienna",
   "type": "public",
   "website": "https://www.wu.ac.at/en/",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": null,
+      "rank_text": "not ranked",
+      "status": "EXPECTED",
+      "source": "rank-the",
+      "note": "Specialised business university: not included in THE's overall ranking (per search)."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": null,
+      "rank_text": "972",
+      "status": "EXPECTED",
+      "source": "rank-usnews",
+      "note": "Edition not stated in the search result."
+    }
+  ],
   "sources": [
     {
       "id": "wu-bbe-selection",
@@ -32,7 +51,9 @@
       "title": "Tuition waiver for Ukrainian citizens",
       "academic_year": "2027/28",
       "state": "UNKNOWN",
-      "effect": { "tuition_percent_off": 100 },
+      "effect": {
+        "tuition_percent_off": 100
+      },
       "eligibility": "Ukrainian citizens (check whether residence status matters).",
       "status": "UNKNOWN",
       "source": "brief",
@@ -45,7 +66,11 @@
       "id": "wu-bbe",
       "name": "BSc Business and Economics (BBE)",
       "degree": "BSc",
-      "fields": ["business", "economics", "management"],
+      "fields": [
+        "business",
+        "economics",
+        "management"
+      ],
       "language": "English",
       "duration_years": 3,
       "campus": "Vienna",
@@ -67,7 +92,12 @@
           "label": "Winter semester 2027/28",
           "status_note": "WU says 2027/28 selection details will be published in mid-November 2026 (per brief). 2026/27 registration ran 2 Mar – 19 May 2026.",
           "windows": [
-            { "id": "main", "label": "Selection procedure registration", "opens": "opens", "closes": "close" }
+            {
+              "id": "main",
+              "label": "Selection procedure registration",
+              "opens": "opens",
+              "closes": "close"
+            }
           ],
           "deadlines": [
             {
@@ -128,7 +158,12 @@
               "source": "brief",
               "note": "Figure from the brief; confirm the 2027/28 rate."
             },
-            "application_fee": { "amount": null, "currency": "EUR", "status": "UNKNOWN", "source": "wu-bbe-selection" },
+            "application_fee": {
+              "amount": null,
+              "currency": "EUR",
+              "status": "UNKNOWN",
+              "source": "wu-bbe-selection"
+            },
             "fees": [
               {
                 "id": "oeh",
@@ -152,7 +187,9 @@
               "id": "osa",
               "category": "tests",
               "title": "WU online self-assessment",
-              "exam": ["WU_EXAM"],
+              "exam": [
+                "WU_EXAM"
+              ],
               "exam_mode": "required",
               "status": "EXPECTED",
               "source": "wu-bbe-selection"
@@ -161,7 +198,9 @@
               "id": "exam",
               "category": "tests",
               "title": "WU entrance exam",
-              "exam": ["WU_EXAM"],
+              "exam": [
+                "WU_EXAM"
+              ],
               "exam_mode": "required",
               "status": "EXPECTED",
               "source": "wu-bbe-selection"

@@ -6,7 +6,7 @@ const { todayISO } = require('./logic/dates');
 const SCHOLARSHIP_PROGRESS = ['not_started', 'considering', 'applying', 'applied', 'awarded', 'rejected'];
 const DOC_FIELDS = { status: ['missing', 'in_progress', 'ready', 'expired'], translation: ['not_needed', 'needed', 'done', 'certified'], apostille: ['unknown', 'not_needed', 'needed', 'done'] };
 const EXAM_STATUSES = ['not_registered', 'registered', 'taken', 'not_needed'];
-const FACT_FIELDS = ['date', 'date_end', 'date_text', 'amount', 'status', 'note', 'source_url', 'source_title', 'state', 'availability'];
+const FACT_FIELDS = ['date', 'date_end', 'date_text', 'amount', 'status', 'note', 'source_url', 'source_title', 'state', 'availability', 'rank_text', 'edition'];
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 class BadRequest extends Error {}
@@ -116,6 +116,10 @@ function createApi({ raw, store, today = () => todayISO() }) {
     if (body.amount !== undefined) body.amount = body.amount === '' || body.amount === null ? null : Number(body.amount);
     if (body.amount !== undefined && body.amount !== null && !Number.isFinite(body.amount)) throw new BadRequest('amount must be a number');
     if (body.source_url && !/^https?:\/\//.test(body.source_url)) throw new BadRequest('source_url must start with http(s)://');
+    for (const k of ['rank_text', 'edition']) {
+      if (body[k] !== undefined && body[k] !== null && String(body[k]).length > 40) throw new BadRequest(`${k} is too long`);
+      if (body[k] === '') body[k] = null;
+    }
     store.update((st) => {
       st.overrides[fid] = { ...(st.overrides[fid] || {}), ...body, checked: today() };
     });

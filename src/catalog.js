@@ -25,6 +25,7 @@ function loadRaw(dataDir) {
     exams: readJson(path.join(dataDir, 'exams.json')),
     livingCosts: readJson(path.join(dataDir, 'living-costs.json')),
     studentSeed: readJson(path.join(dataDir, 'student.seed.json')),
+    rankingSystems: readJson(path.join(dataDir, 'rankings.json')).systems,
   };
 }
 
@@ -75,8 +76,12 @@ function buildCatalog(raw, overrides = {}) {
   };
 
   for (const u of raw.universities) {
-    const { programs: rawPrograms, sources: uniSources = [], scholarships: rawSch = [], benefits: rawBen = [], ...uni } = u;
+    const { programs: rawPrograms, sources: uniSources = [], scholarships: rawSch = [], benefits: rawBen = [], rankings: rawRankings = [], ...uni } = u;
     uniSources.forEach(addSource);
+    for (const r of rawRankings) {
+      if (!raw.rankingSystems[r.system]) throw new Error(`University "${uni.id}" uses unknown ranking system "${r.system}"`);
+    }
+    uni.rankings = rawRankings.map((r) => registerFact(`${uni.id}.k.${r.id}`, { ...r, university_id: uni.id }));
     universities.push(uni);
 
     for (const s of rawSch) {
@@ -142,6 +147,7 @@ function buildCatalog(raw, overrides = {}) {
     facts,
     exams: raw.exams,
     livingCosts: raw.livingCosts,
+    rankingSystems: raw.rankingSystems,
     templates: raw.templates,
   };
 }

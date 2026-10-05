@@ -23,7 +23,10 @@ documents) is not stored here. It lives in the runtime store (`data/runtime/`, n
 - `requirement-templates.json`: common requirement items that intakes reference by key.
 - `exams.json`: exam catalog (SAT, IELTS, university tests…) with preparation resources.
 - `living-costs.json`: rough monthly living-cost estimates per city.
-- `sources.json`: shared sources (project brief, estimates).
+- `sources.json`: shared sources (project brief, estimates, ranking sites).
+- `rankings.json`: ranking systems (THE, U.S. News) and how many institutions each edition ranks.
+  Each university lists its `rankings` (system, edition, `rank_text` like `107`, `=176`, `301–350` or
+  `not ranked`). The app averages the ranks after normalising each to 0–100 by edition size.
 
 Local ids (deadlines, requirements, tuition items) are expanded by `src/catalog.js` into global
 fact ids such as `wu-bbe-2027.d.opens`. User verifications and edits are stored as overrides keyed

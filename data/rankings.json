@@ -1,0 +1,23 @@
+{
+  "_note": "Ranking systems used for the combined ranking score. 'ranked' = number of institutions in that edition, used to normalise a rank to a 0-100 score. Update when a new edition is published.",
+  "systems": {
+    "THE": {
+      "name": "THE World University Rankings",
+      "url": "https://www.timeshighereducation.com/world-university-rankings",
+      "latest": "2027",
+      "editions": {
+        "2026": { "ranked": 2191, "note": "2,191 institutions (per THE, reported in the 2027 announcement)" },
+        "2027": { "ranked": 2297, "note": "Published 30 Sep 2026; 2,297 institutions in 118 countries" }
+      }
+    },
+    "USNEWS": {
+      "name": "U.S. News Best Global Universities",
+      "url": "https://www.usnews.com/education/best-global-universities/rankings",
+      "latest": "2026-2027",
+      "editions": {
+        "2025-2026": { "ranked": 2250, "note": "About 2,250 institutions" },
+        "2026-2027": { "ranked": 2250, "note": "\"More than 2,250\" institutions (U.S. News press release)" }
+      }
+    }
+  }
+}

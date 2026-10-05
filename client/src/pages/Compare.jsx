@@ -11,6 +11,7 @@ const COLUMNS = [
   ['university', 'University', (a) => a.university.short_name],
   ['program', 'Program', (a) => a.program.name],
   ['country', 'Country', (a) => a.university.country],
+  ['ranking', 'Ranking score*', (a) => (a.ranking.score == null ? Infinity : -a.ranking.score)],
   ['match', 'Fit', (a) => MATCH_ORDER[a.assessment.match]],
   ['category', 'Reach/Target/Safe*', (a) => CAT_ORDER[a.assessment.admission.category]],
   ['status', 'My status', (a) => a.application.status],
@@ -65,8 +66,8 @@ export default function Compare() {
         <div>
           <h1>Compare programs</h1>
           <p className="muted small">
-            * Estimates. Reach/Target/Safe is based on selectivity and your entered scores; “best case” assumes the largest available funding comes through. Dots mark
-            unverified dates.
+            * Estimates. Reach/Target/Safe is based on selectivity and your entered scores; “best case” assumes the largest available funding comes through. Ranking
+            score = average of THE and U.S. News ranks, each normalised to 0–100 by the size of its list (100 = #1). Dots mark unverified values.
           </p>
         </div>
       </header>
@@ -112,6 +113,11 @@ export default function Compare() {
                 </td>
                 <td className="wrap">{a.program.name}</td>
                 <td>{a.university.country}</td>
+                <td className="num" title={a.ranking.summary}>
+                  {a.ranking.score == null ? <span className="muted">—</span> : a.ranking.score}
+                  {a.ranking.score != null && a.ranking.used < a.ranking.of && <span className="muted small"> (1 of 2)</span>}
+                  {a.ranking.score != null && !a.ranking.verified && <span className="warn-dot" />}
+                </td>
                 <td>
                   <MatchBadge match={a.assessment.match} />
                 </td>

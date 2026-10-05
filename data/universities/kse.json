@@ -1,0 +1,234 @@
+{
+  "id": "kse",
+  "name": "Kyiv School of Economics",
+  "short_name": "KSE",
+  "country": "Ukraine",
+  "city": "Kyiv",
+  "type": "private",
+  "website": "https://university.kse.ua/en",
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": null,
+      "rank_text": null,
+      "status": "UNKNOWN",
+      "source": "rank-the",
+      "note": "Not found in THE or U.S. News (likely not ranked)."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": null,
+      "rank_text": null,
+      "status": "UNKNOWN",
+      "source": "rank-usnews",
+      "note": "Not found in THE or U.S. News (likely not ranked)."
+    }
+  ],
+  "sources": [
+    {
+      "id": "kse-ba",
+      "title": "KSE: Bachelor’s programs",
+      "url": "https://university.kse.ua/en/bachelors",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "kse-analytics-2025",
+      "title": "KSE: Bachelor and master admission analytics 2025",
+      "url": "https://university.kse.ua/en/ba-ma-admisson-analytics-2025",
+      "type": "official_admissions",
+      "academic_year": "2025/26",
+      "date_checked": "2026-10-05"
+    }
+  ],
+  "benefits": [],
+  "scholarships": [
+    {
+      "id": "state-funded",
+      "name": "State-funded (budget) place",
+      "provider": "government",
+      "type": "merit",
+      "percent": 100,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Awarded by NMT competitive score in the national admission system; number of places varies by year and program.",
+      "separate_application": false,
+      "renewable": true,
+      "academic_year": "2027/28",
+      "availability": "AVAILABLE",
+      "status": "EXPECTED",
+      "source": "kse-analytics-2025",
+      "note": "Places for KSE in 2027 not published yet."
+    },
+    {
+      "id": "kse-grants",
+      "name": "KSE tuition grants",
+      "provider": "university",
+      "type": "merit",
+      "percent": 100,
+      "percent_is_max": true,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "In 2025, 61% of KSE bachelor students studied tuition-free (state places and KSE grants).",
+      "separate_application": null,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "kse-analytics-2025",
+      "note": "2025 figure; 2027 grant rules not checked."
+    }
+  ],
+  "programs": [
+    {
+      "id": "kse-be",
+      "name": "Bachelor in Business Economics",
+      "degree": "BA",
+      "fields": [
+        "business",
+        "economics",
+        "management"
+      ],
+      "language": "Ukrainian",
+      "language_status": "EXPECTED",
+      "duration_years": 4,
+      "campus": "Kyiv",
+      "official_url": "https://university.kse.ua/en/bachelors",
+      "selectivity": "high",
+      "highlights": [
+        "Highest average admission score in Ukraine (2025: 168.18, 522 admitted)",
+        "Most students study tuition-free (61% in 2025)",
+        "Some courses may be taught in English (verify)"
+      ],
+      "risks": [
+        "Admission depends entirely on NMT scores",
+        "Studying in Kyiv during the war"
+      ],
+      "intakes": [
+        {
+          "id": "kse-be-2027",
+          "academic_year": "2027/28",
+          "start": "2027-09",
+          "label": "September 2027",
+          "status_note": "Ukrainian national admission: NMT in spring, applications in July, enrolment in August. 2027 dates follow the 2026 pattern until published.",
+          "windows": [
+            {
+              "id": "main",
+              "label": "National admission campaign",
+              "opens": "opens",
+              "closes": "close"
+            }
+          ],
+          "deadlines": [
+            {
+              "id": "nmt-reg",
+              "type": "test_registration",
+              "label": "NMT registration",
+              "date": null,
+              "date_text": "March 2027 (2026 cycle: 5 Mar – 2 Apr)",
+              "status": "EXPECTED",
+              "source": "ua-admission-2026",
+              "note": "2027 dates not published yet."
+            },
+            {
+              "id": "nmt",
+              "type": "entrance_exam",
+              "label": "NMT test sessions",
+              "date": null,
+              "date_text": "Spring–summer 2027 (dates TBA)",
+              "status": "UNKNOWN",
+              "source": "ua-admission-2026"
+            },
+            {
+              "id": "opens",
+              "type": "application_opens",
+              "label": "Applications open (electronic applicant account)",
+              "date": null,
+              "date_text": "July 2027 (2026 cycle: accounts from 1 Jul, applications from 19 Jul)",
+              "status": "EXPECTED",
+              "source": "ua-admission-2026"
+            },
+            {
+              "id": "close",
+              "type": "final_application",
+              "label": "Applications close",
+              "date": null,
+              "date_text": "Early August 2027 (2026 cycle: 1 Aug)",
+              "status": "EXPECTED",
+              "source": "ua-admission-2026"
+            },
+            {
+              "id": "enrol",
+              "type": "enrollment",
+              "label": "Enrolment (state-funded and paid places)",
+              "date": null,
+              "date_text": "Mid-August 2027 (2026 cycle: by 13 Aug)",
+              "status": "EXPECTED",
+              "source": "ua-admission-2026"
+            }
+          ],
+          "tuition": {
+            "sticker": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "year",
+              "group": "Paid place",
+              "status": "UNKNOWN",
+              "source": "kse-analytics-2025",
+              "note": "Paid-place tuition is set in UAH each year; enter the 2027/28 figure."
+            },
+            "application_fee": {
+              "amount": 0,
+              "currency": "EUR",
+              "status": "EXPECTED",
+              "source": "typical",
+              "note": "No application fee in the Ukrainian national admission system (verify)."
+            },
+            "fees": []
+          },
+          "requirements": [
+            {
+              "id": "nmt",
+              "category": "tests",
+              "title": "NMT: Ukrainian language, mathematics, history of Ukraine + one elective",
+              "detail": "Admission ranks applicants by NMT score (with subject weights set per program).",
+              "exam": [
+                "NMT"
+              ],
+              "exam_mode": "required",
+              "status": "EXPECTED",
+              "source": "ua-admission-2026"
+            },
+            "passport",
+            {
+              "template": "diploma",
+              "id": "diploma",
+              "title": "School certificate (атестат) and its grades",
+              "status": "EXPECTED",
+              "source": "typical"
+            },
+            {
+              "id": "cabinet",
+              "category": "application",
+              "title": "Electronic applicant account and application (up to the national limit of applications)",
+              "status": "EXPECTED",
+              "source": "ua-admission-2026"
+            },
+            {
+              "id": "priority",
+              "category": "selection",
+              "title": "Selection: competitive score from NMT results; state-funded places go to the highest scores",
+              "status": "EXPECTED",
+              "source": "kse-analytics-2025"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

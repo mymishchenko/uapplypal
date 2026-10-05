@@ -6,7 +6,26 @@
   "city": "Warsaw",
   "type": "private",
   "website": "https://www.kozminski.edu.pl/en",
-  "ranking": null,
+  "rankings": [
+    {
+      "id": "the",
+      "system": "THE",
+      "edition": null,
+      "rank_text": null,
+      "status": "UNKNOWN",
+      "source": "rank-the",
+      "note": "No overall ranking found."
+    },
+    {
+      "id": "usnews",
+      "system": "USNEWS",
+      "edition": null,
+      "rank_text": null,
+      "status": "UNKNOWN",
+      "source": "rank-usnews",
+      "note": "No ranking found."
+    }
+  ],
   "sources": [
     {
       "id": "kozminski",

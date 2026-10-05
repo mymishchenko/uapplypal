@@ -5,6 +5,7 @@ const { daysBetween } = require('./dates');
 const { canApplyNow, nextClosingDeadline, CLOSING_TYPES } = require('./windows');
 const { costFor } = require('./cost');
 const { assess } = require('./match');
+const { rankingFor } = require('./rankings');
 
 const APPLICATION_STATUSES = ['not_started', 'preparing', 'ready', 'submitted', 'offer', 'waitlisted', 'rejected', 'withdrawn', 'not_applying'];
 const INACTIVE = new Set(['withdrawn', 'not_applying', 'rejected']);
@@ -27,7 +28,7 @@ function withSource(fact, sources) {
 }
 
 function buildView(catalog, state, today) {
-  const { universities, programs, intakes, scholarships, benefits, sources, livingCosts, exams } = catalog;
+  const { universities, programs, intakes, scholarships, benefits, sources, livingCosts, exams, rankingSystems } = catalog;
   const student = state.student;
   const uniById = Object.fromEntries(universities.map((u) => [u.id, u]));
   const programById = Object.fromEntries(programs.map((p) => [p.id, p]));
@@ -40,6 +41,8 @@ function buildView(catalog, state, today) {
     const apply = canApplyNow(intake, today);
     const cost = costFor({ intake, university, benefits, scholarships, livingCosts, student });
     const assessment = assess({ program, intake, university, student, cost, apply });
+    const ranking = rankingFor(university, rankingSystems);
+    ranking.components = ranking.components.map((c) => ({ ...c, ...pickSource(university.rankings.find((r) => r.fid === c.fid), sources) }));
     const next = nextClosingDeadline(intake, today);
 
     const requirements = intake.requirements.map((r) => ({
@@ -81,6 +84,7 @@ function buildView(catalog, state, today) {
         sticker: cost.sticker ? { ...cost.sticker, ...pickSource(intake.tuition.sticker, sources) } : null,
       },
       assessment,
+      ranking,
       next_deadline: next ? { ...withSource(next, sources), days_left: daysBetween(today, next.date) } : null,
       deadlines,
       requirements,
