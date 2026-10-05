@@ -33,6 +33,14 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": null
+    },
+    {
+      "id": "ut-fees",
+      "title": "University of Twente: IBA tuition fees",
+      "url": "https://www.utwente.nl/en/education/bachelor/programmes/international-business-administration/enrolment/tuition-fees/",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -54,6 +62,25 @@
       "availability": "UNKNOWN",
       "status": "UNKNOWN",
       "source": "holland-scholarship"
+    },
+    {
+      "id": "ut-scholarship",
+      "name": "University of Twente Scholarship (UTS)",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": null,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Talented non-EEA students. Amount varies.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "ut-fees",
+      "note": "Amount and bachelor eligibility not checked."
     }
   ],
   "programs": [
@@ -115,12 +142,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 12300,
               "currency": "EUR",
               "period": "year",
               "group": "Non-EU (institutional fee)",
-              "status": "UNKNOWN",
-              "source": "ut-iba"
+              "status": "EXPECTED",
+              "source": "ut-fees",
+              "note": "€12,300 in 2026/27; 2027/28 rate not published."
             },
             "application_fee": {
               "amount": null,

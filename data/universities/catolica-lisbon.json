@@ -34,10 +34,55 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": null
+    },
+    {
+      "id": "catolica-fees",
+      "title": "Católica Lisbon: bachelor fees and scholarships",
+      "url": "https://www.clsbe.lisboa.ucp.pt/bachelors-degrees-economics/fees-scholarships",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
-  "scholarships": [],
+  "scholarships": [
+    {
+      "id": "merit",
+      "name": "Católica merit scholarships",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": null,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Automatic merit scholarships based on application grades; reported for over half of students.",
+      "separate_application": false,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "catolica-fees"
+    },
+    {
+      "id": "social",
+      "name": "Social Action (need-based) support",
+      "provider": "university",
+      "type": "need",
+      "amount": null,
+      "percent": null,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Financial need.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "catolica-fees"
+    }
+  ],
   "programs": [
     {
       "id": "catolica-ba",
@@ -93,12 +138,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 8580,
               "currency": "EUR",
               "period": "year",
-              "group": "All students",
-              "status": "UNKNOWN",
-              "source": "catolica"
+              "group": "Non-EU students",
+              "status": "EXPECTED",
+              "source": "catolica-fees",
+              "detail": "€858 × 10 instalments",
+              "note": "Search summary of the official page; 2027/28 rate not published."
             },
             "application_fee": {
               "amount": null,

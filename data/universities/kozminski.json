@@ -34,10 +34,64 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": null
+    },
+    {
+      "id": "kozminski-bim",
+      "title": "Kozminski: Bachelor in Management (fees)",
+      "url": "https://www.kozminski.edu.pl/en/programs/undergraduate-programs-bachelor/bachelor-management",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "kozminski-scholarships",
+      "title": "Kozminski: scholarships and discounts",
+      "url": "https://www.kozminski.edu.pl/en/about-university/scholarships-and-discounts",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
-  "scholarships": [],
+  "scholarships": [
+    {
+      "id": "best-students",
+      "name": "Scholarship for the best candidates",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Top candidates before starting studies.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "kozminski-scholarships"
+    },
+    {
+      "id": "foundation",
+      "name": "Leon Kozminski Foundation scholarship",
+      "provider": "university",
+      "type": "merit_need",
+      "amount": 1100,
+      "percent": null,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "kozminski-scholarships",
+      "amount_text": "PLN 4,000–5,000 (≈ €950–1,200) towards tuition"
+    }
+  ],
   "programs": [
     {
       "id": "kozminski-mgmt",
@@ -95,12 +149,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 9130,
               "currency": "EUR",
               "period": "year",
-              "group": "Non-EU students",
-              "status": "UNKNOWN",
-              "source": "kozminski"
+              "group": "All students",
+              "status": "EXPECTED",
+              "source": "kozminski-bim",
+              "detail": "19,400 PLN per semester in year 1 (21,400 in year 2, 23,400 in year 3)",
+              "note": "Year-1 fee from the program page (search summary), converted at about 4.25 PLN/€."
             },
             "application_fee": {
               "amount": null,

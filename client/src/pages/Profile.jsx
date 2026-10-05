@@ -67,6 +67,9 @@ export default function Profile() {
   const addRow = (key, row) => change({ ...s, [key]: [...(s[key] || []), row] });
   const removeRow = (key, i) => change({ ...s, [key]: s[key].filter((_, j) => j !== i) });
   const setTest = (code, field) => (e) => change({ ...s, tests: { ...s.tests, [code]: { ...(s.tests[code] || {}), [field]: e.target.value } } });
+  const cats = s.personal.support_categories || [];
+  const toggleCategory = (c) =>
+    change({ ...s, personal: { ...s.personal, support_categories: cats.includes(c) ? cats.filter((x) => x !== c) : [...cats, c] } });
   const toggleInterest = (i) => change({ ...s, interests: s.interests.includes(i) ? s.interests.filter((x) => x !== i) : [...s.interests, i] });
 
   return (
@@ -86,6 +89,21 @@ export default function Profile() {
         <Section title="Preferences" fields={SECTIONS.preferences} data={s.preferences} onChange={(k) => setField('preferences', k)} />
       </div>
       <Section title="Education" fields={SECTIONS.education} data={s.education} onChange={(k) => setField('education', k)} />
+
+      <section className="card">
+        <h2>Family & residence status</h2>
+        <p className="muted small">
+          Some support depends on status, e.g. Ukrainian state compensation of tuition for children of combatants (УБД) or fallen defenders, or university grants for IDPs. Tick what
+          applies; it is only used to show which scholarships fit you.
+        </p>
+        <div className="chips cats">
+          {(view.funding_categories || []).map((c) => (
+            <button key={c.code} className={`chip ${cats.includes(c.code) ? 'on' : ''}`} title={c.description} onClick={() => toggleCategory(c.code)}>
+              {c.label}
+            </button>
+          ))}
+        </div>
+      </section>
 
       <section className="card">
         <h2>Interests</h2>

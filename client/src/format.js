@@ -27,3 +27,11 @@ export function greeting() {
   const h = new Date().getHours();
   return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
 }
+
+// Human-readable size of a scholarship (percent, fixed amount or free text).
+export function fundingAmount(s) {
+  if (s.percent != null) return `${s.percent_is_max ? 'up to ' : ''}${s.percent}%`;
+  if (s.amount_text) return s.amount_text;
+  if (s.amount != null) return money(s.amount);
+  return 'Amount unknown';
+}

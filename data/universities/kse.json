@@ -42,6 +42,30 @@
       "type": "official_admissions",
       "academic_year": "2025/26",
       "date_checked": "2026-10-05"
+    },
+    {
+      "id": "kse-prices-2026",
+      "title": "Zaxid.net: KSE tuition for 2026 entrants (all programs)",
+      "url": "https://zaxid.net/kiyivska_shkola_ekonomiki_vartist_navchannya_dlya_vstupnikiv_2026_tsini_na_usi_programi_n1641569",
+      "type": "news",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "kse-foundation-grants",
+      "title": "Osvita.ua: KSE Foundation offers 700 bachelor grants",
+      "url": "https://osvita.ua/consultations/89509/",
+      "type": "news",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "kse-grants",
+      "title": "KSE: scholarships and grants",
+      "url": "https://university.kse.ua/en/grants",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -82,6 +106,97 @@
       "status": "EXPECTED",
       "source": "kse-analytics-2025",
       "note": "2025 figure; 2027 grant rules not checked."
+    },
+    {
+      "id": "kse-foundation-defenders",
+      "name": "KSE Foundation grant for defenders and their children",
+      "provider": "foundation",
+      "type": "status",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true,
+        "housing": true
+      },
+      "eligibility": "Combatants and their children: full tuition plus partial co-living costs. Part of 700 KSE Foundation bachelor grants (2026).",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "kse-foundation-grants",
+      "categories": [
+        "combatant_child",
+        "fallen_defender_child",
+        "war_disabled_child"
+      ],
+      "note": "2026 programme; 2027 terms not published."
+    },
+    {
+      "id": "kse-foundation-idp",
+      "name": "KSE Foundation grant for IDPs and residents of occupied territories",
+      "provider": "foundation",
+      "type": "status",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true,
+        "housing": true
+      },
+      "eligibility": "Internally displaced persons (moved after 24 Feb 2022) and people from temporarily occupied territories.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "kse-foundation-grants",
+      "categories": [
+        "idp",
+        "occupied_territory"
+      ],
+      "note": "2026 programme; 2027 terms not published."
+    },
+    {
+      "id": "kse-foundation-nmt",
+      "name": "KSE Foundation grant for NMT 175+",
+      "provider": "foundation",
+      "type": "merit",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Applicants with an NMT competitive score of 175 or more.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "kse-foundation-grants",
+      "percent_is_max": true,
+      "note": "2026 programme; 2027 terms not published."
+    },
+    {
+      "id": "kse-come-back",
+      "name": "KSE “Come back home” grant",
+      "provider": "foundation",
+      "type": "status",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Ukrainians who were forced to move abroad after 24 Feb 2022 and come back to study.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "kse-foundation-grants",
+      "percent_is_max": true,
+      "categories": [
+        "abroad_since_2022"
+      ]
     }
   ],
   "programs": [
@@ -174,13 +289,14 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 2760,
               "currency": "EUR",
               "period": "year",
               "group": "Paid place",
-              "status": "UNKNOWN",
-              "source": "kse-analytics-2025",
-              "note": "Paid-place tuition is set in UAH each year; enter the 2027/28 figure."
+              "status": "EXPECTED",
+              "source": "kse-prices-2026",
+              "detail": "132,500 UAH/yr for 2026 entrants (≈ €2760 at 48 UAH/€)",
+              "note": "2026/27 price for Business Economics; the 2027/28 price is set in UAH next spring and usually rises."
             },
             "application_fee": {
               "amount": 0,

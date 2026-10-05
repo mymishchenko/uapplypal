@@ -33,10 +33,60 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": null
+    },
+    {
+      "id": "mru-ukraine",
+      "title": "MRU: support for students from Ukraine",
+      "url": "https://www.mruni.eu/en/support-to-ukraine/for-students/",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
-  "scholarships": [],
+  "scholarships": [
+    {
+      "id": "ukraine",
+      "name": "Partial tuition scholarship for Ukrainian citizens",
+      "provider": "university",
+      "type": "nationality",
+      "amount": null,
+      "percent": null,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Ukrainian citizens applying to English-taught bachelor or master programmes.",
+      "separate_application": null,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "mru-ukraine",
+      "nationality": [
+        "UA"
+      ],
+      "note": "Size of the discount not found."
+    },
+    {
+      "id": "international",
+      "name": "MRU scholarship for international students",
+      "provider": "university",
+      "type": "merit",
+      "amount": null,
+      "percent": 50,
+      "coverage": {
+        "tuition": true
+      },
+      "eligibility": "Non-EU applicants to bachelor or master programmes.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "mru-ukraine",
+      "percent_is_max": true
+    }
+  ],
   "programs": [
     {
       "id": "mru-gbmm",
@@ -99,7 +149,8 @@
               "period": "year",
               "group": "Non-EU students",
               "status": "UNKNOWN",
-              "source": "mru"
+              "source": "mru",
+              "note": "Bachelor fees for international students reported between about €2,900 and €5,500/yr; enter the program’s 2027/28 fee."
             },
             "application_fee": {
               "amount": null,
@@ -194,7 +245,8 @@
               "period": "year",
               "group": "Non-EU students",
               "status": "UNKNOWN",
-              "source": "mru"
+              "source": "mru",
+              "note": "Bachelor fees for international students reported between about €2,900 and €5,500/yr; enter the program’s 2027/28 fee."
             },
             "application_fee": {
               "amount": null,

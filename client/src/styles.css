@@ -714,3 +714,18 @@ ul.plain li:last-child {
     width: 100%;
   }
 }
+
+.sch.dim > strong,
+tr.dim td:first-child strong {
+  color: var(--muted);
+}
+.elig {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  vertical-align: middle;
+}
+.chips.cats .chip {
+  text-align: left;
+}

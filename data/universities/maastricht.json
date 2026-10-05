@@ -33,6 +33,14 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": null
+    },
+    {
+      "id": "um-fees-2027",
+      "title": "Maastricht University: International Business tuition fees",
+      "url": "https://www.maastrichtuniversity.nl/education/bachelor/programmes/international-business/tuition-fees",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -116,12 +124,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 13400,
               "currency": "EUR",
               "period": "year",
               "group": "Non-EU (institutional fee)",
-              "status": "UNKNOWN",
-              "source": "um-ib"
+              "status": "EXPECTED",
+              "source": "um-fees-2027",
+              "note": "€13,400 for 2027/28 (€13,200 in 2026/27). Search summary of the official page."
             },
             "application_fee": {
               "amount": null,

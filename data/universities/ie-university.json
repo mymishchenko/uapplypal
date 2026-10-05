@@ -42,33 +42,34 @@
       "type": "official_admissions",
       "academic_year": "2027/28",
       "date_checked": null
+    },
+    {
+      "id": "ie-fees",
+      "title": "IE University: tuition and payment methods",
+      "url": "https://www.ie.edu/university/admission/payment-methods/",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ie-ukraine-fund",
+      "title": "IE University: €1 million scholarship fund for students from Ukraine",
+      "url": "https://www.ie.edu/university/news-events/news/ie-university-sets-e1-million-scholarship-fund-students-ukraine/",
+      "type": "news",
+      "academic_year": "2022/23",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ie-ukraine-impact",
+      "title": "IE Foundation: support for Ukraine (impact report)",
+      "url": "https://static.ie.edu/fundacion/pdf/Support_for_Ukraine_Impact.pdf",
+      "type": "official",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
   "scholarships": [
-    {
-      "id": "ukraine",
-      "name": "IE scholarship for Ukrainian students",
-      "provider": "university",
-      "type": "nationality",
-      "amount": null,
-      "percent": 100,
-      "percent_is_max": true,
-      "coverage": {
-        "tuition": true
-      },
-      "eligibility": "Ukrainian students.",
-      "nationality": [
-        "UA"
-      ],
-      "separate_application": true,
-      "renewable": null,
-      "academic_year": "2027/28",
-      "availability": "UNKNOWN",
-      "status": "UNKNOWN",
-      "source": "brief",
-      "note": "Up to 100% per brief. 2027 availability needs verification."
-    },
     {
       "id": "merit",
       "name": "IE Foundation scholarships (merit and need-based)",
@@ -86,6 +87,30 @@
       "availability": "UNKNOWN",
       "status": "UNKNOWN",
       "source": "ie-process"
+    },
+    {
+      "id": "ukraine",
+      "name": "IE for Ukraine Scholarship Fund",
+      "provider": "university",
+      "type": "nationality",
+      "amount": null,
+      "percent": 100,
+      "coverage": {
+        "tuition": true,
+        "housing": true
+      },
+      "eligibility": "Ukrainian candidates or residents affected by the war. Up to 100% of tuition and/or room and board.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "ie-ukraine-fund",
+      "percent_is_max": true,
+      "nationality": [
+        "UA"
+      ],
+      "note": "€1M fund created in 2022. Whether it still accepts 2027 applicants is not confirmed: ask IE admissions."
     }
   ],
   "programs": [
@@ -175,13 +200,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": 29000,
+              "amount": 29880,
               "currency": "EUR",
               "period": "year",
               "group": "All students",
               "status": "EXPECTED",
-              "source": "brief",
-              "note": "Figure from the brief; confirm the 2027/28 rate on IE's fees page."
+              "source": "ie-fees",
+              "note": "BBA €29,880/yr for 2027/28 (search summary of the official payment page)."
             },
             "application_fee": {
               "amount": null,

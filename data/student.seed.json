@@ -5,7 +5,8 @@
     "residence_country": "Ukraine",
     "date_of_birth": "",
     "entry_year": 2027,
-    "target_intake": "September 2027"
+    "target_intake": "September 2027",
+    "support_categories": []
   },
   "education": {
     "school": "",
@@ -21,11 +22,32 @@
     "other_subjects": ""
   },
   "languages": [
-    { "language": "Ukrainian", "level": "Native", "certificate": "", "score": "", "date": "", "expiry": "" },
-    { "language": "English", "level": "", "certificate": "", "score": "", "date": "", "expiry": "" }
+    {
+      "language": "Ukrainian",
+      "level": "Native",
+      "certificate": "",
+      "score": "",
+      "date": "",
+      "expiry": ""
+    },
+    {
+      "language": "English",
+      "level": "",
+      "certificate": "",
+      "score": "",
+      "date": "",
+      "expiry": ""
+    }
   ],
   "tests": {},
-  "interests": ["business", "entrepreneurship", "economics", "management", "finance", "technology"],
+  "interests": [
+    "business",
+    "entrepreneurship",
+    "economics",
+    "management",
+    "finance",
+    "technology"
+  ],
   "preferences": {
     "countries": "",
     "cities": "",

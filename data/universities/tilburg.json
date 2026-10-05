@@ -33,6 +33,14 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": null
+    },
+    {
+      "id": "tilburg-fees",
+      "title": "Tilburg University: tuition fees",
+      "url": "https://www.tilburguniversity.edu/students/administration/tuition-fees",
+      "type": "official_admissions",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
@@ -114,12 +122,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 13400,
               "currency": "EUR",
               "period": "year",
               "group": "Non-EU (institutional fee)",
-              "status": "UNKNOWN",
-              "source": "tilburg-iba"
+              "status": "EXPECTED",
+              "source": "tilburg-fees",
+              "note": "€13,400 in 2026/27; 2027/28 rate not published."
             },
             "application_fee": {
               "amount": null,

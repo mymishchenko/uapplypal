@@ -42,25 +42,64 @@
       "type": "official_admissions",
       "academic_year": null,
       "date_checked": "2026-10-05"
+    },
+    {
+      "id": "esade-fees",
+      "title": "Esade: bachelor tuition fees",
+      "url": "https://www.esade.edu/bachelor/en/degrees/tuition-fees",
+      "type": "official_admissions",
+      "academic_year": "2027/28",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "esade-scholarships",
+      "title": "Esade: bachelor scholarships",
+      "url": "https://www.esade.edu/bachelor/en/degrees/scholarships-grants/scholarships",
+      "type": "official_admissions",
+      "academic_year": "2025/26",
+      "date_checked": "2026-10-05"
     }
   ],
   "benefits": [],
   "scholarships": [
     {
       "id": "esade-aid",
-      "name": "Esade scholarships and financial aid",
+      "name": "Esade Talent Scholarship Program",
       "provider": "university",
-      "type": "need_based",
+      "type": "merit_need",
       "amount": null,
+      "percent": 100,
       "coverage": {
-        "tuition": true
+        "tuition": true,
+        "housing": true
       },
-      "eligibility": "To be checked.",
+      "eligibility": "Merit and financial need. Covers 60–100% of tuition or lodging. Over €5M awarded to 267 students in 2025/26.",
       "separate_application": true,
+      "renewable": null,
       "academic_year": "2027/28",
       "availability": "UNKNOWN",
-      "status": "UNKNOWN",
-      "source": "esade-bba-admissions"
+      "status": "EXPECTED",
+      "source": "esade-scholarships",
+      "percent_is_max": true
+    },
+    {
+      "id": "lodging",
+      "name": "Esade Lodging Scholarship",
+      "provider": "university",
+      "type": "need",
+      "amount": null,
+      "percent": null,
+      "coverage": {
+        "housing": true
+      },
+      "eligibility": "Students who need to move to Barcelona; financial need.",
+      "separate_application": true,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "esade-scholarships",
+      "amount_text": "€450/month towards housing"
     }
   ],
   "programs": [
@@ -123,12 +162,13 @@
           ],
           "tuition": {
             "sticker": {
-              "amount": null,
+              "amount": 21300,
               "currency": "EUR",
               "period": "year",
               "group": "All students",
-              "status": "UNKNOWN",
-              "source": "esade-bba-admissions"
+              "status": "EXPECTED",
+              "source": "esade-fees",
+              "note": "BBA €21,300/yr for 2027/28 (search summary of the official fees page)."
             },
             "application_fee": {
               "amount": null,

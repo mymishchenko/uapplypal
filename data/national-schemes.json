@@ -1,0 +1,206 @@
+{
+  "_note": "Country-level funding that applies to every university in a country (optionally only public or private ones), e.g. Ukrainian state support for children of defenders. Same fact rules as university files: every scheme has source + status, and benefits are per academic year. `categories` limits a scheme to students who have one of those family/residence categories in their profile.",
+  "categories": [
+    {
+      "code": "combatant_child",
+      "label": "Child of a combatant (УБД)",
+      "description": "A parent has combatant status (учасник бойових дій) from the Russian–Ukrainian war."
+    },
+    {
+      "code": "fallen_defender_child",
+      "label": "Child of a fallen, missing or captured defender",
+      "description": "Family member of a defender who died, went missing in special circumstances, or was held captive (член сім'ї загиблого / зниклого безвісти захисника)."
+    },
+    {
+      "code": "war_disabled_child",
+      "label": "Child of a person disabled due to the war",
+      "description": "A parent has disability status as a result of the war (особа з інвалідністю внаслідок війни)."
+    },
+    {
+      "code": "idp",
+      "label": "Internally displaced person (ВПО)",
+      "description": "Changed place of residence inside Ukraine after 24 Feb 2022."
+    },
+    {
+      "code": "occupied_territory",
+      "label": "Lived in temporarily occupied territory",
+      "description": "Lived in territory occupied by Russia."
+    },
+    {
+      "code": "abroad_since_2022",
+      "label": "Left Ukraine after 24 Feb 2022",
+      "description": "Was forced to move abroad after the full-scale invasion."
+    },
+    {
+      "code": "eu_temporary_protection",
+      "label": "Holds EU temporary protection in the country of study",
+      "description": "Registered under the EU Temporary Protection Directive in the country where the university is."
+    }
+  ],
+  "sources": [
+    {
+      "id": "ua-mva-compensation",
+      "title": "Ministry of Veterans Affairs: compensation of contract tuition for children of veterans",
+      "url": "https://mva.gov.ua/prescenter/category/86-novini/yak-otrimati-kompensatsiu-za-navchannya-ditey-veteraniv-ta-veteranok-u-zakladah-peredvischoi-abo-vischoi-osviti",
+      "type": "government",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ua-mon-compensation-diia",
+      "title": "MON: state compensates tuition for defenders' children (certificates in Diia)",
+      "url": "https://mon.gov.ua/news/derzhava-kompensuie-navchannia-ditiam-zakhysnykiv-i-zakhysnyts-za-poperednii-navchalnyi-rik-sertyfikaty-nadiidut-u-zastosunku-diia",
+      "type": "government",
+      "academic_year": "2025/26",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ua-compensation-2026-27",
+      "title": "News: contract-tuition compensation for veterans' children continues in 2026/27",
+      "url": "https://mega.if.ua/u-20262027-navchalnomu-roczi-nadavatymetsya-kompensacziya-vartosti-kontraktnogo-navchannya-dlya-ditej-veteraniv-ta-veteranok/",
+      "type": "news",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ua-mod-ubd-children",
+      "title": "Ministry of Defence: education benefits for children of combatants",
+      "url": "https://mod.gov.ua/explanation/yaki-osvitni-pilhy-maie-dytyna-uchasnyka-boiovykh-dii",
+      "type": "government",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ua-ubd-admission-2026",
+      "title": "Abitly: benefits for combatants and defenders' children, admission 2026",
+      "url": "https://abitly.org/uk/blog/vstup2026/pilhy-ubd-ta-dity-zakhysnykiv-2026",
+      "type": "guide",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ua-mon-admission-faq-2026",
+      "title": "MON: admission 2026, answers to common questions (quotas, benefits)",
+      "url": "https://mon.gov.ua/news/vstupna-kampaniia-2026-vidpovidaiemo-na-naiposhyrenishi-zapytannia-vstupnykiv",
+      "type": "government",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ua-state-grant",
+      "title": "MON: state grants for applicants (державні гранти)",
+      "url": "https://mon.gov.ua/news/dodatkova-finansova-pidtrymka-dlia-vstupnykiv-vid-derzhavy-zaprovadzhuiemo-derzhavni-hranty",
+      "type": "government",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "ua-state-grant-2026",
+      "title": "Abitly: state grants for study, 2026 (amounts and NMT thresholds)",
+      "url": "https://abitly.org/uk/blog/vstup2026/hranty-na-navchannia-2026",
+      "type": "guide",
+      "academic_year": "2026/27",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "at-ministry-ua-exemption",
+      "title": "Austrian ministry: tuition-fee exemption for Ukrainian students",
+      "url": "https://www.bmfwf.gv.at/en/science/ukraine/tuition-fee-exemption.html",
+      "type": "government",
+      "academic_year": "2025/26",
+      "date_checked": "2026-10-05"
+    },
+    {
+      "id": "nl-tp-fees",
+      "title": "Leiden University FAQ: tuition fees for students from Ukraine (temporary protection)",
+      "url": "https://www.universiteitleiden.nl/en/dossiers/war-in-ukraine/frequently-asked-questions",
+      "type": "official_admissions",
+      "academic_year": null,
+      "date_checked": "2026-10-05"
+    }
+  ],
+  "schemes": [
+    {
+      "id": "ua-defender-children-compensation",
+      "kind": "benefit",
+      "country": "Ukraine",
+      "categories": ["combatant_child", "fallen_defender_child", "war_disabled_child"],
+      "benefit_kind": "tuition_compensation",
+      "title": "State compensation of contract tuition for children of defenders",
+      "academic_year": "2027/28",
+      "state": "UNKNOWN",
+      "effect": { "tuition_percent_off": 100 },
+      "eligibility": "Children of combatants (УБД), of persons disabled due to the war, and of fallen, missing or captured defenders, studying on a paid (contract) place at a university of any ownership type (private universities included). The state pays the university, which refunds what the family already paid. Granted once, for one academic year only.",
+      "status": "EXPECTED",
+      "source": "ua-mva-compensation",
+      "note": "Experimental programme (CMU resolution No. 318 of 14 Mar 2025). Covered 2024/25, 2025/26 and 2026/27; not announced for 2027/28. One year of tuition, not the whole degree. Age limits and marital status rules apply: check the official conditions."
+    },
+    {
+      "id": "ua-combatant-children-targeted-support",
+      "kind": "benefit",
+      "country": "Ukraine",
+      "university_types": ["public"],
+      "categories": ["combatant_child", "fallen_defender_child", "war_disabled_child"],
+      "benefit_kind": "state_targeted_support",
+      "title": "State targeted support (державна цільова підтримка) for children of combatants",
+      "academic_year": "2027/28",
+      "state": "UNKNOWN",
+      "eligibility": "Full-time students up to age 23. Children of combatants: priority transfer from a paid place to a vacant state-funded place if their competitive score is no more than 15 points below the state-funded cut-off; preferential long-term study loan for paid places; social scholarship; free textbooks. Full payment of tuition on state-funded places.",
+      "status": "EXPECTED",
+      "source": "ua-mod-ubd-children",
+      "note": "CMU resolution No. 975 (2016). Children of combatants take the NMT like everyone else and have no admission quota. The transfer to a state-funded place depends on vacancies, so it is not guaranteed."
+    },
+    {
+      "id": "ua-fallen-defender-children-quota",
+      "kind": "benefit",
+      "country": "Ukraine",
+      "university_types": ["public"],
+      "categories": ["fallen_defender_child"],
+      "benefit_kind": "quota_and_free_place",
+      "title": "Quota 2 and transfer to a state-funded place for children of fallen defenders",
+      "academic_year": "2027/28",
+      "state": "UNKNOWN",
+      "effect": { "tuition_percent_off": 100 },
+      "eligibility": "Children of fallen (deceased) or missing defenders: admission within quota 2 (up to 20% of state-funded places, lower cut-off) and mandatory transfer from a paid place to a state-funded one after enrolment. Full state targeted support (social scholarship, free dormitory, textbooks) until age 23.",
+      "status": "EXPECTED",
+      "source": "ua-ubd-admission-2026",
+      "note": "Rules of the 2026 admission campaign; 2027 admission rules not published yet. Documents proving the status must be submitted before the first application."
+    },
+    {
+      "id": "ua-state-grant",
+      "kind": "scholarship",
+      "country": "Ukraine",
+      "name": "State grant for paid places (державний грант)",
+      "provider": "government",
+      "type": "merit",
+      "amount": 385,
+      "currency": "EUR",
+      "amount_text": "18,500 UAH/yr (≈ €385) with 150+ in both NMT subjects; 27,000 UAH (≈ €560) with 170+; multiplied by a specialty coefficient",
+      "coverage": { "tuition": true },
+      "eligibility": "Applicants enrolled on a paid place, by NMT score. Only at universities that signed up for the programme (state and private; KSE was listed in 2026). Paid to the university twice a year.",
+      "separate_application": false,
+      "renewable": null,
+      "academic_year": "2027/28",
+      "availability": "UNKNOWN",
+      "status": "EXPECTED",
+      "source": "ua-state-grant-2026",
+      "note": "Introduced in 2025 and continued in 2026. 2027 amounts and participating universities not published yet. Converted at about 48 UAH/€."
+    },
+    {
+      "id": "nl-temporary-protection-fee",
+      "kind": "benefit",
+      "country": "Netherlands",
+      "university_types": ["public"],
+      "categories": ["eu_temporary_protection"],
+      "benefit_kind": "reduced_fee",
+      "title": "Statutory (EU) fee for Ukrainians with temporary protection in the Netherlands",
+      "academic_year": "2027/28",
+      "state": "UNKNOWN",
+      "effect": { "tuition": 2771 },
+      "eligibility": "Ukrainians registered in the Netherlands under the EU Temporary Protection Directive. Some universities charged them the statutory fee instead of the non-EU fee; others have ended this.",
+      "status": "EXPECTED",
+      "source": "nl-tp-fees",
+      "note": "Policy differs per university and does not apply to students who come from Ukraine on a study visa. 2027/28 statutory fee about €2,771."
+    }
+  ]
+}

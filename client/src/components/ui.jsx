@@ -210,3 +210,26 @@ export function DeadlineCell({ d }) {
 export function Empty({ children }) {
   return <p className="muted empty">{children}</p>;
 }
+
+// Who a scholarship/benefit is for, and whether the profile matches.
+export function EligibilityBadges({ item }) {
+  const { view } = useApp();
+  const labels = Object.fromEntries((view.funding_categories || []).map((c) => [c.code, c.label]));
+  const fits = item.eligible !== false;
+  return (
+    <span className="elig">
+      {item.national && <span className="badge subtle blue">{item.country}-wide</span>}
+      {item.nationality && item.nationality.includes('UA') && <span className="badge subtle blue">Ukrainian citizens</span>}
+      {item.categories && item.categories.length > 0 && (
+        <span className={`badge subtle ${fits ? 'green' : 'grey'}`} title={fits ? 'Matches your profile' : 'Not ticked in your profile'}>
+          For: {item.categories.map((c) => labels[c] || c).join(' / ')}
+        </span>
+      )}
+      {item.eligible === false && item.ineligible_reason === 'category' && (
+        <a className="small muted" href="#/profile">
+          not in your profile
+        </a>
+      )}
+    </span>
+  );
+}
